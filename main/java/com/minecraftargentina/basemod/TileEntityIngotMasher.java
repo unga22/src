@@ -292,7 +292,7 @@ public class TileEntityIngotMasher extends TileEntity implements ISidedInventory
 		}
 		
 		if(!worldObj.isRemote){
-			if (this.hasItemPower(this.slots[2]) && this.dualPower < (this.maxPower - this.getItemPower(this.slots[2]))) {
+			if (this.hasItemPower(this.slots[2]) && this.dualPower <= (this.maxPower - this.getItemPower(this.slots[2]))) {
 				this.dualPower += getItemPower(this.slots[2]);
 				
 				if(this.slots[2] != null) {
