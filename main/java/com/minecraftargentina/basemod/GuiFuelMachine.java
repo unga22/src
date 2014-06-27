@@ -37,20 +37,22 @@ public class GuiFuelMachine extends GuiContainer {
 		
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
-		if(fuelmashine.tieneCombustible() == true){
-			int i = fuelmashine.getFuelTimeRemainingScaled(12);
+		if(fuelmashine.tieneCombustible()){
+			int i = fuelmashine.getFuelTimeRemainingScaled(13);
 			drawTexturedModalRect(guiLeft + 82, guiTop + 53 - i, 176, 12 - i, 0, i);
 		}
 		if(fuelmashine.waterStatus > 0 && fuelmashine.waterStatus <= fuelmashine.maxWater){
 			int i = fuelmashine.getWaterRemainingScaled(45);
-			drawTexturedModalRect(guiLeft + 8, guiTop + 53 - i, 176, 102 - i, 16, i);
+			drawTexturedModalRect(guiLeft + 8, guiTop + 53 - i, 176, 103 - i, 16, i);
 		}
 		if(fuelmashine.biofuelStatus >0 && fuelmashine.biofuelStatus <= fuelmashine.maxBioFuel){
 			int i = fuelmashine.getBioFuelRemainingScaled(45);
 			drawTexturedModalRect(guiLeft + 152, guiTop + 53 - i, 176, 57 -i, 16, i);
 		}
-		int i = fuelmashine.getTransformedProgressSclaed(12);
-		drawTexturedModalRect(guiLeft +30, guiTop + 26, 0, 167, i, 176);
+		if(fuelmashine.estaTransformado()){
+			int i = fuelmashine.getTransformedProgressSclaed(17);
+			drawTexturedModalRect(guiLeft +30, guiTop + 26, 0, 167, i, 176);
+		}
 	}
 
 }
