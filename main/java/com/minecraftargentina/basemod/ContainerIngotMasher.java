@@ -139,6 +139,8 @@ public class ContainerIngotMasher extends Container {
 			ICrafting par1 = (ICrafting)this.crafters.get(i);
 			
 			//if(dualCookTime != this)
+			
+			//Arrelgnado el Container!
 		}
 		
 	}
