@@ -15,8 +15,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	private ItemStack slots[];
 	
 	public int transformingTime;
-	public int waterStatus;
-	public int biofuelStatus;
+	public static int waterStatus;
+	public static int biofuelStatus;
 	public int combustibleTime;
 	public static int combustibleTimeMax;
 	public static final int maxWater = 100;
@@ -179,8 +179,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 		}else{
 			Item item = itemstack.getItem();
 			if (item == BaseMod.itemResiduos){
-				combustibleTimeMax = 50;
-				return 50;
+				combustibleTimeMax = 500;
+				return 500;
 			}
 			
 			
@@ -215,7 +215,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 		
 	}
 	
-	public int getMasherProgressSclaed(int i) {
+	public int getTransformedProgressSclaed(int i) {
 		return (transformingTime * i) / this.TransformingSpeed;
 	}
 	public int getWaterRemainingScaled(int i) {
@@ -224,61 +224,46 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	public int getBioFuelRemainingScaled(int i) {
 		return ((this.biofuelStatus * i) / this.maxBioFuel);
 	}
+	public int getFuelTimeRemainingScaled(int i){
+		return ((this.combustibleTime * i)/ this.combustibleTimeMax);
+	}
 	
-	private boolean canTransform() {
-		
+	private boolean puedeTransform() {
 		if (slots[1] == null || slots[2] == null || slots[3] == null) {
 			return false;
 		}
-		
-		ItemStack itemstack = BioFuelRecipes.getMashingResult(slots[1].getItem(), slots[2].getItem(), slots[3].getItem());
-		
-		if (itemstack == null) {
+		int porcentajedebiofuel = BioFuelRecipes.getMashingResult(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), this.waterStatus);
+		if (waterStatus == 0) {
 			return false;
-		}
-		
-		if (slots[3] == null){
+		}	
+		if (biofuelStatus != maxBioFuel){
 			return true;
 		}
-		
-		if (!slots[3].isItemEqual(itemstack)) {
+		if(porcentajedebiofuel > 0){
+			return true;
+		} else {
 			return false;
 		}
-		
-		if (slots[3].stackSize < getInventoryStackLimit()  && slots[3].stackSize < slots[3].getMaxStackSize()) {
-			return true;
-		}else{
-			return slots[3].stackSize < itemstack.getMaxStackSize();
-		}				
 	}
 	
 	private void transformarAgua() {
-		if (canTransform()) {
-			ItemStack itemstack = BioFuelRecipes.getMashingResult(slots[1].getItem(), slots[2].getItem(), slots[3].getItem());
-			
-			if (slots[3] == null) {
-				slots[3] = itemstack.copy();
-			}else if (slots[3].isItemEqual(itemstack)) {
-				slots[3].stackSize += itemstack.stackSize;
-				
-			}
-			
-			for (int i = 0; i < 2; i++) {
+		if (puedeTransform()) {
+			int porcentajedebiofuel = BioFuelRecipes.getMashingResult(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
+				biofuelStatus =+ porcentajedebiofuel;
+				System.out.println(biofuelStatus);
+			for (int i = 1; i <= 3; i++) {
 				if (slots[i].stackSize <= 0) {
-					slots[i] = new ItemStack(slots[i].getItem().setFull3D());
-					
+					slots[i] = new ItemStack(slots[i].getItem().setFull3D());	
+				}	
+				if (slots[i].stackSize > 0) {
+					slots[i].stackSize--;
 				}
-					
-					if (slots[i].stackSize > 0) {
-						slots[i].stackSize--;
-					}
-					
-					if (slots[i].stackSize == 0) {
-						slots[i] = null;
-					}
+				if (slots[i].stackSize == 0) {
+					slots[i] = null;
 				}
 			}
 		}
+	}
 				
 			
 				
@@ -289,20 +274,37 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 
 	}
 	
-	public boolean estaTransformada() {
+	public boolean estaTransformado() {
 		return this.transformingTime > 0;
 	}
 	public void updateEntity() {
 		boolean flag = this.tieneCombustible();
 		boolean flag1 = false;
-
-		
-		if(tieneCombustible() && this.estaTransformada()) {
+		//Comprobar Combiustibe y añadir tempo de quemar y quitar el item de combustible
+		if(tieneCombustible() && this.estaTransformado()) {
 			this.combustibleTime--;
 		}
 		if(!worldObj.isRemote){
-			if (this.hasItemPower(this.slots[4]) && this.combustibleTime < (this.combustibleTimeMax)) {
-				this.combustibleTime += getItemPower(this.slots[4]);
+			//Comprobar si se mete agua
+			if(this.slots[0] != null && this.slots[0].getItem() == Items.water_bucket && this.waterStatus < this.maxWater){
+				this.waterStatus =+ 10;
+				System.out.println(waterStatus);
+				ItemStack cubo = new ItemStack(Items.bucket);
+				slots[0] = null;
+				if(slots[0] == null){
+					slots[0] = cubo.copy();
+				}
+				if(this.slots[0]!= null){
+					flag1 = true;
+					this.slots[0].stackSize--;
+					if (this.slots[0].stackSize == 0){
+						this.slots[0] = this.slots[0].getItem().getContainerItem(this.slots[0]);
+						
+					}
+				}
+			}
+			if (this.hasItemPower(this.slots[4]) && this.combustibleTime == 0) {
+				this.combustibleTime = getItemPower(this.slots[4]);
 				if(this.slots[4] != null) {
 					flag1 = true;
 					
@@ -314,8 +316,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 					}							
 				}
 			}
-			
-			if (tieneCombustible() && canTransform()) {
+			//Transformacion
+			if (tieneCombustible() && puedeTransform()) {
 				transformingTime++;
 				
 				if (this.transformingTime == this.TransformingSpeed){
@@ -324,12 +326,10 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 					flag1 = true;
 					
 				}				
-			}else{ 
-				transformingTime = 0;
-		}
-		if ((flag == this.estaTransformada()) || (flag != this.estaTransformada())) {
+			}
+		if ((flag == this.estaTransformado()) || (flag != this.estaTransformado())) {
 			flag1 = true;
-			FuelMachine.updateBlockState(this.estaTransformada(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);						
+			FuelMachine.updateBlockState(this.estaTransformado(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);						
 	    	}		
     	}
 	
@@ -337,6 +337,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 		this.markDirty();
 	    }
     }
+	
+
 }
 
 
