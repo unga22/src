@@ -1,0 +1,16 @@
+[
+{
+  "modid": "basemod",
+  "name": "MinecraftArgentina",
+  "description": "MinecraftArgentina by Oblivion Games ® All Rigths Reserved 2013-2015 ",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://minecraftargentina.minecraftus.com/",
+  "updateUrl": "",
+  "authorList": ["Tomas Eduardo Ungarini"],
+  "credits": "Gracias al equipo de Oblivion Games",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

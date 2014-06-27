@@ -1,0 +1,86 @@
+item.HierbaRoja.name=Hierba Roja
+
+
+tile.PlantaRoja.name=Planta Roja
+item.SemillasRojas.name=Semillas Rojas
+item.HierbaRoja.name=Hierba Roja
+item.blueberry.name= Semillas de Frutilla
+item.Frutilla.name= Frutillas
+container.ingotMasher.name=Ingor Masher
+item.CopperIngot.name=Copper Ingot
+item.TinIngot.name= Tin Ingot
+item.ZincIngot.name=Zinc Ingot
+item.NickelIngot.name=Nickel Ingot
+item.ManganeseIngot.name=Manganese Ingot
+item.VanadiumIngot.name=Vanadium Ingot
+item.TurmalineIngot.name=Turmaline Ingot
+item.TinCog.name=Tin Cog
+item.IronWasher.name=Iron Washer
+item.IronDisc.name=Iron Disc
+item.IronHammer.name=Iron Hammer
+item.IronPunch.name=Iron Punch
+item.TreePitch.name=Tree Pitch
+item.Staff.name=Baculo Sagrado
+item.Topaz.name=Topaz
+item.HotDog.name=Salchicha
+item.BBQRibs.name=Costillas
+item.StrawberrySeeds.name=Strawberry Seeds
+item.Strawberry.name=Strawberry
+block.StrawberryPlant.name=StrawberryPlant
+item.BloodMelonSeeds.name=Red Melon Seeds
+item.BloodMelonSlice.name=Red Melon Slice
+item.BloodMelon.name=Blood Melon Crop
+block.BloodMelonStem.name=Blood Melon Stem
+item.TopazAxe.name=Topaz Axe
+item.TopazSword= Topaz Sword
+item.TopazHoe.name=Topaz Hoe
+item.TopazPickaxe.name=Topaz Pickaxe
+item.TopazHelm.name=Topaz Helm
+item.TopazChest.name=Topaz Chest
+item.TopazLegs.name=Topaz Legs
+item.TopazBoots.name=Topaz Boots
+tile.CooperOre.name=Cooper Ore
+tile.TinOre.name=Tin Ore
+tile.ZincOre.name=Zinc Ore
+tile.NickelOre.name=Nickel Ore
+tile.ManganeseOre.name=Manganese Ore
+tile.VanadiumOre.name=Vanadium Ore
+tile.TopazOre.name=Topaz Ore
+tile.NetherCooperOre=Nether Cooper Ore
+tile.BetherTinOre.name=Nether Tin Ore
+tile.NetherZincOre.name=Nether Zinc Ore
+tile.NetherNickelOre.name=Nether Nickel Ore
+tile.NetherManganeseOre.name=Nether Manganese Ore
+tile.NetherVanadiumOre.name=Nether Vanadium Ore
+tile.NetherTopazOre.name=Nether Topaz Ore
+tile.CopperBlock.name=Copper Block
+tile.ObsidianTable.name=Obsidian Table
+tile.PurpleLampOn.name=Purple Lamp On
+tile.PurpleLampOff.name=Purple Lamp Off
+
+
+        //Lamps
+        GameRegistry.registerBlock(blockPurpleLampOn, "PurpleLampOn");
+        GameRegistry.registerBlock(blockPurpleLampOff, "PurpleLampOff");
+
+        //Fluids
+
+        GameRegistry.registerBlock(fluidSludgeStill, "SludgeStill");
+        GameRegistry.registerBlock(fluidSludgeFlowing, "SludgeFlowing");
+        //FluidRegistry.registerFluid(fluidSludgeStill);
+        //FluidRegistry.registerFluid(fluidSludge);
+
+        //Machines
+        GameRegistry.registerBlock(blockAlabasterOvenIdle, "AlabasterOvenIdle");
+        GameRegistry.registerBlock(blockAlabasterOvenActive, "AlabasterOvenActive");
+
+        GameRegistry.registerBlock(blockIngotMasherIdle, "IngotMasherIdle");
+        GameRegistry.registerBlock(blockIngotMasherActive, "IngotMasherActive");
+
+        GameRegistry.registerBlock(blockWorkSurface, "WorkSurface");
+
+        //Spawn
+        GameRegistry.registerWorldGenerator(eventWorldGen, 0);
+
+        //Renderers
+        nealeProxy.registerRenderThings();
