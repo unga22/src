@@ -40,9 +40,11 @@ public class GuiIngotMasher extends GuiContainer {
 		
 		if(ingotMasher.hasPower()) {
 			int i1 = ingotMasher.getPowerRemainingScaled(45);
-			drawTexturedModalRect(guiLeft + 8, guiTop + 53 - i1, 176, 62 - i1, 16, i1);
+			drawTexturedModalRect(guiLeft + 8, guiTop + 53 - i1, 176, 97 - i1, 51, i1);
 		}
 		
+		int j1 = ingotMasher.getMasherProgressSclaed(48);
+		drawTexturedModalRect(guiLeft + 59, guiTop + 15, 176, 0, j1 + 1, 51);
 
 	}
 

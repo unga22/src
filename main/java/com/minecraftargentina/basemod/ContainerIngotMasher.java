@@ -138,11 +138,30 @@ public class ContainerIngotMasher extends Container {
 		for (int i = 0; i < this.crafters.size(); i++){
 			ICrafting par1 = (ICrafting)this.crafters.get(i);
 			
-			//if(dualCookTime != this)
+			if(this.dualCookTime != this.masher.dualCookTime){
+				par1.sendProgressBarUpdate(this, 0, this.masher.dualCookTime);
+			}
 			
-			//Arrelgnado el Container!
+			if(this.dualPower != this.masher.dualPower){
+				par1.sendProgressBarUpdate(this, 1, this.masher.dualPower);
+				
+			}		
+		
 		}
 		
+		this.dualCookTime = this.masher.dualCookTime;
+		this.dualPower = this.masher.dualPower;
+	}
+	
+	public void updateProgressBar(int i, int j) {
+		if (i ==0){
+			masher.dualCookTime = j;
+			
+		}
+		
+		if (i == 1) {
+			masher.dualPower = j;
+		}
 	}
 
 }
