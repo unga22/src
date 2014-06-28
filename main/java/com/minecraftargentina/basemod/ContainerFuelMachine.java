@@ -23,28 +23,28 @@ public class ContainerFuelMachine extends Container {
 
 		fuelmashine = biofuelTransformer;
         //BioFuelImput
-		this.addSlotToContainer(new Slot(fuelmashine, 0, 8, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 0, 8, 72));
         //Natural 1
-		this.addSlotToContainer(new Slot(fuelmashine, 1, 48, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 1, 48, 24));
         //Natural 2
-		this.addSlotToContainer(new Slot(fuelmashine, 2, 81, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 2, 81, 24));
         //Natural 3
-		this.addSlotToContainer(new Slot(fuelmashine, 3, 113, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 3, 113, 24));
         //FuelImput
-		this.addSlotToContainer(new Slot(fuelmashine, 4, 81, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 4, 81, 72));
         //BifuelOutput
-		this.addSlotToContainer(new Slot(fuelmashine, 5, 152, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 5, 152, 72));
 
 
 		//Inventoario del Jugador
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 9; j++) {
-				this.addSlotToContainer(new Slot(invPlayer, j + i * 9 + 9, 8 + j * 18, 84 + i * 18)); 
+				this.addSlotToContainer(new Slot(invPlayer, j + i * 9 + 9, 8 + j * 18, 100 + i * 18)); 
 			}
 		}
 		//ABarra en donde se ponen los items en miencraft
 		for(int i = 0; i < 9; i++) {
-			this.addSlotToContainer(new Slot(invPlayer, i, 8 + i * 18, 142));
+			this.addSlotToContainer(new Slot(invPlayer, i, 8 + i * 18, 158));
 		}
 	}
 
