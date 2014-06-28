@@ -1,6 +1,8 @@
 package com.minecraftargentina.basemod;
 
 
+import com.minecraftargentina.basemod.WorckSurface.WorkSurfaceCraftingManager;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

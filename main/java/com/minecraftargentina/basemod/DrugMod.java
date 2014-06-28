@@ -5,6 +5,9 @@ package com.minecraftargentina.basemod;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
+import com.minecraftargentina.basemod.Cubos.BucketHandler;
+import com.minecraftargentina.basemod.lib.ClientProxy;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -71,8 +74,8 @@ public class DrugMod {
 
 
 
-     	@SidedProxy(clientSide = "com.minecraftargentina.basemod.ClientProxy", serverSide = "com.minecraftargentina.basemod.CommonProxy")
-     	public static CommonProxy nealeProxy;
+     	@SidedProxy(clientSide = "com.minecraftargentina.basemod.lib.ClientProxy", serverSide = "com.minecraftargentina.basemod.lib.CommonProxy")
+     	public static ClientProxy nealeProxy;
  
         
         @EventHandler // used in 1.6.2

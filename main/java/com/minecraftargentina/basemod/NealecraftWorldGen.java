@@ -4,6 +4,8 @@ package com.minecraftargentina.basemod;
 
 import java.util.Random;
 
+import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
+
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -32,25 +34,25 @@ public class NealecraftWorldGen implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int x, int z) {
 		//this.addOreSpawn(Nealecraft.oreWhatever, world, random, i=blockXPos, j= blockZPos, maxX, maxZ, maxVeinSize, chancetospawn, minY, maxY); 
-		this.addOreSpawn(BaseMod.oreCopperOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreTinOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreZincOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreNickelOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreManganeseOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreVanadiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(BaseMod.oreTopazOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreCopperOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreTinOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreZincOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreNickelOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreManganeseOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreVanadiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(CreacionDeBloques.oreTopazOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
 
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {
 		// TODO Auto-generated method stub
-		this.addNetherOreSpawn(BaseMod.oreNetherCopperOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherTinOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherZincOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherNickelOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherManganeseOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherVanadiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addNetherOreSpawn(BaseMod.oreNetherTopazOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherCopperOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherTinOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherZincOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherNickelOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherManganeseOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherVanadiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addNetherOreSpawn(CreacionDeBloques.oreNetherTopazOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
 	}
 
 	private void generateEnd(World world, Random random, int x, int z) {

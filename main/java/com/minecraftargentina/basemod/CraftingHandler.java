@@ -1,6 +1,8 @@
 package com.minecraftargentina.basemod;
 
 
+import com.minecraftargentina.basemod.Items.CreaciondeItems;
+
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -16,8 +18,8 @@ public class CraftingHandler {
 			if (event.craftMatrix.getStackInSlot(i) != null) {
 
 				ItemStack item0 = event.craftMatrix.getStackInSlot(i);
-					if (item0 != null && item0.getItem() == BaseMod.itemIronHammer) {
-						ItemStack k = new ItemStack(BaseMod.itemIronHammer, 2, (item0.getItemDamage() + 1));
+					if (item0 != null && item0.getItem() == CreaciondeItems.itemIronHammer) {
+						ItemStack k = new ItemStack(CreaciondeItems.itemIronHammer, 2, (item0.getItemDamage() + 1));
 
 						if (k.getItemDamage() >= k.getMaxDamage()) {
 							k.stackSize--;
@@ -28,8 +30,8 @@ public class CraftingHandler {
 					}
 
 				ItemStack item1 = event.craftMatrix.getStackInSlot(i);
-					if (item1 != null && item1.getItem() == BaseMod.itemIronPunch) {
-						ItemStack k = new ItemStack(BaseMod.itemIronPunch, 2, (item1.getItemDamage() + 1));
+					if (item1 != null && item1.getItem() == CreaciondeItems.itemIronPunch) {
+						ItemStack k = new ItemStack(CreaciondeItems.itemIronPunch, 2, (item1.getItemDamage() + 1));
 
 						if (k.getItemDamage() >= k.getMaxDamage()) {
 							k.stackSize--;

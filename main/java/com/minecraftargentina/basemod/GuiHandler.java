@@ -1,5 +1,16 @@
 package com.minecraftargentina.basemod;
 
+import com.minecraftargentina.basemod.AlabasterOven.ContainerAlabasterOven;
+import com.minecraftargentina.basemod.AlabasterOven.GuiAlabasterOven;
+import com.minecraftargentina.basemod.AlabasterOven.TileEntityAlabasterOven;
+import com.minecraftargentina.basemod.FuelMachine.ContainerFuelMachine;
+import com.minecraftargentina.basemod.FuelMachine.GuiFuelMachine;
+import com.minecraftargentina.basemod.FuelMachine.TileEntityFuelMachine;
+import com.minecraftargentina.basemod.IngotMasher.ContainerIngotMasher;
+import com.minecraftargentina.basemod.IngotMasher.GuiIngotMasher;
+import com.minecraftargentina.basemod.IngotMasher.TileEntityIngotMasher;
+import com.minecraftargentina.basemod.WorckSurface.GuiWorkSurface;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -8,7 +19,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {
