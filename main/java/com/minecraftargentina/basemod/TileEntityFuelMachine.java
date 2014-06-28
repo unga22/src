@@ -15,10 +15,10 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	private ItemStack slots[];
 	
 	public int transformingTime;
-	public static int waterStatus;
-	public static int biofuelStatus;
+	public int waterStatus;
+	public int biofuelStatus;
 	public int combustibleTime;
-	public static int combustibleTimeMax;
+	public int combustibleTimeMax;
 	public static final int maxWater = 100;
 	public static final int maxBioFuel = 100;
 	public static final int TransformingSpeed = 600;
@@ -99,6 +99,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			
 			waterStatus = nbt.getShort("WaterStatus");
 			biofuelStatus = nbt.getShort("BioFuelStatus");
+			combustibleTime = nbt.getShort("FuelTime");
+			combustibleTimeMax = nbt.getShort("FuelTimeMax");
 			transformingTime = nbt.getShort("TransformingTime");
 			
 			
@@ -108,6 +110,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			super.writeToNBT(nbt);
 			nbt.setShort("WaterStatus", (short)waterStatus);
 			nbt.setShort("BioFuelStatus", (short)biofuelStatus);
+			nbt.setShort("FuelTime", (short)combustibleTime);
+			nbt.setShort("FuelTimeMax", (short)combustibleTimeMax);
 			nbt.setShort("TransformingTime", (short)transformingTime);
 			NBTTagList list = new NBTTagList();
 			
@@ -243,7 +247,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	private void transformarAgua() {
 		if (puedeTransformar()) {
 			int porcentajedebiofuel = BioFuelRecipes.obtenerBioFuel(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
-			BioFuelRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
+			int AguaQueConsumir = BioFuelRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
+			waterStatus = waterStatus - AguaQueConsumir;
 			biofuelStatus = biofuelStatus + porcentajedebiofuel;
 			if(biofuelStatus > maxBioFuel){
 				int BioFuelSobrante = biofuelStatus - maxBioFuel;
@@ -284,8 +289,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 				}
 			}
 			if (hasItemPower(slots[4]) && combustibleTime == 0) {
-				combustibleTime = combustibleTimeMax = getItemPower(slots[4]);
-				System.out.println(combustibleTimeMax);
+				combustibleTimeMax = combustibleTime = getItemPower(slots[4]);
 				if(slots[4] != null) {
 					flag1 = true;
 					slots[4].stackSize--;
@@ -298,7 +302,6 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			//Transformacion
 			if (tieneCombustible() && puedeTransformar()) {
 				transformingTime++;
-				
 				if (this.transformingTime == this.TransformingSpeed){
 					this.transformingTime = 0;
 					this.transformarAgua();

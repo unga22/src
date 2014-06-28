@@ -455,6 +455,7 @@ public class BaseMod {
 
 		GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
 		GameRegistry.registerTileEntity(TileEntityIngotMasher.class, "IngotMasher");
+		GameRegistry.registerTileEntity(TileEntityFuelMachine.class, "FuelMashine");
 		
 		achievementOblivion = new Achievement("archievement.mineOblivion", "mineOblivion", 0, 0, new ItemStack(BaseMod.itemOldBook), (Achievement)null).initIndependentStat().registerStat();
 		achievementCopperPick = new Achievement("archivement.craftPick", "craftPick", 2, 1, BaseMod.oreCopperOre, achievementOblivion).registerStat();

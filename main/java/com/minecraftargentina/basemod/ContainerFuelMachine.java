@@ -12,31 +12,28 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 public class ContainerFuelMachine extends Container {
 
-	private TileEntityFuelMachine bifuelTransformer;
+	private TileEntityFuelMachine fuelmashine;
 	public int transformingTime;
 	public int waterStatus;
 	public int biofuelStatus;
-	private int lastItemBurnTime;
+	public int combustibleTime;
+	public int combustibleTimeMax;
 
 	public ContainerFuelMachine(InventoryPlayer invPlayer, TileEntityFuelMachine biofuelTransformer) {
-		transformingTime = 0;
-		waterStatus = 0;
-		biofuelStatus = 0;
-		lastItemBurnTime = 0;
 
-		bifuelTransformer = biofuelTransformer;
+		fuelmashine = biofuelTransformer;
         //BioFuelImput
-		this.addSlotToContainer(new Slot(bifuelTransformer, 0, 8, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 0, 8, 56));
         //Natural 1
-		this.addSlotToContainer(new Slot(bifuelTransformer, 1, 48, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 1, 48, 8));
         //Natural 2
-		this.addSlotToContainer(new Slot(bifuelTransformer, 2, 81, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 2, 81, 8));
         //Natural 3
-		this.addSlotToContainer(new Slot(bifuelTransformer, 3, 113, 8));
+		this.addSlotToContainer(new Slot(fuelmashine, 3, 113, 8));
         //FuelImput
-		this.addSlotToContainer(new Slot(bifuelTransformer, 4, 81, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 4, 81, 56));
         //BifuelOutput
-		this.addSlotToContainer(new Slot(bifuelTransformer, 5, 152, 56));
+		this.addSlotToContainer(new Slot(fuelmashine, 5, 152, 56));
 
 
 		//Inventoario del Jugador
@@ -53,9 +50,11 @@ public class ContainerFuelMachine extends Container {
 
 	public void addCraftingToCrafters (ICrafting crafting) {
 		super.addCraftingToCrafters(crafting);
-		crafting.sendProgressBarUpdate(this, 0, this.bifuelTransformer.transformingTime);
-		crafting.sendProgressBarUpdate(this, 1, this.bifuelTransformer.waterStatus);
-		crafting.sendProgressBarUpdate(this, 1, this.bifuelTransformer.biofuelStatus);
+		crafting.sendProgressBarUpdate(this, 0, fuelmashine.transformingTime);
+		crafting.sendProgressBarUpdate(this, 1, fuelmashine.waterStatus);
+		crafting.sendProgressBarUpdate(this, 2, fuelmashine.biofuelStatus);
+		crafting.sendProgressBarUpdate(this, 3, fuelmashine.combustibleTime);
+		crafting.sendProgressBarUpdate(this, 4, fuelmashine.combustibleTimeMax);
 	}
 	
 	   public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
@@ -129,11 +128,58 @@ public class ContainerFuelMachine extends Container {
 
 	        return itemstack;
 	    }
-	   
+
 
 	@Override
 	public boolean canInteractWith(EntityPlayer player) {
-		return bifuelTransformer.isUseableByPlayer(player);
+		return fuelmashine.isUseableByPlayer(player);
+	}
+	
+	public void detectAndSendChanges() {
+		super.detectAndSendChanges();
+		
+		for (int i = 0; i < crafters.size(); i++){
+			ICrafting par1 = (ICrafting)crafters.get(i);
+			
+			if(transformingTime != fuelmashine.transformingTime){
+				par1.sendProgressBarUpdate(this, 0, fuelmashine.transformingTime);
+			}
+			if(waterStatus != fuelmashine.waterStatus){
+				par1.sendProgressBarUpdate(this, 1, fuelmashine.waterStatus);
+			}
+			if(biofuelStatus != fuelmashine.biofuelStatus){
+				par1.sendProgressBarUpdate(this, 2, fuelmashine.biofuelStatus);
+			}
+			if(combustibleTime != fuelmashine.combustibleTime){
+				par1.sendProgressBarUpdate(this, 3, fuelmashine.combustibleTime);
+			}
+			if(combustibleTimeMax != fuelmashine.combustibleTimeMax){
+				par1.sendProgressBarUpdate(this, 4, fuelmashine.combustibleTimeMax);
+			}
+		}
+		transformingTime = fuelmashine.transformingTime;
+		waterStatus = fuelmashine.waterStatus;
+		biofuelStatus = fuelmashine.biofuelStatus;
+		combustibleTime = fuelmashine.combustibleTime;
+		combustibleTimeMax = fuelmashine.combustibleTimeMax;
+	}
+	
+	public void updateProgressBar(int i, int j) {
+		if (i ==0){
+			fuelmashine.transformingTime = j;	
+		}
+		if (i == 1) {
+			fuelmashine.waterStatus = j;
+		}
+		if(i == 2){
+			fuelmashine.biofuelStatus = j;
+		}
+		if(i == 3){
+			fuelmashine.combustibleTime = j;
+		}
+		if(i == 4){
+			fuelmashine.combustibleTimeMax = j;
+		}
 	}
 
 }

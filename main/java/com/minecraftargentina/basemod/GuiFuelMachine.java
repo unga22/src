@@ -39,7 +39,7 @@ public class GuiFuelMachine extends GuiContainer {
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		if(fuelmashine.tieneCombustible()){
 			int i = fuelmashine.getFuelTimeRemainingScaled(13);
-			drawTexturedModalRect(guiLeft + 82, guiTop + 53 - i, 176, 12 - i, 0, i);
+			drawTexturedModalRect(guiLeft + 82, guiTop + 53 - i, 176, 13 - i, 14, i);
 		}
 		if(fuelmashine.waterStatus > 0 && fuelmashine.waterStatus <= fuelmashine.maxWater){
 			int i = fuelmashine.getWaterRemainingScaled(45);
@@ -50,8 +50,8 @@ public class GuiFuelMachine extends GuiContainer {
 			drawTexturedModalRect(guiLeft + 152, guiTop + 53 - i, 176, 57 -i, 16, i);
 		}
 		if(fuelmashine.estaTransformado()){
-			int i = fuelmashine.getTransformedProgressSclaed(17);
-			drawTexturedModalRect(guiLeft +30, guiTop + 26, 0, 167, i, 176);
+			int i = fuelmashine.getTransformedProgressSclaed(114);
+			drawTexturedModalRect(guiLeft +31, guiTop + 26, 0, 167,0 + i, 17);
 		}
 	}
 
