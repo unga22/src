@@ -88,6 +88,8 @@ public class BaseMod {
 	
 	@Instance(modid)
 	public static BaseMod instance;
+	//Cubos
+	public static Item BioFuelBucketItem;
 	
 	public static Item itemOldBook;
 
@@ -229,6 +231,7 @@ public class BaseMod {
 		BioFuel.setUnlocalizedName(fluidblock.getUnlocalizedName());
 		  
 		//Initializations
+	
 
 		//Items
 		itemOldBook = new NCItems().setUnlocalizedName("OldBook");
@@ -315,7 +318,8 @@ public class BaseMod {
 		fluidSludgeStill = new NCBlockStaticLiquid(BaseMod.materialSludge).setBlockName("SludgeStill");
 		fluidSludgeFlowing = new NCBlockDynamicLiquid(BaseMod.materialSludge).setBlockName("SludgeFlowing");
 
-
+		//Cubos
+		BioFuelBucketItem = new BioFuelBucket(fluidblock).setUnlocalizedName("BioFuelBucket").setTextureName("basemod:BioFuelBucket");
 
 		//Machines
 		
@@ -420,8 +424,8 @@ public class BaseMod {
 		//FluidRegistry.registerFluid(BioFuel);
 		
 		
-		
-
+		//Cubos
+		GameRegistry.registerItem(BioFuelBucketItem, "BiofuelBucket");
 
 		
 		//FluidRegistry.registerFluid(fluidSludgeStill);
@@ -452,7 +456,9 @@ public class BaseMod {
 
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-
+		//cubos
+		BucketHandler.INSTANCE.buckets.put(fluidblock, BioFuelBucketItem);
+		
 		GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
 		GameRegistry.registerTileEntity(TileEntityIngotMasher.class, "IngotMasher");
 		GameRegistry.registerTileEntity(TileEntityFuelMachine.class, "FuelMashine");

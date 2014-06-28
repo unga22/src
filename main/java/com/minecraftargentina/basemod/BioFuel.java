@@ -51,11 +51,7 @@ public class BioFuel extends BlockFluidClassic {
 				  if (((EntityLivingBase)entity).getActivePotionEffect(Potion.poison) == null) {
 					  ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(Potion.poison.id, 120)); //100 = 5 Seconds , 20 = 1 Second
 				  }
-				  
-				  
-				  
 				  ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 120)); //100 = 5 Seconds , 20 = 1 Second
-
 			  }	  
 		  }
         
