@@ -32,7 +32,7 @@ public class ItemsGenericos extends Item {
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5){
     	if (entity instanceof EntityPlayer){
     		EntityPlayer player = (EntityPlayer)entity;
-    		if(itemstack.getItem() == CreaciondeItems.itemVanadiumIngot){
+    		if(itemstack.getItem() == CreacionDeItems.itemVanadiumIngot){
     			if(!(player.inventory.armorInventory[0] !=null && player.inventory.armorInventory[1] !=null && player.inventory.armorInventory[2] !=null && player.inventory.armorInventory[3] !=null)){
     				if(player.getActivePotionEffect(Potion.poison) == null){
     					player.addPotionEffect(new PotionEffect(Potion.poison.id, 240));
@@ -44,7 +44,7 @@ public class ItemsGenericos extends Item {
     				ItemStack pantalon = player.inventory.armorInventory[1];
     				ItemStack peto = player.inventory.armorInventory[2];
     				ItemStack casco = player.inventory.armorInventory[3];
-    				if(!(botas.getItem() == CreaciondeItems.armorTopazBoots && pantalon.getItem() == CreaciondeItems.armorTopazLegs && peto.getItem() == CreaciondeItems.armorTopazChest && casco.getItem() == CreaciondeItems.armorTopazHelm)){
+    				if(!(botas.getItem() == CreacionDeItems.armorTopazBoots && pantalon.getItem() == CreacionDeItems.armorTopazLegs && peto.getItem() == CreacionDeItems.armorTopazChest && casco.getItem() == CreacionDeItems.armorTopazHelm)){
     					if(player.getActivePotionEffect(Potion.poison) == null){
     						player.addPotionEffect(new PotionEffect(Potion.poison.id, 240));
     					}

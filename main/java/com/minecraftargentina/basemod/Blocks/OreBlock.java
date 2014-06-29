@@ -5,7 +5,7 @@ package com.minecraftargentina.basemod.Blocks;
 import java.util.Random;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.Items.CreaciondeItems;
+import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,7 +28,7 @@ public class OreBlock extends Block {
 	}
 
 	public Item getItemDropped(int i, Random random, int j) {
-		return this == CreacionDeBloques.oreTopazOre ? CreaciondeItems.itemTopaz : Item.getItemFromBlock(this);
+		return this == CreacionDeBloques.oreTopazOre ? CreacionDeItems.itemTopaz : Item.getItemFromBlock(this);
 	}
 
 	public int quantityDropped(Random random) {

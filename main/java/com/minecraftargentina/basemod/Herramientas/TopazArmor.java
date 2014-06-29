@@ -3,7 +3,7 @@ package com.minecraftargentina.basemod.Herramientas;
 
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.Items.CreaciondeItems;
+import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
@@ -33,9 +33,9 @@ public class TopazArmor extends ItemArmor {
 	}
 
 	public String getArmorTexture(ItemStack itemstack, Entity entity, int slot, String type) {
-		if (itemstack.getItem() == CreaciondeItems.armorTopazHelm || itemstack.getItem() == CreaciondeItems.armorTopazChest || itemstack.getItem() == CreaciondeItems.armorTopazBoots) {  
+		if (itemstack.getItem() == CreacionDeItems.armorTopazHelm || itemstack.getItem() == CreacionDeItems.armorTopazChest || itemstack.getItem() == CreacionDeItems.armorTopazBoots) {  
 				return BaseMod.modid + ":textures/model/armor/topaz_layer_1.png";
-		}else if (itemstack.getItem() == CreaciondeItems.armorTopazLegs) {  
+		}else if (itemstack.getItem() == CreacionDeItems.armorTopazLegs) {  
 			return BaseMod.modid + ":textures/model/armor/topaz_layer_2.png";
 		}else{
 			return null;
@@ -44,13 +44,13 @@ public class TopazArmor extends ItemArmor {
 
 	public void onCreated(ItemStack itemstack, World world, EntityPlayer entityplayer) {
 
-		if (itemstack.getItem() == CreaciondeItems.armorTopazHelm) {
+		if (itemstack.getItem() == CreacionDeItems.armorTopazHelm) {
 			itemstack.addEnchantment(Enchantment.aquaAffinity, 2);
-		}else if (itemstack.getItem() == CreaciondeItems.armorTopazChest) {
+		}else if (itemstack.getItem() == CreacionDeItems.armorTopazChest) {
 			itemstack.addEnchantment(Enchantment.fireProtection, 4);
-		}else if (itemstack.getItem() == CreaciondeItems.armorTopazLegs) {
+		}else if (itemstack.getItem() == CreacionDeItems.armorTopazLegs) {
 			itemstack.addEnchantment(Enchantment.thorns, 5);
-		}else if (itemstack.getItem() == CreaciondeItems.armorTopazBoots) {
+		}else if (itemstack.getItem() == CreacionDeItems.armorTopazBoots) {
 			itemstack.addEnchantment(Enchantment.unbreaking, 4);
 		}
 	}

@@ -8,7 +8,7 @@ import static net.minecraftforge.common.util.ForgeDirection.WEST;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.TileEntityObsidianTable;
-import com.minecraftargentina.basemod.AlabasterOven.TileEntityAlabasterOven;
+import com.minecraftargentina.basemod.Maquinas.AlabasterOven.TileEntityAlabasterOven;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

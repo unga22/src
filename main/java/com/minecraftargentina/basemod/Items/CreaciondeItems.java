@@ -4,6 +4,7 @@ import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.FoodBBQRibs;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Cubos.BioFuelBucket;
+import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
 import com.minecraftargentina.basemod.Herramientas.TopazArmor;
 import com.minecraftargentina.basemod.Herramientas.TopazAxe;
 import com.minecraftargentina.basemod.Herramientas.TopazHoe;
@@ -19,7 +20,7 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
-public class CreaciondeItems {
+public class CreacionDeItems {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static Item BioFuelBucketItem;
@@ -63,7 +64,7 @@ public class CreaciondeItems {
 	
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static void CreacionDeItems(){
+	public static void CreaciondeItems(){
 		itemOldBook = new ItemsGenericos().setUnlocalizedName("OldBook");
 		itemCopperIngot = new ItemsGenericos().setUnlocalizedName("CopperIngot");
 		itemTinIngot = new ItemsGenericos().setUnlocalizedName("TinIngot");
@@ -95,14 +96,14 @@ public class CreaciondeItems {
 		armorTopazChest = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazChestID, 1).setUnlocalizedName("TopazChest");
 		armorTopazLegs = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazLegsID, 2).setUnlocalizedName("TopazLegs");
 		armorTopazBoots = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazBootsID, 3).setUnlocalizedName("TopazBoots");
-		BioFuelBucketItem = new BioFuelBucket(BaseMod.fluidblock).setUnlocalizedName("BioFuelBucket").setTextureName("basemod:BioFuelBucket");
+		BioFuelBucketItem = new BioFuelBucket(CreacionDeFluidos.fluidblock).setUnlocalizedName("BioFuelBucket").setTextureName("basemod:BioFuelBucket");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static void RegistracionDeItems(){
+	public static void RegistraciondeItems(){
 		GameRegistry.registerItem(itemOldBook, "OldBook");
 		GameRegistry.registerItem(itemCopperIngot, "CopperIngot");
 		GameRegistry.registerItem(itemTinIngot, "TinIngot");

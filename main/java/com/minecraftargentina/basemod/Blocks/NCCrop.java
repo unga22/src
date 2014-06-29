@@ -5,7 +5,7 @@ package com.minecraftargentina.basemod.Blocks;
 import java.util.Random;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.Items.CreaciondeItems;
+import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -45,11 +45,11 @@ public class NCCrop extends BlockCrops {
 	}
 	
 	protected Item func_149866_i() {
-		return CreaciondeItems.cropStrawberrySeeds;
+		return CreacionDeItems.cropStrawberrySeeds;
 	}
 
 	protected Item func_149865_P() {
-		return CreaciondeItems.cropStrawberry;
+		return CreacionDeItems.cropStrawberry;
 
 	}
 

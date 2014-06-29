@@ -43,7 +43,7 @@ public class CreacionDeBloques {
 	
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static void CreacionDeBloqes(){
+	public static void CreaciondeBloques(){
 		cropStrawberryPlant = new NCCrop().setBlockName("StrawberryPlant");
 
 		cropBloodMelon = new BloodMelon().setBlockName("BloodMelon").setBlockTextureName(BaseMod.modid + ":BloodMelon");
@@ -74,7 +74,7 @@ public class CreacionDeBloques {
 	
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static void RegistracionDeBloques(){
+	public static void RegistraciondeBloques(){
 		GameRegistry.registerBlock(cropStrawberryPlant, "StrawberryPlant");
 		GameRegistry.registerBlock(cropBloodMelon, "BloodMelon");
 		GameRegistry.registerBlock(cropBloodMelonStem, "BloodMelonStem");
