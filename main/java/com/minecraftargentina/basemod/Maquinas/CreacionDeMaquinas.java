@@ -2,8 +2,11 @@ package com.minecraftargentina.basemod.Maquinas;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.Maquinas.AlabasterOven.AlabasterOven;
+import com.minecraftargentina.basemod.Maquinas.AlabasterOven.TileEntityAlabasterOven;
 import com.minecraftargentina.basemod.Maquinas.FuelMachine.FuelMachine;
+import com.minecraftargentina.basemod.Maquinas.FuelMachine.TileEntityFuelMachine;
 import com.minecraftargentina.basemod.Maquinas.IngotMasher.IngotMasher;
+import com.minecraftargentina.basemod.Maquinas.IngotMasher.TileEntityIngotMasher;
 import com.minecraftargentina.basemod.Maquinas.WorckSurface.WorkSurface;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -59,6 +62,10 @@ public class CreacionDeMaquinas {
 		GameRegistry.registerBlock(blockIngotMasherActive, "IngotMasherActive");
 
 		GameRegistry.registerBlock(blockWorkSurface, "WorkSurface");
+		
+		GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
+		GameRegistry.registerTileEntity(TileEntityIngotMasher.class, "IngotMasher");
+		GameRegistry.registerTileEntity(TileEntityFuelMachine.class, "FuelMashine");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------

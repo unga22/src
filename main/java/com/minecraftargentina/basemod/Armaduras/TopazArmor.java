@@ -1,4 +1,4 @@
-package com.minecraftargentina.basemod.Herramientas;
+package com.minecraftargentina.basemod.Armaduras;
 
 
 

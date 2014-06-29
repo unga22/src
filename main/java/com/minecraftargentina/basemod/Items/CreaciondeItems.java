@@ -2,10 +2,10 @@ package com.minecraftargentina.basemod.Items;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.FoodBBQRibs;
+import com.minecraftargentina.basemod.Armaduras.TopazArmor;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Cubos.BioFuelBucket;
 import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
-import com.minecraftargentina.basemod.Herramientas.TopazArmor;
 import com.minecraftargentina.basemod.Herramientas.TopazAxe;
 import com.minecraftargentina.basemod.Herramientas.TopazHoe;
 import com.minecraftargentina.basemod.Herramientas.TopazPickaxe;
@@ -23,7 +23,6 @@ import net.minecraftforge.common.MinecraftForge;
 public class CreacionDeItems {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static Item BioFuelBucketItem;
 	public static Item itemOldBook;
 	public static Item itemCopperIngot;
 	public static Item itemTinIngot;
@@ -96,7 +95,6 @@ public class CreacionDeItems {
 		armorTopazChest = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazChestID, 1).setUnlocalizedName("TopazChest");
 		armorTopazLegs = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazLegsID, 2).setUnlocalizedName("TopazLegs");
 		armorTopazBoots = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazBootsID, 3).setUnlocalizedName("TopazBoots");
-		BioFuelBucketItem = new BioFuelBucket(CreacionDeFluidos.fluidblock).setUnlocalizedName("BioFuelBucket").setTextureName("basemod:BioFuelBucket");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -142,7 +140,6 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(armorTopazChest, "TopazChest");
 		GameRegistry.registerItem(armorTopazLegs, "TopazLegs");
 		GameRegistry.registerItem(armorTopazBoots, "TopazBoots");
-		GameRegistry.registerItem(BioFuelBucketItem, "BiofuelBucket");
 
 	}
 	//

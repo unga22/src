@@ -47,6 +47,7 @@ import java.lang.reflect.Modifier;
 
 import com.minecraftargentina.basemod.Achievement.CopperOnCraftEvent;
 import com.minecraftargentina.basemod.Achievement.CopperOnPickEvent;
+import com.minecraftargentina.basemod.Armaduras.TopazArmor;
 import com.minecraftargentina.basemod.Blocks.BlockNCStem;
 import com.minecraftargentina.basemod.Blocks.BloodMelon;
 import com.minecraftargentina.basemod.Blocks.CopperBlock;
@@ -58,9 +59,9 @@ import com.minecraftargentina.basemod.Blocks.OreBlock;
 import com.minecraftargentina.basemod.Blocks.PurpleLamp;
 import com.minecraftargentina.basemod.Cubos.BioFuelBucket;
 import com.minecraftargentina.basemod.Cubos.BucketHandler;
+import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
 import com.minecraftargentina.basemod.Fluidos.BioFuel;
 import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
-import com.minecraftargentina.basemod.Herramientas.TopazArmor;
 import com.minecraftargentina.basemod.Herramientas.TopazAxe;
 import com.minecraftargentina.basemod.Herramientas.TopazHoe;
 import com.minecraftargentina.basemod.Herramientas.TopazPickaxe;
@@ -119,9 +120,6 @@ public class BaseMod {
 	public static ToolMaterial TopazMaterial = EnumHelper.addToolMaterial("TopazMaterial", 2, 750, 6.0F, 2.0F, 10);
 	public static ArmorMaterial TopazArmorMaterial = EnumHelper.addArmorMaterial("TopazArmorMaterial", 24, new int[] {3, 7, 5, 3}, 10);
 	
-	public static Achievement achievementOblivion;
-	public static Achievement achievementCopperPick;
-	
 	@Instance(modid)
 	public static BaseMod instance;
 	
@@ -158,6 +156,7 @@ public class BaseMod {
 	
 		
 
+		
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(CreacionDeItems.armorTopazChest),1,1,065));
 
 		MinecraftForge.addGrassSeed(new ItemStack(CreacionDeItems.cropStrawberrySeeds), 10);
@@ -176,26 +175,19 @@ public class BaseMod {
 
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-		//cubos
-		BucketHandler.INSTANCE.buckets.put(CreacionDeFluidos.fluidblock, CreacionDeItems.BioFuelBucketItem);
 		
-		GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
-		GameRegistry.registerTileEntity(TileEntityIngotMasher.class, "IngotMasher");
-		GameRegistry.registerTileEntity(TileEntityFuelMachine.class, "FuelMashine");
 		
-		achievementOblivion = new Achievement("archievement.mineOblivion", "mineOblivion", 0, 0, new ItemStack(CreacionDeItems.itemOldBook), (Achievement)null).initIndependentStat().registerStat();
-		achievementCopperPick = new Achievement("archivement.craftPick", "craftPick", 2, 1, CreacionDeBloques.oreCopperOre, achievementOblivion).registerStat();
+		CreacionDeCubos.CreaciondeCubos();
 		
-		AchievementPage.registerAchievementPage(new AchievementPage("Oblivion Archives", new Achievement[]{achievementOblivion, achievementCopperPick}));
+	
+		
 		FMLCommonHandler.instance().bus().register(new CopperOnPickEvent());
 		FMLCommonHandler.instance().bus().register(new CopperOnCraftEvent());
 		//Archievement Language (Nombres y Descripcion)
-		LanguageRegistry.instance().addStringLocalization("achievement.mineOblivion", "en_US", "Oblivion");
-		LanguageRegistry.instance().addStringLocalization("achievement.mineOblivion.desc", "en_US", "¿ Acaso empiezas a recordar algo?");
 		
 		
 		
-
+		
 		CreacionDeRecetasMesaDeCrafteo.RecetasMesaDeCrafteo();
 		CreacionDeRecetasDelHorno.RecetasDelHorno();
 		

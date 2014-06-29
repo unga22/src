@@ -13,7 +13,7 @@ public class CopperOnCraftEvent {
 	@SubscribeEvent
 	public void whenICraftMachine(PlayerEvent.ItemSmeltedEvent e){
 		if(e.smelting.getItem().equals(CreacionDeItems.itemCopperIngot)){
-			e.player.addStat(BaseMod.achievementCopperPick, 1);
+			e.player.addStat(CreacionDeAchievement.achievementCopperPick, 1);
 			
 		
 			

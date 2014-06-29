@@ -1,6 +1,7 @@
 package com.minecraftargentina.basemod.Maquinas.FuelMachine;
 
 import com.minecraftargentina.basemod.BaseMod;
+import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -279,7 +280,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			if(biofuelStatus >= 10 && slots[5] != null && slots[5].getItem() == Items.bucket && slots[5].stackSize == 1){
 				biofuelStatus = biofuelStatus - 10;
 				flag1 = true;
-				slots[5] = new ItemStack(CreacionDeItems.BioFuelBucketItem).copy();
+				slots[5] = new ItemStack(CreacionDeCubos.BioFuelBucketItem).copy();
 			}
 			//Transformacion
 			if (tieneCombustible() && puedeTransformar()) {
