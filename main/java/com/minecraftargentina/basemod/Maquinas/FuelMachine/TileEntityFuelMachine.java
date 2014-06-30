@@ -4,6 +4,7 @@ import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
@@ -17,6 +18,7 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityFuelMachine extends TileEntity implements ISidedInventory{
 
 	private ItemStack slots[];
+
 	
 	public int transformingTime;
 	public int waterStatus;
@@ -46,9 +48,11 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 
 	@Override
 	public ItemStack getStackInSlot(int i) {
-		return slots[i];
+		return slots[i];		
 		
-	}
+	}	
+	
+	
 	
 	@Override
 	public ItemStack getStackInSlotOnClosing(int i) {
@@ -219,18 +223,24 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			return false;
 		}
 		int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuel(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
-		if(porcentajedebiofuel > 0 && biofuelStatus != maxBioFuel){
+		
+		int porcentajedebiofuel2 = FuelMacineRecipes.obtenerBioFuel2(Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
+
+		
+		if(porcentajedebiofuel2 > 0 || porcentajedebiofuel > 0 && biofuelStatus != maxBioFuel){
 			return true;
 		} else {
 			return false;
 		}
-	}
+	}		
+	
 	private void transformarAgua() {
 		if (puedeTransformar()) {
 			int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuel(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
+			int porcentajedebiofuel2 = FuelMacineRecipes.obtenerBioFuel2(Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
 			int AguaQueConsumir = FuelMacineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
 			waterStatus = waterStatus - AguaQueConsumir;
-			biofuelStatus = biofuelStatus + porcentajedebiofuel;
+			biofuelStatus = biofuelStatus + porcentajedebiofuel + porcentajedebiofuel2;
 			if(biofuelStatus > maxBioFuel){
 				int BioFuelSobrante = biofuelStatus - maxBioFuel;
 				biofuelStatus = biofuelStatus - BioFuelSobrante;

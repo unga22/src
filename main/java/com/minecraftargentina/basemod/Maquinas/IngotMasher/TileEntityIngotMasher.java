@@ -1,6 +1,7 @@
 package com.minecraftargentina.basemod.Maquinas.IngotMasher;
 
 import com.minecraftargentina.basemod.BaseMod;
+import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -175,7 +176,7 @@ public class TileEntityIngotMasher extends TileEntity implements ISidedInventory
 			
 		}else{
 			Item item = itemstack.getItem();
-			if (item == CreacionDeItems.itemResiduos) return 50;
+			if (item == CreacionDeCubos.BioFuelBucketItem) return 500;
 			
 			
 			return 0;
@@ -295,20 +296,22 @@ public class TileEntityIngotMasher extends TileEntity implements ISidedInventory
 		}
 		
 		if(!worldObj.isRemote){
-			if (this.hasItemPower(this.slots[2]) && this.dualPower <= (this.maxPower - this.getItemPower(this.slots[2]))) {
+			
+			
+			if (slots[2] != null && this.hasItemPower(this.slots[2]) && this.dualPower <= (this.maxPower - this.getItemPower(this.slots[2]))) {
+				
+				
 				this.dualPower += getItemPower(this.slots[2]);
 				
-				if(this.slots[2] != null) {
-					flag1 = true;
+				slots[2] = new ItemStack(Items.bucket).copy();
+				
+		           	flag1 = true;
 					
 					this.slots[2].stackSize--;
-					
-					if (this.slots[2].stackSize == 0){
-						this.slots[2] = this.slots[2].getItem().getContainerItem(this.slots[2]);
 						
 					}							
 				}
-			}
+			
 			
 			if (hasPower() && canMash()) {
 				dualCookTime++;
@@ -326,7 +329,7 @@ public class TileEntityIngotMasher extends TileEntity implements ISidedInventory
 			flag1 = true;
 			IngotMasher.updateBlockState(this.isMashing(), this.worldObj, this.xCoord, this.yCoord, this.zCoord);						
 	    	}		
-    	}
+    	
 	
 	    if (flag1) {
 		this.markDirty();
