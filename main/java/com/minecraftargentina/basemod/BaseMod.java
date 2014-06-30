@@ -57,7 +57,7 @@ import com.minecraftargentina.basemod.Blocks.NCCrop;
 import com.minecraftargentina.basemod.Blocks.ObsidianBlock;
 import com.minecraftargentina.basemod.Blocks.OreBlock;
 import com.minecraftargentina.basemod.Blocks.PurpleLamp;
-import com.minecraftargentina.basemod.Cubos.BioFuelBucket;
+import com.minecraftargentina.basemod.Cubos.BucketGenericos;
 import com.minecraftargentina.basemod.Cubos.BucketHandler;
 import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
 import com.minecraftargentina.basemod.Fluidos.BioFuel;
@@ -144,13 +144,6 @@ public class BaseMod {
 				
 			}
 		};
-		CreacionDeItems.CreaciondeItems();
-		CreacionDeItems.RegistraciondeItems();
-		CreacionDeBloques.CreaciondeBloques();
-		CreacionDeBloques.RegistraciondeBloques();
-		CreacionDeFluidos.CreaciondeFluidos();
-		CreacionDeMaquinas.CreaciondeMaquinas();
-		CreacionDeMaquinas.RegistraaciondeMaquinas();
 		//Machines
 		
 	
@@ -172,12 +165,19 @@ public class BaseMod {
 
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
-
+		CreacionDeItems.CreaciondeItems();
+		CreacionDeItems.RegistraciondeItems();
+		CreacionDeBloques.CreaciondeBloques();
+		CreacionDeBloques.RegistraciondeBloques();
+		CreacionDeFluidos.CreaciondeFluidos();
+		CreacionDeMaquinas.CreaciondeMaquinas();
+		CreacionDeMaquinas.RegistraaciondeMaquinas();
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
 		
 		CreacionDeCubos.CreaciondeCubos();
+		CreacionDeCubos.RegistraciondeCubos();
 		
 	
 		

@@ -51,7 +51,6 @@ public class Register {
 		DrugMod m = new DrugMod();
 
     	GameRegistry.registerBlock(m.CocaCrop, "CocaCrop");
-    	GameRegistry.registerBlock(m.HotWaterBlock, "HotWaterBlock");
 		GameRegistry.registerBlock(m.ChemicalExtractorIdle, "ChemicalExtractorIdle");
 		GameRegistry.registerBlock(m.ChemicalExtractorActive, "ChemicalExtractorActive");
 
@@ -62,7 +61,6 @@ public class Register {
 
     	GameRegistry.registerItem(m.CocaSeeds , "CocaSeeds");
     	GameRegistry.registerItem(m.CocaLeaf , "CocaLeaf");
-    	GameRegistry.registerItem(m.HotWaterBucket , "HotWaterBucket");
 
     }
 

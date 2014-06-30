@@ -5,7 +5,10 @@ package com.minecraftargentina.basemod;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
+import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Cubos.BucketHandler;
+import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
+import com.minecraftargentina.basemod.Maquinas.CreacionDeMaquinas;
 import com.minecraftargentina.basemod.lib.ClientProxy;
 
 import net.minecraft.block.Block;
@@ -48,7 +51,7 @@ public class DrugMod {
       //Creative tab
         public static CreativeTabs drugTab = new CreativeTabs("drugTab"){
     		public Item getTabIconItem() {
-    			return DrugMod.HotWaterBucket;
+    			return CreacionDeCubos.HotWaterBueketItem;
     		}
     		
     	};

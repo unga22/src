@@ -17,7 +17,6 @@ public class Definer {
 		DrugMod m = new DrugMod();
 
     	m.CocaCrop = new DmCocaCrop().setBlockName("cocaCrop");
-    	m.HotWaterBlock = new DmHotWater().setBlockName("hotWater");
     	m.ChemicalExtractorIdle = new DmChemicalExtractor(false).setBlockName("extractorChemicalIdle").setHardness(3.5F).setCreativeTab(DrugMod.drugTab); 
 		m.ChemicalExtractorActive = new DmChemicalExtractor(true).setBlockName("extractorChemicalActive").setHardness(3.5F).setLightLevel(0.9F);
 
@@ -28,7 +27,7 @@ public class Definer {
 
     	m.CocaSeeds = new ItemSeeds(m.CocaCrop, Blocks.farmland).setTextureName(DrugMod.modid + ":" + "seedCoca").setUnlocalizedName("seedCoca").setCreativeTab(DrugMod.drugTab);
     	m.CocaLeaf = new DmCocaLeaf("leafCoca");
-    	m.HotWaterBucket = new DmHotWaterBucket(m.HotWaterBlock).setTextureName(DrugMod.modid + ":" + "bucketHotWater");
+
     	
 	}
 

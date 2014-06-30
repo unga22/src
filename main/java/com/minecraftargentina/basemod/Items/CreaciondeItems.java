@@ -4,7 +4,7 @@ import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.FoodBBQRibs;
 import com.minecraftargentina.basemod.Armaduras.TopazArmor;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
-import com.minecraftargentina.basemod.Cubos.BioFuelBucket;
+import com.minecraftargentina.basemod.Cubos.BucketGenericos;
 import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
 import com.minecraftargentina.basemod.Herramientas.TopazAxe;
 import com.minecraftargentina.basemod.Herramientas.TopazHoe;
