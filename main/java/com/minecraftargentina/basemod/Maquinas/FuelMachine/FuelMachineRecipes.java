@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.common.EnumPlantType;
 
-public class FuelMacineRecipes {
+public class FuelMachineRecipes {
 	//Cantidad de BioFuel Obtenida ----------------------------------------------------------------------------------------
 	public static int obtenerBioFuelDeItems(Item item1, Item item2, Item item3, Block block1, Block block2, Block block3) {		
 		int cantidadbiofuel = 0;
@@ -231,7 +231,7 @@ public class FuelMacineRecipes {
 	}
 	//Tiempo que quita cada item/bloque al tiempo de transformacion ----------------------------------------------------------------------------------------
 	public static int TiempoDeTransformacion(Item item1, Item item2, Item item3, Block block1, Block block2, Block block3){
-		int TiempoDeTransformacion = 1000;//Tiempo base y despues depende de los items va restando si quieres puedes cambiar el tiempo base y el tiempo que quita cada item
+		int TiempoDeTransformacion = TileEntityFuelMachine.TransformingSpeedBase;//Tiempo base se edita en la Clase TileEntityFuelMachine.java linea 30 y despues simplemente abajo le pones el tiempo que reste
 		for (int slot = 1; slot <= 3;){
 			if (slot == 1) {
 				if (item1 == Items.apple){
@@ -246,7 +246,7 @@ public class FuelMacineRecipes {
 			    }else if(block1 == Blocks.yellow_flower){
 			    	TiempoDeTransformacion = TiempoDeTransformacion - 50;
 			    	slot++;
-			    }else if(block1 == Blocks.grass){ 
+			    }else if(block1 == Blocks.grass){
 			    	TiempoDeTransformacion = TiempoDeTransformacion - 50;
 			    	slot++;
 			    }else if(block1 == Blocks.brown_mushroom){
@@ -263,6 +263,7 @@ public class FuelMacineRecipes {
 				    slot++;
 			    }else{
 			    	slot++;
+			    	return 0;
 			    }
 			}
 			if (slot == 2) {
@@ -295,6 +296,7 @@ public class FuelMacineRecipes {
 				    slot++;
 			    }else{
 			    	slot++;
+			    	return 0;
 			    }
 			}
 			if (slot == 3) {
@@ -327,11 +329,12 @@ public class FuelMacineRecipes {
 				    slot++;
 			    }else{
 			    	slot++;
+			    	return 0;
 			    }
 				return TiempoDeTransformacion;	
 			}						
 		}
-		return TiempoDeTransformacion;
+		return 0;
 	}
 }
 

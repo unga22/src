@@ -27,7 +27,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	public int combustibleTimeMax;
 	public static final int maxWater = 100;
 	public static final int maxBioFuel = 100;
-	public static int TransformingSpeed;
+	public static final  int TransformingSpeedBase = 1000;
+	public static int TransformingSpeed = TransformingSpeedBase;
 	
 	private static final int[] slots_top = new int[] {1, 2, 3};
 	private static final int[] slots_bottom = new int[]  {0, 4};
@@ -223,11 +224,12 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			transformingTime = 0;
 			return false;
 		}
-		int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
-		int AguaQueConsumir = FuelMacineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
-		int tiempoDeTransformacion = FuelMacineRecipes.TiempoDeTransformacion(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
+		int porcentajedebiofuel = FuelMachineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
+		int AguaQueConsumir = FuelMachineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
+		int tiempoDeTransformacion = FuelMachineRecipes.TiempoDeTransformacion(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
 		if(porcentajedebiofuel > 0 && AguaQueConsumir > 0 && waterStatus >= AguaQueConsumir && biofuelStatus != maxBioFuel){
-			transformingTime = tiempoDeTransformacion;
+			System.out.println(TransformingSpeed);
+			TransformingSpeed = tiempoDeTransformacion;
 			return true;
 		} else {
 			return false;
@@ -236,8 +238,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	
 	private void transformarAgua() {
 		if (puedeTransformar()) {
-			int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
-			int AguaQueConsumir = FuelMacineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
+			int porcentajedebiofuel = FuelMachineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
+			int AguaQueConsumir = FuelMachineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
 			waterStatus = waterStatus - AguaQueConsumir;
 			biofuelStatus = biofuelStatus + porcentajedebiofuel;
 			if(biofuelStatus > maxBioFuel){
