@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiIngotMasher extends GuiContainer {
 
-	private ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "/textures/gui/IngotMasherGui.png");
+	private ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "textures/gui/IngotMasherGui.png");
 	private TileEntityIngotMasher ingotMasher;
 
 	public GuiIngotMasher(InventoryPlayer invPlayer, TileEntityIngotMasher teIngotMasher) {
