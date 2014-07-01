@@ -228,7 +228,6 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 		int AguaQueConsumir = FuelMachineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
 		int tiempoDeTransformacion = FuelMachineRecipes.TiempoDeTransformacion(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()));
 		if(porcentajedebiofuel > 0 && AguaQueConsumir > 0 && waterStatus >= AguaQueConsumir && biofuelStatus != maxBioFuel){
-			System.out.println(TransformingSpeed);
 			TransformingSpeed = tiempoDeTransformacion;
 			return true;
 		} else {

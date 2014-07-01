@@ -14,7 +14,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiFuelMachine extends GuiContainer {
 
-	private ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "/textures/gui/GuiFuelMachine.png");
+	private ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "textures/gui/GuiFuelMachine.png");
+	
+
+
+
 	private TileEntityFuelMachine fuelmashine;
 
 	public GuiFuelMachine(InventoryPlayer invPlayer, TileEntityFuelMachine teBioFuelTransformer) {

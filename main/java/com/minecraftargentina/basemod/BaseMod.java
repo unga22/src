@@ -6,6 +6,7 @@ import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -196,7 +197,8 @@ public class BaseMod {
 	}
 
 	@EventHandler
-	public void PostInit(FMLPostInitializationEvent postEvent){
+	public void PostInit(FMLPostInitializationEvent postEvent){		
+		
 	}
  }
 
