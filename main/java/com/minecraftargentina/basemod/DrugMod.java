@@ -60,16 +60,11 @@ public class DrugMod {
 
          public static Item CocaSeeds;
          public static Item CocaLeaf;
-         public static Item HotWaterBucket;
 
          public static Block CocaCrop;
-         public static Block HotWaterBlock;
          public static Block ChemicalExtractorIdle;
          public static Block ChemicalExtractorActive;
-         
-         public static Fluid HotWaterFluid;
-         
-         public static Material HotWaterMaterial;     
+       
          
          public static Potion waterHot;
          
@@ -124,8 +119,6 @@ public class DrugMod {
         	Definer.addItemDefinitions();
         	
         	Definer.addPotionDefinitions();
-        	
-        	BucketHandler.INSTANCE.buckets.put(HotWaterBlock, HotWaterBucket);
 
         	MinecraftForge.addGrassSeed(new ItemStack(CocaSeeds), 10);
         	

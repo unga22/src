@@ -9,8 +9,6 @@ public class Definer {
 	public static void addFluidDefinitions(){
 		DrugMod m = new DrugMod();
 
-    	m.HotWaterFluid = new Fluid("hotwater").setTemperature(373).setViscosity(1200);
-
 	}
 
 	public static void addBlockDefinitions(){

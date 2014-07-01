@@ -27,7 +27,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	public int combustibleTimeMax;
 	public static final int maxWater = 100;
 	public static final int maxBioFuel = 100;
-	public static final int TransformingSpeed = 600;
+	public static int TransformingSpeed = 1000;
 	
 	private static final int[] slots_top = new int[] {1, 2, 3};
 	private static final int[] slots_bottom = new int[]  {0, 4};
@@ -220,14 +220,11 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	
 	private boolean puedeTransformar() {
 		if (slots[1] == null || slots[2] == null || slots[3] == null) {
+			transformingTime = 0;
 			return false;
 		}
-		int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuel(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
-		
-		int porcentajedebiofuel2 = FuelMacineRecipes.obtenerBioFuel2(Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
-
-		
-		if(porcentajedebiofuel2 > 0 || porcentajedebiofuel > 0 && biofuelStatus != maxBioFuel){
+		int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
+		if(porcentajedebiofuel > 0 && biofuelStatus != maxBioFuel){
 			return true;
 		} else {
 			return false;
@@ -236,11 +233,10 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	
 	private void transformarAgua() {
 		if (puedeTransformar()) {
-			int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuel(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
-			int porcentajedebiofuel2 = FuelMacineRecipes.obtenerBioFuel2(Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
-			int AguaQueConsumir = FuelMacineRecipes.ConsumirAgua(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
+			int porcentajedebiofuel = FuelMacineRecipes.obtenerBioFuelDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), Block.getBlockFromItem(slots[1].getItem()), Block.getBlockFromItem(slots[2].getItem()), Block.getBlockFromItem(slots[3].getItem()), waterStatus);
+			int AguaQueConsumir = FuelMacineRecipes.ConsumirAguaDeItems(slots[1].getItem(), slots[2].getItem(), slots[3].getItem(), waterStatus);
 			waterStatus = waterStatus - AguaQueConsumir;
-			biofuelStatus = biofuelStatus + porcentajedebiofuel + porcentajedebiofuel2;
+			biofuelStatus = biofuelStatus + porcentajedebiofuel;
 			if(biofuelStatus > maxBioFuel){
 				int BioFuelSobrante = biofuelStatus - maxBioFuel;
 				biofuelStatus = biofuelStatus - BioFuelSobrante;
@@ -275,7 +271,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 					flag1 = true;
 					slots[0] = new ItemStack(Items.bucket).copy();
 			}
-			if(hasItemPower(slots[4]) && combustibleTime == 0) {
+			if(hasItemPower(slots[4]) && combustibleTime == 0 && puedeTransformar()) {
 				combustibleTimeMax = combustibleTime = getItemPower(slots[4]);
 				if(slots[4] != null) {
 					flag1 = true;
@@ -295,9 +291,9 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 			//Transformacion
 			if (tieneCombustible() && puedeTransformar()) {
 				transformingTime++;
-				if (this.transformingTime == this.TransformingSpeed){
-					this.transformingTime = 0;
-					this.transformarAgua();
+				if (transformingTime == TransformingSpeed){
+					transformingTime = 0;
+					transformarAgua();
 					flag1 = true;
 					
 				}				

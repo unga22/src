@@ -1,8 +1,6 @@
 package com.minecraftargentina.basemod.Maquinas.IngotMasher;
 
 
-import com.minecraftargentina.basemod.SlotIngotMasher;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -32,7 +30,7 @@ public class ContainerIngotMasher extends Container {
 		//Fuel
 		this.addSlotToContainer(new Slot(teIngotMasher, 2, 8, 56));
 		//Mashed Ingot
-		this.addSlotToContainer(new SlotIngotMasher(invPlayer.player, teIngotMasher, 3, 113, 33));
+		this.addSlotToContainer(new Slot(teIngotMasher, 3, 113, 33));
 
 
 

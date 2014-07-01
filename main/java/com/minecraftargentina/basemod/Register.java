@@ -16,8 +16,6 @@ public class Register {
 	public static void addFluidRegistrations(){
 		DrugMod m = new DrugMod();
 
-    	FluidRegistry.registerFluid(m.HotWaterFluid);
-
 	}
 
 	public static void addTileEntityRegistrations(){
@@ -37,13 +35,6 @@ public class Register {
 
 	public static void addNetworkRegistrations(){
 		DrugMod m = new DrugMod();
-
-    }
-
-	public static void addFluidContainerRegistrations(){
-		DrugMod m = new DrugMod();
-
-    	FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("hotwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(m.HotWaterBucket), new ItemStack(Items.bucket));
 
     }
 
