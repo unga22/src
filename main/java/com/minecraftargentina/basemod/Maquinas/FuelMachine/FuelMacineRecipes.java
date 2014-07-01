@@ -2,8 +2,6 @@ package com.minecraftargentina.basemod.Maquinas.FuelMachine;
 
 
 
-import com.sun.scenario.effect.Crop;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -22,10 +20,10 @@ public class FuelMacineRecipes {
 				if (item == Items.apple){
 				    cantidadbiofuel = cantidadbiofuel + 5;
 				    slot++;
-			    }else if(item == Item.getItemById(37)){
+			    }else if(block == Blocks.red_flower){
 			    	cantidadbiofuel = cantidadbiofuel + 1;
 			    	slot++;
-			    }else if(item == Item.getItemById(38)){
+			    }else if(block == Blocks.yellow_flower){
 			    	cantidadbiofuel = cantidadbiofuel + 1;
 			    	slot++;
 			    }else if(block == Blocks.brown_mushroom){
@@ -41,10 +39,19 @@ public class FuelMacineRecipes {
 			}
 			if (slot == 2) {
 				if (item2 == Items.apple){
-					cantidadbiofuel = cantidadbiofuel + 5;
-				    slot++;
-			    }else if (block2 == Blocks.cactus){
 				    cantidadbiofuel = cantidadbiofuel + 5;
+				    slot++;
+			    }else if(block == Blocks.red_flower){
+			    	cantidadbiofuel = cantidadbiofuel + 1;
+			    	slot++;
+			    }else if(block == Blocks.yellow_flower){
+			    	cantidadbiofuel = cantidadbiofuel + 1;
+			    	slot++;
+			    }else if(block2 == Blocks.brown_mushroom){
+			    	cantidadbiofuel = cantidadbiofuel +5;
+			    	slot++;
+			    }else if(block2 == Blocks.cactus){
+			    	cantidadbiofuel = cantidadbiofuel + 5;
 				    slot++;
 			    }else{
 			    	slot++;
@@ -53,14 +60,23 @@ public class FuelMacineRecipes {
 			}
 			if (slot == 3) {
 				if (item3 == Items.apple){
-					cantidadbiofuel = cantidadbiofuel + 5;
-				    slot++;
-			    } else if (block3 == Blocks.cactus){
 				    cantidadbiofuel = cantidadbiofuel + 5;
 				    slot++;
-			    }else{
+			    }else if(block == Blocks.red_flower){
+			    	cantidadbiofuel = cantidadbiofuel + 1;
+			    	slot++;
+			    }else if(block == Blocks.yellow_flower){
+			    	cantidadbiofuel = cantidadbiofuel + 1;
+			    	slot++;
+			    }else if(block3 == Blocks.brown_mushroom){
+			    	cantidadbiofuel = cantidadbiofuel +5;
+			    	slot++;
+			    }else if(block3 == Blocks.cactus){
+			    	cantidadbiofuel = cantidadbiofuel + 5;
 				    slot++;
-				    return 0;
+			    }else{
+			    	slot++;
+			    	return 0;
 			    }
 				return cantidadbiofuel;	
 			}						
