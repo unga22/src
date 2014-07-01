@@ -21,7 +21,7 @@ public class ItemLogBlocks extends ItemBlock {
 			i = 0;
 		}
 		
-		return super.getUnlocalizedName() + "," + logs[i];
+		return super.getUnlocalizedName() + "." + logs[i];
 	}
 	
 	@Override

@@ -21,7 +21,7 @@ public class ItemLeafBlocks extends ItemBlock {
 			i = 0;
 		}
 		
-		return super.getUnlocalizedName() + "," + leaves[i];
+		return super.getUnlocalizedName() + "." + leaves[i];
 	}
 	
 	@Override

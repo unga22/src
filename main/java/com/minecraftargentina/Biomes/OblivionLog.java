@@ -29,11 +29,9 @@ public class OblivionLog extends BlockLog {
 	public void registerBlockIcons (IIconRegister iconRegister){
 		this.field_150167_a = new IIcon[logs.length];
 		this.field_150166_b = new IIcon[logs.length];
-		
 		for (int i = 0; i < this.field_150167_a.length; i++){			
-			
-			this.field_150167_a[i] = iconRegister.registerIcon(BaseMod.modid + this.getTextureName() + logs[i]);
-			this.field_150166_b[i] = iconRegister.registerIcon(BaseMod.modid + this.getTextureName() + logs[i] + "Top");
+			this.field_150167_a[i] = iconRegister.registerIcon(BaseMod.modid + ":" + getUnlocalizedName().substring(5) + logs[i]);
+			this.field_150166_b[i] = iconRegister.registerIcon(BaseMod.modid + ":" + getUnlocalizedName().substring(5) + logs[i] + "Top");
 			
 		
 		}
