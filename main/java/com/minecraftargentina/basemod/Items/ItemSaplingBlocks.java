@@ -1,5 +1,7 @@
 package com.minecraftargentina.basemod.Items;
 
+import com.minecraftargentina.basemod.BaseMod;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -21,7 +23,8 @@ public class ItemSaplingBlocks extends ItemBlock {
 			i = 0;
 		}
 		
-		return super.getUnlocalizedName() + "." + saplings[i];
+		return (BaseMod.modid + ":" + this.getUnlocalizedName().substring(5) + saplings[i]);
+		
 	}
 	
 	@Override

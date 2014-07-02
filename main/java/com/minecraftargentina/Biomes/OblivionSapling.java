@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.minecraftargentina.basemod.BaseMod;
+import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
@@ -100,7 +101,7 @@ public class OblivionSapling extends BlockSapling {
 	            case 0:
 	                break;
 	            case 1:
-	            	object = new WorldGenOlvidoTree(BaseMod.blockLog, BaseMod.blockLeaf, 1, 1, false, 10, 15, false);
+	            	object = new WorldGenOlvidoTree(CreacionDeBloques.blockLog, CreacionDeBloques.blockLeaf, 1, 1, false, 10, 15, false);
 	            	break;
 	            case 2:
 	                break;

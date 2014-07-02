@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 
 public class CreacionDeItems {
@@ -58,6 +59,7 @@ public class CreacionDeItems {
 	public static Item cropStrawberry;
 	public static Item cropBloodMelonSeeds;
 	public static Item cropBloodMelonSlice;
+	public static Item hojasDelRecuerdo;
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	
@@ -95,6 +97,7 @@ public class CreacionDeItems {
 		armorTopazChest = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazChestID, 1).setUnlocalizedName("TopazChest");
 		armorTopazLegs = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazLegsID, 2).setUnlocalizedName("TopazLegs");
 		armorTopazBoots = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazBootsID, 3).setUnlocalizedName("TopazBoots");
+		hojasDelRecuerdo = new ItemFood(4, 0.5F, false).setUnlocalizedName("HojasDelRecuerdo").setTextureName(BaseMod.modid + ":HojasDelRecuerdo").setCreativeTab(BaseMod.oblivion);
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -140,6 +143,8 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(armorTopazChest, "TopazChest");
 		GameRegistry.registerItem(armorTopazLegs, "TopazLegs");
 		GameRegistry.registerItem(armorTopazBoots, "TopazBoots");
+		
+		GameRegistry.registerItem(hojasDelRecuerdo, "HojasDelRecuerdo");
 
 	}
 	//

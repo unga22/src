@@ -125,10 +125,6 @@ public class BaseMod {
 	public static CreativeTabs oblivion;
 	
 	
-	//Trees
-	public static Block blockLog;
-	public static Block blockLeaf;
-	public static Block blockSapling;
 
 	public static ToolMaterial TopazMaterial = EnumHelper.addToolMaterial("TopazMaterial", 2, 750, 6.0F, 2.0F, 10);
 	public static ArmorMaterial TopazArmorMaterial = EnumHelper.addArmorMaterial("TopazArmorMaterial", 24, new int[] {3, 7, 5, 3}, 10);
@@ -159,10 +155,7 @@ public class BaseMod {
 		};
 		//Machines
 		
-		
-		blockLog = new OblivionLog().setBlockName("Log").setCreativeTab(BaseMod.oblivion);
-		blockLeaf = new OblivionLeaf().setBlockName("Leaf").setCreativeTab(BaseMod.oblivion);
-		blockSapling = new OblivionSapling().setBlockName("Sapling").setCreativeTab(BaseMod.oblivion);
+
 		
 	
 		
@@ -172,10 +165,6 @@ public class BaseMod {
 
 		MinecraftForge.addGrassSeed(new ItemStack(CreacionDeItems.cropStrawberrySeeds), 10);
 		MinecraftForge.addGrassSeed(new ItemStack(CreacionDeItems.cropBloodMelonSeeds), 10);
-
-		GameRegistry.registerBlock(blockLog, ItemLogBlocks.class, blockLog.getUnlocalizedName().substring(5));
-		GameRegistry.registerBlock(blockLeaf, ItemLeafBlocks.class, blockLeaf.getUnlocalizedName().substring(5));
-		GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
 
 		
 		//Spawn

@@ -3,6 +3,8 @@ package com.minecraftargentina.Biomes;
 import java.util.List;
 
 import com.minecraftargentina.basemod.BaseMod;
+import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
+import com.minecraftargentina.basemod.Items.CreacionDeItems;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -23,7 +25,7 @@ public class OblivionLeaf extends BlockLeaves {
 	
     protected void func_150124_c(World world, int x, int y, int z, int side, int meta){
         if ((side & 3) == 1 && world.rand.nextInt(meta) == 0){
-            this.dropBlockAsItem(world, x, y, z, new ItemStack(Items.apple, 1, 0));
+            this.dropBlockAsItem(world, x, y, z, new ItemStack(CreacionDeItems.hojasDelRecuerdo, 4, 5));
         }
     }
 

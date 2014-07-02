@@ -6,6 +6,7 @@ import com.minecraftargentina.Biomes.OblivionSapling;
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.Items.ItemLeafBlocks;
 import com.minecraftargentina.basemod.Items.ItemLogBlocks;
+import com.minecraftargentina.basemod.Items.ItemSaplingBlocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -43,6 +44,10 @@ public class CreacionDeBloques {
 	public static Block cropBloodMelonStem;
 	public static Block cropBloodMelon;
 	
+	public static Block blockLog;
+	public static Block blockLeaf;
+	public static Block blockSapling;
+	
 	
 	
 	//
@@ -75,7 +80,9 @@ public class CreacionDeBloques {
 		blockObsidianTable = new ObsidianBlock(Material.rock).setBlockName("ObsidianTable");
 		blockPurpleLampOn = new PurpleLamp(true).setBlockName("PurpleLampOn");
 		blockPurpleLampOff = new PurpleLamp(false).setBlockName("PurpleLampOff").setCreativeTab(BaseMod.oblivion);
-	
+		blockLog = new OblivionLog().setBlockName("Log").setCreativeTab(BaseMod.oblivion);
+		blockLeaf = new OblivionLeaf().setBlockName("Leaf").setCreativeTab(BaseMod.oblivion);
+		blockSapling = new OblivionSapling().setBlockName("Sapling").setCreativeTab(BaseMod.oblivion);
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -105,6 +112,9 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(blockPurpleLampOn, "PurpleLampOn");
 		GameRegistry.registerBlock(blockPurpleLampOff, "PurpleLampOff");
 		GameRegistry.registerBlock(blockObsidianTable, "ObsidianTable");
+		GameRegistry.registerBlock(blockLog, ItemLogBlocks.class, blockLog.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockLeaf, ItemLeafBlocks.class, blockLeaf.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
 		
 	}
 	//
