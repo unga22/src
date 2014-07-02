@@ -13,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class OblivionLeaf extends BlockLeaves {
@@ -40,12 +41,12 @@ public class OblivionLeaf extends BlockLeaves {
         return world.getBlockMetadata(x, y, z) & 3;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item item, CreativeTabs tab, List list){
-       for (int i = 0; i < leaves.length; i++) {
-    	   list.add(new ItemStack(item, 1, i));
-       }
-    }
+	    @SideOnly(Side.CLIENT)
+	    public void getSubBlocks(Item item, CreativeTabs tab, List list){
+	       for (int i = 0; i < leaves.length; i++) {
+	    	   list.add(new ItemStack(item, 1, i));
+	       }
+	    }
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister){
@@ -68,6 +69,23 @@ public class OblivionLeaf extends BlockLeaves {
 	public String[] func_150125_e() {
 				
 		return leaves;
+	}
+	
+	
+	@Override
+	public boolean renderAsNormalBlock(){
+		return false;
+	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	
+	}
+	
+	@Override
+	public boolean shouldSideBeRendered(IBlockAccess blockaccess, int x, int y, int z, int side){
+		return true;
 	}
 
 }
