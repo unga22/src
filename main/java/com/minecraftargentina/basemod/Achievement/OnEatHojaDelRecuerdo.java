@@ -20,6 +20,7 @@ public class OnEatHojaDelRecuerdo {
 	
 	@SubscribeEvent
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 public void foodEaten(PlayerUseItemEvent.Finish event) {
 	  	   if(event.item.getItem() == CreacionDeItems.hojasDelRecuerdo) {
 	  		 event.entityPlayer.addStat(CreacionDeAchievement.achievementHojasDelRecuerdoEat, 1);
@@ -30,6 +31,10 @@ public class OnEatHojaDelRecuerdo {
 =======
 	public void whenPlayerEatHojaDelRecuerdo(PlayerUseItemEvent e) {
 		System.out.println("1");
+=======
+	public void whenIEatHojaDelRecuerdo(PlayerUseItemEvent e) {
+		System.out.println((e.item.equals(new ItemStack(CreacionDeItems.hojasDelRecuerdo))));
+>>>>>>> ffa78be739e3660beaab6edc45e8fb2c78bdda1b
 		if(e.item.equals(new ItemStack(CreacionDeItems.hojasDelRecuerdo))){
 			e.entityPlayer.addStat(CreacionDeAchievement.achievementHojasDelRecuerdoEat, 1);
 		}
