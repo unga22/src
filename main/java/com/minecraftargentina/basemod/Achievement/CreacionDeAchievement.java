@@ -11,6 +11,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.MinecraftForge;
 
 public class CreacionDeAchievement {
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -45,8 +46,15 @@ public class CreacionDeAchievement {
 	//-----------------------------------------------------------------------------------------------------------------------
 	public static void RegistracionDeEventos(){
 		
-		FMLCommonHandler.instance().bus().register(new OnPickHojaDelRecuerdo());
-		FMLCommonHandler.instance().bus().register(new OnEatHojaDelRecuerdo());
+		//Registro Minecraft
+		FMLCommonHandler.instance().bus().register(new OnPickHojaDelRecuerdo());	
+		
+		//Registro Forge
+		MinecraftForge.EVENT_BUS.register(new OnEatHojaDelRecuerdo());
+		
+		
+		
+		
 		
 		
 		
