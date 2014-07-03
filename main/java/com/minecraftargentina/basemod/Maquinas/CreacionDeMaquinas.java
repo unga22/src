@@ -35,8 +35,8 @@ public class CreacionDeMaquinas {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static void CreaciondeMaquinas(){
-		blockFuelMachineIdle = new FuelMachine(false).setBlockName("FuelMachineEmpty").setCreativeTab(BaseMod.oblivion).setHardness(3.5F);
-		blockFuelMachineActive = new FuelMachine(true).setBlockName("FuelMachineFull").setCreativeTab(BaseMod.oblivion).setHardness(3.5F);
+		blockFuelMachineIdle = new FuelMachine(false).setBlockName("FuelMachineIdle").setCreativeTab(BaseMod.oblivion).setHardness(3.5F);
+		blockFuelMachineActive = new FuelMachine(true).setBlockName("FuelMachineActive").setHardness(3.5F);
 		
 		blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(BaseMod.oblivion).setHardness(3.5F);
 		blockAlabasterOvenActive = new AlabasterOven(true).setBlockName("AlabasterOvenActive").setLightLevel(0.625F).setHardness(3.5F);
