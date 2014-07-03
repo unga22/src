@@ -39,8 +39,8 @@ public class FuelMachine extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(BaseMod.modid + ":" + (this.isActive ? "IngotMasherSideOn" : "IngotMasherSideOff"));
-		this.iconFront = iconRegister.registerIcon(BaseMod.modid + ":" + (this.isActive ? "IngotMasherFrontOn" : "IngotMasherFrontOff"));
+		this.blockIcon = iconRegister.registerIcon(BaseMod.modid + ":" + (this.isActive ? "FuelMachineSideOn" : "FuelMachineSideOff"));
+		this.iconFront = iconRegister.registerIcon(BaseMod.modid + ":" + (this.isActive ? "FuelMachineFrontOn" : "FuelMachineFrontOff"));
 	}
 
 	@SideOnly(Side.CLIENT)
