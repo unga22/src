@@ -55,7 +55,6 @@ public class DrugMod {
     		}
     		
     	};
-        public static final int hotwaterID = 4051;
         public static final int guiIdChemicalExtractor = 0;
 
          public static Item CocaSeeds;
@@ -65,8 +64,7 @@ public class DrugMod {
          public static Block ChemicalExtractorIdle;
          public static Block ChemicalExtractorActive;
        
-         
-         public static Potion waterHot;
+  
          
 
 
@@ -81,27 +79,11 @@ public class DrugMod {
         	instance = this;
 
         	//Potion
-        	Potion[] potionTypes = null;
-
-        	for (Field f : Potion.class.getDeclaredFields()) {
-        	f.setAccessible(true);
-        	try {
-        	if (f.getName().equals("potionTypes") || f.getName().equals("field_76425_a")) {
-        	Field modfield = Field.class.getDeclaredField("modifiers");
-        	modfield.setAccessible(true);
-        	modfield.setInt(f, f.getModifiers() & ~Modifier.FINAL);
-
-        	potionTypes = (Potion[])f.get(null);
-        	final Potion[] newPotionTypes = new Potion[256];
-        	System.arraycopy(potionTypes, 0, newPotionTypes, 0, potionTypes.length);
-        	f.set(null, newPotionTypes);
-        	}
-        	}
-        	catch (Exception e) {
-        	System.err.println("Severe error, please report this to the mod author:");
-        	System.err.println(e);
-        	}
-        	}
+        	
+        	
+        	
+        	
+        	
         	
         	Register.addTileEntityRegistrations();
         	

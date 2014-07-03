@@ -46,12 +46,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-import com.minecraftargentina.Biomes.OblivionLeaf;
-import com.minecraftargentina.Biomes.OblivionLog;
-import com.minecraftargentina.Biomes.OblivionSapling;
 import com.minecraftargentina.basemod.Achievement.CopperOnCraftEvent;
 import com.minecraftargentina.basemod.Achievement.CopperOnPickEvent;
 import com.minecraftargentina.basemod.Armaduras.TopazArmor;
+import com.minecraftargentina.basemod.Biomes.OblivionLeaf;
+import com.minecraftargentina.basemod.Biomes.OblivionLog;
+import com.minecraftargentina.basemod.Biomes.OblivionSapling;
 import com.minecraftargentina.basemod.Blocks.BlockNCStem;
 import com.minecraftargentina.basemod.Blocks.BloodMelon;
 import com.minecraftargentina.basemod.Blocks.CopperBlock;
@@ -85,6 +85,7 @@ import com.minecraftargentina.basemod.Maquinas.FuelMachine.TileEntityFuelMachine
 import com.minecraftargentina.basemod.Maquinas.IngotMasher.IngotMasher;
 import com.minecraftargentina.basemod.Maquinas.IngotMasher.TileEntityIngotMasher;
 import com.minecraftargentina.basemod.Maquinas.WorckSurface.WorkSurface;
+import com.minecraftargentina.basemod.Pociones.CreacionDePociones;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasDelHorno;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasMesaDeCrafteo;
 import com.minecraftargentina.basemod.lib.ClientProxy;
@@ -183,6 +184,9 @@ public class BaseMod {
 		CreacionDeFluidos.CreaciondeFluidos();
 		CreacionDeMaquinas.CreaciondeMaquinas();
 		CreacionDeMaquinas.RegistraaciondeMaquinas();
+		CreacionDePociones.RegistraciondePociones();
+		CreacionDePociones.CreaciondePociones();
+		CreacionDePociones.RegistrarEventosdePociones();
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		

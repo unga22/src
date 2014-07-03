@@ -28,7 +28,6 @@ public class Register {
 	public static void addEventRegistrations(){
 		DrugMod m = new DrugMod();
 
-    	MinecraftForge.EVENT_BUS.register(new DrugModEventHooks());
     	MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 
     }

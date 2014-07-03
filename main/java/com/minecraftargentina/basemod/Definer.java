@@ -32,7 +32,5 @@ public class Definer {
 	public static void addPotionDefinitions(){
 		DrugMod m = new DrugMod();
 
-    	m.waterHot = (new PotionDrugMod(32, true, 0)).setIconIndex(1,1).setPotionName("potion.waterHot");
-
 	}
 }

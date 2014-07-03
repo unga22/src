@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.Fluid;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.DrugMod;
+import com.minecraftargentina.basemod.Pociones.CreacionDePociones;
 
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -50,7 +51,7 @@ public class HotWater extends BlockFluidClassic{
 		}
 	  public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity){
 		  if(entity instanceof EntityLivingBase){
-			  ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(DrugMod.waterHot.id, 1, 0)); //100 = 5 Seconds , 20 = 1 Second
+			  ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(CreacionDePociones.PocionWaterHot.id, 1, 0)); //100 = 5 Seconds , 20 = 1 Second
 		  }	  
 	  }
 
