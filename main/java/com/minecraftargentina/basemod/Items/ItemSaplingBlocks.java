@@ -4,14 +4,15 @@ import com.minecraftargentina.basemod.BaseMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class ItemSaplingBlocks extends ItemBlock {
+public class ItemSaplingBlocks extends ItemBlockWithMetadata {
 	
 	public static final String[] saplings = new String[] {"Olvido", "Recuerdo"};
 
 	public ItemSaplingBlocks(Block block) {
-		super(block);
+		super(block, block);
 		this.setHasSubtypes(true);
 		
 		

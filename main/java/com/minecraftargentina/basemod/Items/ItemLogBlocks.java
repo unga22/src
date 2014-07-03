@@ -2,14 +2,15 @@ package com.minecraftargentina.basemod.Items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class ItemLogBlocks extends ItemBlock {
+public class ItemLogBlocks extends ItemBlockWithMetadata {
 	
 	public static final String[] logs = new String[] {"Olvido", "Recuerdo"};
 
 	public ItemLogBlocks(Block block) {
-		super(block);
+		super(block, block);
 		this.setHasSubtypes(true);
 		
 		

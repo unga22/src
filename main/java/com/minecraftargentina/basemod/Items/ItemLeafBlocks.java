@@ -2,14 +2,15 @@ package com.minecraftargentina.basemod.Items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class ItemLeafBlocks extends ItemBlock {
+public class ItemLeafBlocks extends ItemBlockWithMetadata{
 	
 	public static final String[] leaves = new String[] {"Olvido", "Recuerdo"};
 
 	public ItemLeafBlocks(Block block) {
-		super(block);
+		super(block, block);
 		this.setHasSubtypes(true);
 		
 		

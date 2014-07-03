@@ -19,20 +19,16 @@ public class OnEatHojaDelRecuerdo {
 	
 	
 	@SubscribeEvent
-<<<<<<< HEAD
+
 
 	 public void ComerHojaDelRecuerdo(PlayerUseItemEvent.Finish event) {
-=======
-	 public void foodEaten(PlayerUseItemEvent.Finish event) {
->>>>>>> origin/master
+
 	  	   if(event.item.getItem() == CreacionDeItems.hojasDelRecuerdo) {
 	  		 event.entityPlayer.addStat(CreacionDeAchievement.achievementHojasDelRecuerdoEat, 1);
 	   
-	   }
-	  }
-<<<<<<< HEAD
-	 }
+	  	   }
+		}
 
-=======
-}
->>>>>>> origin/master
+ 	}
+
+
