@@ -64,7 +64,7 @@ public class OblivionSapling extends BlockSapling {
 	    public IIcon getIcon(int side, int meta)
 	    {
 	    	meta &= 7;
-	        return iconLength[MathHelper.clamp_int(meta, 0, 5)];
+	    	return iconLength[MathHelper.clamp_int(meta, 0, 5)];
 	    }
 
 	    
@@ -172,8 +172,8 @@ public class OblivionSapling extends BlockSapling {
 	    @SideOnly(Side.CLIENT)
 	    public void registerBlockIcons(IIconRegister iconRegister)
 	    {
-	        for (int i = 0; i < iconLength.length; ++i)
-	        {
+	        for (int i = 0; i < iconLength.length;i++)
+	        {	
 	        	iconLength[i] = iconRegister.registerIcon(BaseMod.modid + ":" + this.getUnlocalizedName().substring(5) + saplings[i]);
 	        }
 	    }

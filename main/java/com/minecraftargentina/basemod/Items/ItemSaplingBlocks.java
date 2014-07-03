@@ -22,8 +22,7 @@ public class ItemSaplingBlocks extends ItemBlock {
 		if (i < 0 || i >= saplings.length) {
 			i = 0;
 		}
-		
-		return (BaseMod.modid + ":" + this.getUnlocalizedName().substring(5) + saplings[i]);
+		return super.getUnlocalizedName() + "." + saplings[i];
 		
 	}
 	
