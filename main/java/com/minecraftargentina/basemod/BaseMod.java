@@ -48,6 +48,7 @@ import java.lang.reflect.Modifier;
 
 import com.minecraftargentina.basemod.Achievement.CopperOnCraftEvent;
 import com.minecraftargentina.basemod.Achievement.CopperOnPickEvent;
+import com.minecraftargentina.basemod.Achievement.CreacionDeAchievement;
 import com.minecraftargentina.basemod.Armaduras.TopazArmor;
 import com.minecraftargentina.basemod.Biomes.OblivionLeaf;
 import com.minecraftargentina.basemod.Biomes.OblivionLog;
@@ -187,6 +188,9 @@ public class BaseMod {
 		CreacionDePociones.RegistraciondePociones();
 		CreacionDePociones.CreaciondePociones();
 		CreacionDePociones.RegistrarEventosdePociones();
+		CreacionDeAchievement.CreaciondeAchievement();
+		CreacionDeAchievement.RegistracionAchievement();
+		CreacionDeAchievement.RegistracionDeEventos();
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
