@@ -12,8 +12,8 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 public class OnEatHojaDelRecuerdo {
 	
 	@SubscribeEvent
-	public void whenPlayerEatHojaDelRecuerdo(PlayerUseItemEvent e) {
-		System.out.println("1");
+	public void whenIEatHojaDelRecuerdo(PlayerUseItemEvent e) {
+		System.out.println((e.item.equals(new ItemStack(CreacionDeItems.hojasDelRecuerdo))));
 		if(e.item.equals(new ItemStack(CreacionDeItems.hojasDelRecuerdo))){
 			e.entityPlayer.addStat(CreacionDeAchievement.achievementHojasDelRecuerdoEat, 1);
 		}
