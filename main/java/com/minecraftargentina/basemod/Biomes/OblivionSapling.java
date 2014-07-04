@@ -99,6 +99,7 @@ public class OblivionSapling extends BlockSapling {
 	        switch (l)
 	        {
 	            case 0:
+	            	object = new WorldGenOlvidoTree(CreacionDeBloques.blockLog, CreacionDeBloques.blockLeaf, 1, 1, false, 10, 15, false);
 	                break;
 	            case 1:
 	            	object = new WorldGenOlvidoTree(CreacionDeBloques.blockLog, CreacionDeBloques.blockLeaf, 1, 1, false, 10, 15, false);
