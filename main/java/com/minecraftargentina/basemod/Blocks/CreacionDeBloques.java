@@ -49,6 +49,9 @@ public class CreacionDeBloques {
 	public static Block blockLeaf;
 	public static Block blockSapling;
 	
+	public static Block blockMaderaRefinada;
+	
+	
 	
 	
 	//
@@ -84,6 +87,7 @@ public class CreacionDeBloques {
 		blockLog = new OblivionLog().setBlockName("Log").setCreativeTab(BaseMod.oblivion);
 		blockLeaf = new OblivionLeaf().setBlockName("Leaf").setCreativeTab(BaseMod.oblivion);
 		blockSapling = new OblivionSapling().setBlockName("Sapling").setCreativeTab(BaseMod.oblivion);
+		blockMaderaRefinada = new MaderaRefinada(Material.wood).setBlockName("MaderaRefinada");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -116,6 +120,7 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(blockLog, ItemLogBlocks.class, blockLog.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockLeaf, ItemLeafBlocks.class, blockLeaf.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockMaderaRefinada, "MaderaRefinada");
 		
 	}
 	//

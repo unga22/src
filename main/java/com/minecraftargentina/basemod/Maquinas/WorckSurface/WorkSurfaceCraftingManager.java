@@ -42,6 +42,7 @@ public class WorkSurfaceCraftingManager
         
         this.addRecipe(new ItemStack (CreacionDeItems.itemStaff, 1), new Object[] {"S", "S", "S", "S", "S", 'S', Items.stick});
         
+        this.addRecipe(new ItemStack (CreacionDeItems.itemIronDisc, 1), new Object[] {"A", "A", "A", "A", "A", 'A', Items.iron_ingot});
         
         Collections.sort(this.recipes, new WorkSurfaceRecipeSorter(this));
     }

@@ -7,6 +7,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
+import com.minecraftargentina.basemod.Maquinas.CreacionDeMaquinas;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -30,5 +31,11 @@ public class CreacionDeRecetasMesaDeCrafteo {
 
 		GameRegistry.addRecipe(new ItemStack(CreacionDeItems.itemIronDisc, 4), new Object[]{"IH", 'I', Items.iron_ingot, 'H', new ItemStack(CreacionDeItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
 		GameRegistry.addRecipe(new ItemStack(CreacionDeItems.itemIronWasher), new Object[]{"DP", 'D', CreacionDeItems.itemIronDisc, 'P', new ItemStack(CreacionDeItems.itemIronPunch, 1, OreDictionary.WILDCARD_VALUE)});
+		
+		GameRegistry.addRecipe(new ItemStack(CreacionDeMaquinas.blockWorkSurface, 1), new Object[]{"XXX", "XXX", "XXX", 'X', CreacionDeBloques.blockMaderaRefinada});
+		GameRegistry.addRecipe(new ItemStack(CreacionDeBloques.blockMaderaRefinada, 1), new Object[]{"IH", 'I', Blocks.log, 'H', new ItemStack(CreacionDeItems.itemLija, 1, OreDictionary.WILDCARD_VALUE)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(CreacionDeItems.itemLija, 1), new Object[]{CreacionDeItems.itemPolvoDeVidrio, Items.paper});
+		GameRegistry.addRecipe(new ItemStack(CreacionDeItems.itemPolvoDeVidrio, 1), new Object[]{"IH", 'I', Blocks.glass, 'H', new ItemStack(CreacionDeItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
 	}
 }

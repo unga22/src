@@ -58,6 +58,8 @@ public class CreacionDeItems {
 	public static Item hojasDelRecuerdo;
 	public static Item cropBloodMelonSlice;
 	public static Item cropStrawberry;
+	public static Item itemLija;
+	public static Item itemPolvoDeVidrio;
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	
@@ -94,6 +96,8 @@ public class CreacionDeItems {
 		armorTopazLegs = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazLegsID, 2).setUnlocalizedName("TopazLegs");
 		armorTopazBoots = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazBootsID, 3).setUnlocalizedName("TopazBoots");
 		hojasDelRecuerdo = new ItemFood(4, 0.5F, false).setUnlocalizedName("HojasDelRecuerdo").setTextureName(BaseMod.modid + ":HojasDelRecuerdo").setCreativeTab(BaseMod.oblivion);
+		itemLija = new Lija().setUnlocalizedName("Lija");
+		itemPolvoDeVidrio = new ItemPolvoDeVidrio().setUnlocalizedName("PolvoDeVidrio");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -139,6 +143,9 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(armorTopazBoots, "TopazBoots");
 		
 		GameRegistry.registerItem(hojasDelRecuerdo, "HojasDelRecuerdo");
+		GameRegistry.registerItem(itemLija, "Lija");
+		GameRegistry.registerItem(itemPolvoDeVidrio, "PolvoDeVidrio");
+		
 
 	}
 	//
