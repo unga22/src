@@ -40,6 +40,29 @@ public class CraftingHandler {
 					event.craftMatrix.setInventorySlotContents(i, k);
 
 					}
+					ItemStack item2 = event.craftMatrix.getStackInSlot(i);
+					if (item1 != null && item1.getItem() == CreacionDeItems.itemLija) {
+						ItemStack k = new ItemStack(CreacionDeItems.itemLija, 2, (item1.getItemDamage() + 1));
+
+						if (k.getItemDamage() >= k.getMaxDamage()) {
+							k.stackSize--;
+						}
+
+					event.craftMatrix.setInventorySlotContents(i, k);
+
+					}
+					
+					ItemStack item3 = event.craftMatrix.getStackInSlot(i);
+					if (item1 != null && item1.getItem() == CreacionDeItems.itemTerrajaTM) {
+						ItemStack k = new ItemStack(CreacionDeItems.itemTerrajaTM, 2, (item1.getItemDamage() + 1));
+
+						if (k.getItemDamage() >= k.getMaxDamage()) {
+							k.stackSize--;
+						}
+
+					event.craftMatrix.setInventorySlotContents(i, k);
+
+					}
 				}
 			}
 		}

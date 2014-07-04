@@ -1,6 +1,9 @@
 package com.minecraftargentina.basemod.Items;
 
 
+
+
+
 import com.minecraftargentina.basemod.BaseMod;
 
 import cpw.mods.fml.relauncher.Side;
@@ -8,13 +11,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
-public class Lija extends Item {
+public class ItemTiraMadera extends Item {
 
-	public Lija() {
-		super();
-		this.maxStackSize = 1;
-		this.setMaxDamage(64);
-		this.setNoRepair();
+	public ItemTiraMadera() {
+		super();		
 		this.setCreativeTab(BaseMod.oblivion);
 	}
 

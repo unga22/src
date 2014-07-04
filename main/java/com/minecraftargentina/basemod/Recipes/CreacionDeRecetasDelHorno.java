@@ -1,5 +1,6 @@
 package com.minecraftargentina.basemod.Recipes;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
@@ -17,5 +18,6 @@ public class CreacionDeRecetasDelHorno {
 		GameRegistry.addSmelting(CreacionDeBloques.oreVanadiumOre, new ItemStack(CreacionDeItems.itemVanadiumIngot), 0);
 
 		GameRegistry.addSmelting(CreacionDeBloques.oreNetherCopperOre, new ItemStack(CreacionDeBloques.oreCopperOre, 2), 0);
+		GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(CreacionDeItems.itemTerrajaTM), 0);
 	}
 }
