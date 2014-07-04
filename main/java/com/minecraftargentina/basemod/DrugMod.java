@@ -55,12 +55,11 @@ public class DrugMod {
     		}
     		
     	};
-        public static final int guiIdChemicalExtractor = 0;
+        public static final int guiIdChemicalExtractor = 4;
 
-         public static Item CocaSeeds;
-         public static Item CocaLeaf;
 
-         public static Block CocaCrop;
+
+        
          public static Block ChemicalExtractorIdle;
          public static Block ChemicalExtractorActive;
        
@@ -102,7 +101,7 @@ public class DrugMod {
         	
         	Definer.addPotionDefinitions();
 
-        	MinecraftForge.addGrassSeed(new ItemStack(CocaSeeds), 10);
+
         	
         	Register.addBlockRegistrations();
         	

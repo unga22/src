@@ -55,11 +55,9 @@ public class CreacionDeItems {
 	public static int armorTopazBootsID;
 	public static Item foodHotDog;
 	public static Item foodBBQRibs;
-	public static Item cropStrawberrySeeds;
-	public static Item cropStrawberry;
-	public static Item cropBloodMelonSeeds;
-	public static Item cropBloodMelonSlice;
 	public static Item hojasDelRecuerdo;
+	public static Item cropBloodMelonSlice;
+	public static Item cropStrawberry;
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	
@@ -84,14 +82,12 @@ public class CreacionDeItems {
 		itemTopaz = new ItemsGenericos().setUnlocalizedName("Topaz");
 		foodHotDog = new ItemFood(6, 0.6F, true).setUnlocalizedName("HotDog").setCreativeTab(BaseMod.oblivion).setTextureName(BaseMod.modid + ":HotDog");
 		foodBBQRibs = new FoodBBQRibs(10, 1.0F, true).setUnlocalizedName("BBQRibs");
-		cropStrawberrySeeds = new ItemSeeds(CreacionDeBloques.cropStrawberryPlant, Blocks.farmland).setUnlocalizedName("StrawberrySeeds").setTextureName(BaseMod.modid + ":StrawberrySeeds").setCreativeTab(BaseMod.oblivion);
-		cropStrawberry = new ItemFood(4, 0.5F, false).setUnlocalizedName("Strawberry").setTextureName(BaseMod.modid + ":Strawberry").setCreativeTab(BaseMod.oblivion);
 		itemTopazSword = new TopazSword(BaseMod.TopazMaterial).setUnlocalizedName("TopazSword");
 		itemTopazAxe = new TopazAxe(BaseMod.TopazMaterial).setUnlocalizedName("TopazAxe");
 		itemTopazShovel = new TopazShovel(BaseMod.TopazMaterial).setUnlocalizedName("TopazShovel");
 		itemTopazHoe = new TopazHoe(BaseMod.TopazMaterial).setUnlocalizedName("TopazHoe");
 		itemTopazPickaxe = new TopazPickaxe(BaseMod.TopazMaterial).setUnlocalizedName("TopazPickaxe");
-		cropBloodMelonSeeds = new ItemSeeds(CreacionDeBloques.cropBloodMelonStem, Blocks.farmland).setUnlocalizedName("BloodMelonSeeds").setTextureName(BaseMod.modid + ":BloodMelonSeeds").setCreativeTab(BaseMod.oblivion);
+		cropStrawberry = new ItemFood(4, 0.5F, false).setUnlocalizedName("Strawberry").setTextureName(BaseMod.modid + ":Strawberry").setCreativeTab(BaseMod.oblivion);
 		cropBloodMelonSlice = new ItemFood(4, 0.5F, false).setUnlocalizedName("BloodMelonSlice").setTextureName(BaseMod.modid + ":BloodMelonSlice").setCreativeTab(BaseMod.oblivion);
 		armorTopazHelm = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazHelmID, 0).setUnlocalizedName("TopazHelm");
 		armorTopazChest = new TopazArmor(BaseMod.TopazArmorMaterial, armorTopazChestID, 1).setUnlocalizedName("TopazChest");
@@ -129,9 +125,7 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(foodHotDog, "HotDog");
 		GameRegistry.registerItem(foodBBQRibs, "BBQRibs");
 
-		GameRegistry.registerItem(cropStrawberrySeeds, "StrawberrySeeds");
 		GameRegistry.registerItem(cropStrawberry, "Strawberry");
-		GameRegistry.registerItem(cropBloodMelonSeeds, "BloodMelonSeeds");
 		GameRegistry.registerItem(cropBloodMelonSlice, "BloodMelonSlice");
 		GameRegistry.registerItem(itemTopazAxe, "TopazAxe");
 		GameRegistry.registerItem(itemTopazSword, "TopazSword");

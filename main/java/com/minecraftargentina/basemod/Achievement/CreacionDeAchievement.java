@@ -47,7 +47,9 @@ public class CreacionDeAchievement {
 	public static void RegistracionDeEventos(){
 		
 		//Registro Minecraft
-		FMLCommonHandler.instance().bus().register(new OnPickHojaDelRecuerdo());	
+		FMLCommonHandler.instance().bus().register(new OnPickHojaDelRecuerdo());
+		FMLCommonHandler.instance().bus().register(new CopperOnPickEvent());
+		FMLCommonHandler.instance().bus().register(new CopperOnCraftEvent());
 		
 		//Registro Forge
 		MinecraftForge.EVENT_BUS.register(new OnEatHojaDelRecuerdo());

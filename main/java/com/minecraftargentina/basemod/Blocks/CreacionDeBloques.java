@@ -7,6 +7,7 @@ import com.minecraftargentina.basemod.Biomes.OblivionSapling;
 import com.minecraftargentina.basemod.Items.ItemLeafBlocks;
 import com.minecraftargentina.basemod.Items.ItemLogBlocks;
 import com.minecraftargentina.basemod.Items.ItemSaplingBlocks;
+import com.minecraftargentina.basemod.Semillas.StrawberryCrop;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -56,7 +57,7 @@ public class CreacionDeBloques {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static void CreaciondeBloques(){
-		cropStrawberryPlant = new NCCrop().setBlockName("StrawberryPlant");
+		cropStrawberryPlant = new StrawberryCrop().setBlockName("StrawberryPlant");
 
 		cropBloodMelon = new BloodMelon().setBlockName("BloodMelon").setBlockTextureName(BaseMod.modid + ":BloodMelon");
 		cropBloodMelonStem = new BlockNCStem(cropBloodMelon).setBlockName("BloodMelonStem").setBlockTextureName(BaseMod.modid + ":BloodMelon");

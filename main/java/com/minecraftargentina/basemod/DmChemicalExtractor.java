@@ -2,10 +2,13 @@ package com.minecraftargentina.basemod;
 
 
 
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import java.util.Random;
+
+import com.minecraftargentina.basemod.Maquinas.CreacionDeMaquinas;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -109,20 +112,12 @@ public class DmChemicalExtractor extends BlockContainer
         this.field_149936_O = p_149651_1_.registerIcon(this.field_149932_b ? DrugMod.modid + ":" + "extractorChemicalOn" :  DrugMod.modid + ":" + "extractorChemicalOff");
         this.field_149935_N = p_149651_1_.registerIcon(DrugMod.modid + ":" + "extractorChemicalTop");
     }
-
     /**
      * Called upon block activation (right click on the block.)
      */
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f, float g, float t) {
-		TileEntity tile_entity = world.getTileEntity(x, y, z);
-
-		if (tile_entity == null || player.isSneaking()) {
-
-			return false;
-		}
-
-		player.openGui(DrugMod.instance, 0, world, x, y, z);
+		player.openGui(DrugMod.instance, 4, world, x, y, z);
 
 
 		return true;
@@ -303,7 +298,7 @@ public class DmChemicalExtractor extends BlockContainer
     {
         return Container.calcRedstoneFromInventory((IInventory)p_149736_1_.getTileEntity(p_149736_2_, p_149736_3_, p_149736_4_));
     }
-
+    
     /**
      * Gets an item for the block being called on. Args: world, x, y, z
      */

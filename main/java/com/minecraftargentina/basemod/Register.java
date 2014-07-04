@@ -40,7 +40,7 @@ public class Register {
 	public static void addBlockRegistrations(){
 		DrugMod m = new DrugMod();
 
-    	GameRegistry.registerBlock(m.CocaCrop, "CocaCrop");
+    	
 		GameRegistry.registerBlock(m.ChemicalExtractorIdle, "ChemicalExtractorIdle");
 		GameRegistry.registerBlock(m.ChemicalExtractorActive, "ChemicalExtractorActive");
 
@@ -49,8 +49,7 @@ public class Register {
 	public static void addItemRegistrations(){
 		DrugMod m = new DrugMod();
 
-    	GameRegistry.registerItem(m.CocaSeeds , "CocaSeeds");
-    	GameRegistry.registerItem(m.CocaLeaf , "CocaLeaf");
+    	
 
     }
 

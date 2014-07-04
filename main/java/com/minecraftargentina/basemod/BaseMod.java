@@ -58,7 +58,6 @@ import com.minecraftargentina.basemod.Blocks.BloodMelon;
 import com.minecraftargentina.basemod.Blocks.CopperBlock;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Blocks.MineralBlocks;
-import com.minecraftargentina.basemod.Blocks.NCCrop;
 import com.minecraftargentina.basemod.Blocks.ObsidianBlock;
 import com.minecraftargentina.basemod.Blocks.OreBlock;
 import com.minecraftargentina.basemod.Blocks.PurpleLamp;
@@ -73,7 +72,6 @@ import com.minecraftargentina.basemod.Herramientas.TopazPickaxe;
 import com.minecraftargentina.basemod.Herramientas.TopazShovel;
 import com.minecraftargentina.basemod.Herramientas.TopazSword;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
-import com.minecraftargentina.basemod.Items.ItemBlueberrySeeds;
 import com.minecraftargentina.basemod.Items.ItemLeafBlocks;
 import com.minecraftargentina.basemod.Items.ItemLogBlocks;
 import com.minecraftargentina.basemod.Items.ItemSaplingBlocks;
@@ -89,6 +87,8 @@ import com.minecraftargentina.basemod.Maquinas.WorckSurface.WorkSurface;
 import com.minecraftargentina.basemod.Pociones.CreacionDePociones;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasDelHorno;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasMesaDeCrafteo;
+import com.minecraftargentina.basemod.Semillas.CreacionDeSemillas;
+import com.minecraftargentina.basemod.Semillas.StrawberryCrop;
 import com.minecraftargentina.basemod.lib.ClientProxy;
 
 import net.minecraft.block.Block;
@@ -138,40 +138,26 @@ public class BaseMod {
 	@SidedProxy(clientSide = "com.minecraftargentina.basemod.lib.ClientProxy", serverSide = "com.minecraftargentina.basemod.lib.CommonProxy")
 	public static ClientProxy nealeProxy;
 	public static Item Frutilla;
-	
-	
-	 // ItemBlueBerrySeeds
-	 public final static Block blockBlueberry = new blueberrycrop();
-	 public final static Item blueberryseeds = new ItemBlueberrySeeds();
 
 
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent preEvent){
-
-		oblivion = new CreativeTabs("Oblivion") {
+		//Pasar CreativeTap
+			oblivion = new CreativeTabs("Oblivion") {
 			@SideOnly(Side.CLIENT)
 			public Item getTabIconItem() {
 				return Item.getItemFromBlock(CreacionDeBloques.oreCopperOre);		
 				
 			}
 		};
-		//Machines
-		
-
-		
-	
-		
-
-		
+		//Falta pasat todo esto
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(CreacionDeItems.armorTopazChest),1,1,065));
-
-		MinecraftForge.addGrassSeed(new ItemStack(CreacionDeItems.cropStrawberrySeeds), 10);
-		MinecraftForge.addGrassSeed(new ItemStack(CreacionDeItems.cropBloodMelonSeeds), 10);
-
-		
 		//Spawn
 		GameRegistry.registerWorldGenerator(eventWorldGen, 0);
 
+		
+		
+		
 		nealeProxy.registerRenderThings();
 
 	}
@@ -191,25 +177,16 @@ public class BaseMod {
 		CreacionDeAchievement.CreaciondeAchievement();
 		CreacionDeAchievement.RegistracionAchievement();
 		CreacionDeAchievement.RegistracionDeEventos();
-		FMLCommonHandler.instance().bus().register(new CraftingHandler());
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-		
-		
+		CreacionDeSemillas.CreaciondeSemillas();
+		CreacionDeSemillas.RegistraciondeSemillas();
 		CreacionDeCubos.CreaciondeCubos();
 		CreacionDeCubos.RegistraciondeCubos();
-		
-	
-		
-		FMLCommonHandler.instance().bus().register(new CopperOnPickEvent());
-		FMLCommonHandler.instance().bus().register(new CopperOnCraftEvent());
-		//Archievement Language (Nombres y Descripcion)
-		
-		
-		
-		
 		CreacionDeRecetasMesaDeCrafteo.RecetasMesaDeCrafteo();
 		CreacionDeRecetasDelHorno.RecetasDelHorno();
 		
+		FMLCommonHandler.instance().bus().register(new CraftingHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+		//Falta pasar todo esto
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
 	}

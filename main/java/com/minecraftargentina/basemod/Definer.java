@@ -14,7 +14,6 @@ public class Definer {
 	public static void addBlockDefinitions(){
 		DrugMod m = new DrugMod();
 
-    	m.CocaCrop = new DmCocaCrop().setBlockName("cocaCrop");
     	m.ChemicalExtractorIdle = new DmChemicalExtractor(false).setBlockName("extractorChemicalIdle").setHardness(3.5F).setCreativeTab(DrugMod.drugTab); 
 		m.ChemicalExtractorActive = new DmChemicalExtractor(true).setBlockName("extractorChemicalActive").setHardness(3.5F).setLightLevel(0.9F);
 
@@ -23,8 +22,7 @@ public class Definer {
 	public static void addItemDefinitions(){
 		DrugMod m = new DrugMod();
 
-    	m.CocaSeeds = new ItemSeeds(m.CocaCrop, Blocks.farmland).setTextureName(DrugMod.modid + ":" + "seedCoca").setUnlocalizedName("seedCoca").setCreativeTab(DrugMod.drugTab);
-    	m.CocaLeaf = new DmCocaLeaf("leafCoca");
+    	
 
     	
 	}

@@ -1,4 +1,4 @@
-package com.minecraftargentina.basemod.Blocks;
+package com.minecraftargentina.basemod.Semillas;
 
 
 
@@ -14,7 +14,7 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class NCCrop extends BlockCrops {
+public class StrawberryCrop extends BlockCrops {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
@@ -45,7 +45,7 @@ public class NCCrop extends BlockCrops {
 	}
 	
 	protected Item func_149866_i() {
-		return CreacionDeItems.cropStrawberrySeeds;
+		return CreacionDeSemillas.cropStrawberrySeeds;
 	}
 
 	protected Item func_149865_P() {

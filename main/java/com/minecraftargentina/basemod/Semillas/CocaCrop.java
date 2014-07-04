@@ -1,23 +1,19 @@
-package com.minecraftargentina.basemod;
+package com.minecraftargentina.basemod.Semillas;
 
+import com.minecraftargentina.basemod.DrugMod;
 
-import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 
-public class DmCocaCrop extends BlockCrops {
-
+public class CocaCrop extends BlockCrops{
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
 
-    public DmCocaCrop(){
+    public CocaCrop(){
     	super();
     }
     @SideOnly(Side.CLIENT)
@@ -30,11 +26,11 @@ public class DmCocaCrop extends BlockCrops {
     	return iconArray[8];
     }
     public Item func_149866_i(){
-    	return DrugMod.CocaSeeds;
+    	return CreacionDeSemillas.CocaSeeds;
     }
     
     public Item func_149865_P(){
-    	return DrugMod.CocaLeaf;
+    	return CreacionDeSemillas.CocaLeaf;
     }
 
     
@@ -46,6 +42,4 @@ public class DmCocaCrop extends BlockCrops {
     		this.iconArray[i] = iconRegister.registerIcon(DrugMod.modid + ":" + "stage" + i + "Coca");
     	}
     }
-
-
 }
