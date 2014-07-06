@@ -4,6 +4,7 @@ import com.minecraftargentina.basemod.CraftingHandler;
 import com.minecraftargentina.basemod.GuiHandler;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
+import com.minecraftargentina.basemod.Maquinas.FuelMachine.FuelMachineEvents;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -53,6 +54,13 @@ public class CreacionDeAchievement {
 		
 		//Registro Forge
 		MinecraftForge.EVENT_BUS.register(new OnEatHojaDelRecuerdo());
+		
+       // ERROR ARREGLAR//ConfigHandler.init(event.getSuggestedConfigurationFile());
+		
+		MinecraftForge.EVENT_BUS.register(new FuelMachineEvents());
+		FMLCommonHandler.instance().bus().register(new FuelMachineEvents());
+		
+		
 		
 		
 		

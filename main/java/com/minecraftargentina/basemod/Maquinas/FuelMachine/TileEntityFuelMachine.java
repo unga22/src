@@ -311,5 +311,21 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	    if (flag1) {
 		this.markDirty();
 	    }
+	}
+	    
+	
+	
+	//como funcionara?
+	    public String getStartSoundFile()
+	    {
+	        return "Machines/FuelMachine.ogg";
+	    }
+
+	    public String getInterruptSoundFile()
+	    {
+	        return "Machines/FuelMachine.ogg";
+	    
+	    
+	    
     }
 }

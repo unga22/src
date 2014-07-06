@@ -63,6 +63,8 @@ public class CreacionDeItems {
 	public static Item itemTornilloMadera;
 	public static Item itemTerrajaTM;
 	public static Item itemTiraMadera;
+	
+	
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	
@@ -104,6 +106,7 @@ public class CreacionDeItems {
 		itemTornilloMadera = new ItemTornilloMadera().setUnlocalizedName("TornilloMadera");
 		itemTerrajaTM = new ItemTerrajaTM().setUnlocalizedName("TerrajaTM");
 		itemTiraMadera = new ItemTiraMadera().setUnlocalizedName("TiraMadera");
+
 		
 	}
 	//
@@ -155,6 +158,8 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(itemTornilloMadera, "TornilloMadera");
 		GameRegistry.registerItem(itemTerrajaTM, "TerrajaTM");
 		GameRegistry.registerItem(itemTiraMadera, "TiraMadera");
+		
+		
 		
 
 	}
