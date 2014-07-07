@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.sound.PlaySoundEffectEvent;
 import net.minecraftforge.common.ISpecialArmor;
 import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 
 import com.minecraftargentina.basemod.SoundHandler;
 import com.minecraftargentina.basemod.Achievement.CreacionDeAchievement;
@@ -18,18 +19,48 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 
-public class FuelMachineEvents {
-	
-	private TileEntityFuelMachine fuelmashine;
-	private boolean hasPlayed = false;
-	@SubscribeEvent
-	public void onEntityConstructing0(TickEvent.PlayerTickEvent event) {
-		boolean mustPlayMusic = TileEntityFuelMachine.prendida;
-	    if(mustPlayMusic == true && !hasPlayed ) {	
-	    	SoundHandler.onEntityPlay("Skyrim0", event.player.worldObj, event.player, 1, 1);
-	     }
-		hasPlayed = mustPlayMusic;
-	}
-	
 
-}
+public class FuelMachineEvents {
+ 
+ private int tiempo = 1100; 
+ private TileEntityFuelMachine fuelmashine;
+ 
+ 
+ 	@SubscribeEvent
+ 		public void onEntityConstructing0(TickEvent.PlayerTickEvent event) {
+ 		
+ 				
+ 		
+ 				System.out.println(tiempo);
+ 				
+ 				boolean mustPlayMusic = TileEntityFuelMachine.prendida;
+ 				if(mustPlayMusic){
+ 					if(tiempo == 1100) {
+ 						SoundHandler.onEntityPlay("FuelMachine", event.player.worldObj, event.player, 1, 1);
+ 					} 
+   
+ 					if (tiempo > 0){
+ 						tiempo = tiempo - 1;
+ 					}
+  
+ 					if (tiempo <= 0){
+ 						tiempo = 1100;
+ 				}
+ 					
+ 			}else if(tiempo != 1100){
+ 				tiempo = 1100; 				
+ 				
+ 				SoundHandler.onEntityPlay("InterruptOne", event.player.worldObj, event.player, 1, 1); 				
+ 				
+ 				
+ 			}
+ 				
+ 				
+ 				
+ 		}
+ 	
+ 	 	
+	}
+
+
+

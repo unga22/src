@@ -40,5 +40,7 @@
    "alarm-scifiB": {"category": "master","sounds": [{"name": "alarm-scifiB","stream": false}]},
    "alarm-scifiC": {"category": "master","sounds": [{"name": "alarm-scifiC","stream": false}]},
    "alarm-scifiD": {"category": "master","sounds": [{"name": "alarm-scifiD","stream": false}]},
-   "Skyrim0": {"category": "master","sounds": [{"name": "Skyrim0","stream": true}]}
+   "Skyrim0": {"category": "master","sounds": [{"name": "Skyrim0","stream": true}]},
+   "FuelMachine": {"category": "master","sounds": [{"name": "FuelMachine","stream": false}]},
+   "InterruptOne": {"category": "master","sounds": [{"name": "InterruptOne","stream": false}]}  
    }
