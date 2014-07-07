@@ -30,6 +30,8 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	public static final  int TransformingSpeedBase = 1000;
 	public static int TransformingSpeed = TransformingSpeedBase;
 	
+	public static boolean prendida;
+
 	private static final int[] slots_top = new int[] {1, 2, 3};
 	private static final int[] slots_bottom = new int[]  {0, 4};
 	private static final int[] slots_side = new int[]  {5};	
@@ -260,6 +262,12 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 		return combustibleTime > 0;
 	}
 	public boolean estaTransformado() {
+		if (transformingTime > 0){
+			prendida = true;
+		}else{
+			prendida = false;
+		}
+
 		return transformingTime > 0;
 	}
 	public void updateEntity() {
@@ -313,19 +321,7 @@ public class TileEntityFuelMachine extends TileEntity implements ISidedInventory
 	    }
 	}
 	    
-	
-	
-	//como funcionara?
-	    public String getStartSoundFile()
-	    {
-	        return "Machines/FuelMachine.ogg";
-	    }
-
-	    public String getInterruptSoundFile()
-	    {
-	        return "Machines/FuelMachine.ogg";
 	    
 	    
 	    
     }
-}

@@ -1,6 +1,8 @@
 package com.minecraftargentina.basemod.Maquinas.FuelMachine;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.EntityEvent;
 
@@ -17,9 +19,19 @@ public class FuelMachineEvents {
 	
 	private TileEntityFuelMachine fuelmashine;
 	
-	public void onEntityConstructing(EntityEvent.EntityConstructing event) {
-	        if (event.equals(fuelmashine.estaTransformado()));
-	        SoundHandler.onEntityPlay("bunnyBegA", event.entity.worldObj, event.entity, 1, 1);
-  }
+	@SubscribeEvent
+	public void onEntityConstructing0(EntityEvent.EntityConstructing event) {
+	        if (TileEntityFuelMachine.prendida == true && ) {
+	 
+	     System.out.println("AAAAAAAAAAAAA");
+	        	
+	        	//  if(event.pickedUp.getEntityItem().isItemEqual(new ItemStack(CreacionDeItems.hojasDelRecuerdo))){
+	        SoundHandler.onEntityPlay("Skyrim0", event.entity.worldObj, event.entity, 1, 1);
+	        
+	        
+
+	}
+	}
 	
+
 }
