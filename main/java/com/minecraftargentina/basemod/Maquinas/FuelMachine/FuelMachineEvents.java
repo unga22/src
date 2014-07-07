@@ -23,10 +23,10 @@ public class FuelMachineEvents {
 	private TileEntityFuelMachine fuelmashine;
 	private boolean hasPlayed = false;
 	@SubscribeEvent
-	public void onEntityConstructing0(EntityEvent.EntityConstructing event) {
+	public void onEntityConstructing0(TickEvent.PlayerTickEvent event) {
 		boolean mustPlayMusic = TileEntityFuelMachine.prendida;
 	    if(mustPlayMusic == true && !hasPlayed ) {	
-	    	SoundHandler.onEntityPlay("Skyrim0", event.entity.worldObj, event.entity, 1, 1);
+	    	SoundHandler.onEntityPlay("Skyrim0", event.player.worldObj, event.player, 1, 1);
 	     }
 		hasPlayed = mustPlayMusic;
 	}
