@@ -6,6 +6,7 @@ import java.util.Map;
 import com.minecraftargentina.basemod.CraftingHandler;
 import com.minecraftargentina.basemod.GuiHandler;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
+import com.minecraftargentina.basemod.Fluidos.BioFuelEvents;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
 import com.minecraftargentina.basemod.Maquinas.FuelMachine.FuelMachineEvents;
 
@@ -71,6 +72,11 @@ public class CreacionDeAchievement {
 		
 		MinecraftForge.EVENT_BUS.register(new Hidden());
 		FMLCommonHandler.instance().bus().register(new Hidden());
+		
+		MinecraftForge.EVENT_BUS.register(new BioFuelEvents());
+		FMLCommonHandler.instance().bus().register(new BioFuelEvents());
+		
+
 		
 		
 		
