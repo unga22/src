@@ -58,6 +58,9 @@ tile.ObsidianTable.name=Obsidian Table
 tile.PurpleLampOn.name=Purple Lamp On
 tile.PurpleLampOff.name=Purple Lamp Off
 
+achievement.Oblivion=Conocimientos Generales!
+achievement.Oblivion.desc=Si tan solo pudiera recordar algo...
+
 
         //Lamps
         GameRegistry.registerBlock(blockPurpleLampOn, "PurpleLampOn");

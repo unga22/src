@@ -29,9 +29,9 @@ public class FuelMachineEvents {
  	@SubscribeEvent
  		public void onEntityConstructing0(TickEvent.PlayerTickEvent event) {
  		
- 				
+ 			
  		
- 				System.out.println(tiempo);
+ 				//System.out.println(tiempo);
  				
  				boolean mustPlayMusic = TileEntityFuelMachine.prendida;
  				if(mustPlayMusic){
@@ -52,6 +52,7 @@ public class FuelMachineEvents {
  				
  				SoundHandler.onEntityPlay("InterruptOne", event.player.worldObj, event.player, 1, 1); 				
  				
+ 			
  				
  			}
  				

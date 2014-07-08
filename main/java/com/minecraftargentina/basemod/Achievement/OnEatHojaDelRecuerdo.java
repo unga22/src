@@ -8,6 +8,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -27,8 +29,6 @@ public class OnEatHojaDelRecuerdo {
 	  		 event.entityPlayer.addStat(CreacionDeAchievement.achievementHojasDelRecuerdoEat, 1);
 	   
 	  	   }
-		}
-
- 	}
-
-
+	}
+}
+	  	   
