@@ -27,13 +27,15 @@ public class CreacionDeAchievement {
 	
 	public static Achievement achievementHojasDelRecuerdoPick;
 	public static Achievement achievementHojasDelRecuerdoEat;
-	public static Achievement achievementHidden;
 	public static AchievementPage OblivionPage;
+	public static Achievement achievementHidden;
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
-	public static void CreaciondeAchievement(){		
+	public static void CreaciondeAchievement(){			
+		
+		achievementHidden = new Achievement("archivement.Hidden", "Hidden", 3, 1, new ItemStack(CreacionDeBloques.blockObsidianTable),(Achievement)null).initIndependentStat();
 		achievementOblivion = new Achievement("archievement.Oblivion", "Oblivion", 0, 0, new ItemStack(CreacionDeItems.itemOldBook), (Achievement)null).initIndependentStat().registerStat();
 		achievementCopperPick = new Achievement("archivement.craftPick", "craftPick", 2, 1, CreacionDeBloques.oreCopperOre, achievementOblivion).registerStat();
 		achievementHojasDelRecuerdoPick = new Achievement("archievement.pickHojasDelRcuerdo", "PickHojasDelRecuerdo", 0, 4, new ItemStack(CreacionDeItems.hojasDelRecuerdo), (Achievement)null).initIndependentStat().registerStat();
@@ -47,8 +49,8 @@ public class CreacionDeAchievement {
 		
 		
 		OblivionPage = new AchievementPage("Oblivion Archives", new Achievement[]{achievementOblivion, achievementCopperPick, achievementHojasDelRecuerdoPick, achievementHojasDelRecuerdoEat});
+		AchievementPage.registerAchievementPage(OblivionPage);
 		
-
 		
 	}
 	//	
