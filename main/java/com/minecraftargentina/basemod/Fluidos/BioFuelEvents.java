@@ -31,24 +31,47 @@ public class BioFuelEvents {
 			
 			System.out.println("1");
 			
-			System.out.println(event.entityPlayer.worldObj.getBlock(event.x, event.y, event.z));
 			
 			if(event.entityPlayer.getHeldItem() == new ItemStack(Items.flint_and_steel)){
 				
 			
 			
 			System.out.println("2");
-		
-			if(event.entityPlayer.worldObj.getBlock(event.x, event.y, event.z) == Block.getBlockFromName("BioFuelStill")) {
+			
+			
+			
+			
+			int dy = event.y;
+			int dx = event.x;
+			int dz = event.z;
+			switch(event.face){
+			case 0:
+				dy = dy - 1;
+				break;
+			case 1:
+				dy = dy + 1;
+				break;
+			case 2:
+				dz = dz - 1;
+				break;
+			case 3:
+				dz = dz + 1;
+				break;
+			case 4:
+				dx = dx - 1;
+				break;
+			case 5:
+				dx = dx + 1;
+				break;
+			}
+			System.out.println(event.entityPlayer.worldObj.getBlock(event.x, event.y, event.z));
+			System.out.println(dy);
+			System.out.println(dx);
+			System.out.println(dz);
+			
+			if(event.entityPlayer.worldObj.getBlock(event.x, event.y, event.z) == CreacionDeFluidos.BiofuelBlock) {
 	
 				System.out.println("3");
-		
-			
-				
-				
-				int dy = event.y;
-				int dx = event.x;
-				int dz = event.z;
 				
 				// Switch adds/subtracts 1 from coordinates of the block that was right clicked based on which face of the
 				// block that is associated with the PlayerInteractEvent
