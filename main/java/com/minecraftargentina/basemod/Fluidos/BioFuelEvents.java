@@ -36,7 +36,7 @@ public class BioFuelEvents {
 				
 				System.out.println("2");
 				
-				if(event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK){
+			//	if(event.action == event.entityPlayer.o){
 					
 					System.out.println("3");
 					
@@ -94,5 +94,5 @@ public class BioFuelEvents {
 				}
 			
 			}
-		}
+		
 	

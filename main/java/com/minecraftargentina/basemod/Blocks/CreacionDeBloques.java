@@ -11,6 +11,7 @@ import com.minecraftargentina.basemod.Semillas.StrawberryCrop;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFire;
 import net.minecraft.block.material.Material;
 
 public class CreacionDeBloques {
@@ -50,6 +51,10 @@ public class CreacionDeBloques {
 	public static Block blockSapling;
 	
 	public static Block blockMaderaRefinada;
+	public final int blockMaderaRefinadaID = 1111;
+	public static Block OblivionPortalBlock;
+	public static BlockFire OblivionFireBlock;
+
 	
 	
 	
@@ -60,6 +65,9 @@ public class CreacionDeBloques {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static void CreaciondeBloques(){
+		
+		
+		
 		cropStrawberryPlant = new StrawberryCrop().setBlockName("StrawberryPlant");
 
 		cropBloodMelon = new BloodMelon().setBlockName("BloodMelon").setBlockTextureName(BaseMod.modid + ":BloodMelon");
@@ -88,6 +96,8 @@ public class CreacionDeBloques {
 		blockLeaf = new OblivionLeaf().setBlockName("Leaf").setCreativeTab(BaseMod.oblivion);
 		blockSapling = new OblivionSapling().setBlockName("Sapling").setCreativeTab(BaseMod.oblivion);
 		blockMaderaRefinada = new MaderaRefinada(Material.wood).setBlockName("MaderaRefinada");
+		OblivionPortalBlock = new OblivionPortalBlock().setBlockName("OblivionPortal");
+		OblivionFireBlock = (BlockFire) new OblivionFireBlock(Material.cactus).setBlockName("OblivionFireBlock");
 	}
 	//
 	//-----------------------------------------------------------------------------------------------------------------------
@@ -121,6 +131,11 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(blockLeaf, ItemLeafBlocks.class, blockLeaf.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockMaderaRefinada, "MaderaRefinada");
+		GameRegistry.registerBlock(OblivionPortalBlock, "OblivionPortal");
+		GameRegistry.registerBlock(OblivionFireBlock, "OblivionFireBlock");
+		
+		
+		
 		
 	}
 	//

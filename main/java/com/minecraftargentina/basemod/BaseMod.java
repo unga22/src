@@ -22,6 +22,7 @@ import net.minecraft.stats.AchievementList;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
@@ -29,6 +30,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
+import OblivionDimension.WorldGenTutorialTree;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -126,6 +128,8 @@ public class BaseMod {
 
 	public static CreativeTabs oblivion;
 	
+	public static int DimID = 2;
+	
 	
 
 	public static ToolMaterial TopazMaterial = EnumHelper.addToolMaterial("TopazMaterial", 2, 750, 6.0F, 2.0F, 10);
@@ -189,6 +193,9 @@ public class BaseMod {
 		//Falta pasar todo esto
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
+		
+		GameRegistry.registerWorldGenerator(new WorldGenTutorialTree(false), 32);
+
 	}
 
 	@EventHandler

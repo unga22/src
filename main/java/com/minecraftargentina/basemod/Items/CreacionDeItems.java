@@ -63,6 +63,7 @@ public class CreacionDeItems {
 	public static Item itemTornilloMadera;
 	public static Item itemTerrajaTM;
 	public static Item itemTiraMadera;
+	public static Item ItemPortalPlacer;
 	
 	
 	//
@@ -106,6 +107,7 @@ public class CreacionDeItems {
 		itemTornilloMadera = new ItemTornilloMadera().setUnlocalizedName("TornilloMadera");
 		itemTerrajaTM = new ItemTerrajaTM().setUnlocalizedName("TerrajaTM");
 		itemTiraMadera = new ItemTiraMadera().setUnlocalizedName("TiraMadera");
+		ItemPortalPlacer = new ItemPortalPlacer().setUnlocalizedName("OblivionPortalPlacer");
 
 		
 	}
@@ -158,6 +160,7 @@ public class CreacionDeItems {
 		GameRegistry.registerItem(itemTornilloMadera, "TornilloMadera");
 		GameRegistry.registerItem(itemTerrajaTM, "TerrajaTM");
 		GameRegistry.registerItem(itemTiraMadera, "TiraMadera");
+		GameRegistry.registerItem(ItemPortalPlacer, "OblivionPortalPlacer");
 		
 		
 		
