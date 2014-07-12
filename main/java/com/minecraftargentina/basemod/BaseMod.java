@@ -30,6 +30,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
+import OblivionDimension.BiomeGenTutorial;
 import OblivionDimension.WorldGenTutorialTree;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -123,12 +124,14 @@ public class BaseMod {
 
 	public static final String modid = "basemod";
 	public static final String version = "Alpha v0.1";
+	public static int DimID = 32;
 
 	NealecraftWorldGen eventWorldGen = new NealecraftWorldGen();
+	public static BiomeGenTutorial worldGen = new BiomeGenTutorial(DimID); // This is your world generation file.
 
 	public static CreativeTabs oblivion;
 	
-	public static int DimID = 2;
+	
 	
 	
 
@@ -195,6 +198,9 @@ public class BaseMod {
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
 		
 		GameRegistry.registerWorldGenerator(new WorldGenTutorialTree(false), 32);
+		
+		DimensionManager.registerProviderType(BaseMod.DimID, OblivionDimension.WorldProviderOblivion.class, false);
+		DimensionManager.registerDimension(BaseMod.DimID, BaseMod.DimID);
 
 	}
 

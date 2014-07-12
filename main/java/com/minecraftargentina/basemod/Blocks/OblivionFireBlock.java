@@ -1,4 +1,4 @@
-package com.minecraftargentina.basemod.Blocks;
+/*package com.minecraftargentina.basemod.Blocks;
 
 
 import cpw.mods.fml.relauncher.Side;
@@ -363,7 +363,7 @@ newChance = block.getFireSpreadSpeed(world, x, y, z, world.getBlockMetadata(x, y
 }
 return newChance > oldChance ? newChance : oldChance;
 }
-/** registers Icons, set textures here **/
+//registers Icons, set textures here //
 @SideOnly(Side.CLIENT)
 public void registerIcons(IIconRegister par1IconRegister)
 {
@@ -380,3 +380,4 @@ return this.iconArray[0];
 }
 }
 
+**/

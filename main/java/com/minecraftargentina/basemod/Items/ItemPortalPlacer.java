@@ -64,7 +64,7 @@ par3World.setBlock(X, Y + 7, Z, Blocks.diamond_ore);
 par3World.setBlock(X + 1, Y + 7, Z, Blocks.diamond_ore);
 par3World.setBlock(X, Y + 6, Z, Blocks.diamond_ore);
 par3World.setBlock(X + 1, Y + 6, Z, Blocks.diamond_ore);
-par3World.setBlock(X, Y + 3, Z, CreacionDeBloques.OblivionFireBlock);
+par3World.setBlock(X, Y + 3, Z, CreacionDeBloques.blockMaderaRefinada);
 }
 else
 {
@@ -103,7 +103,7 @@ par3World.setBlock(X, Y + 7, Z, Blocks.diamond_ore);
 par3World.setBlock(X + 1, Y + 7, Z, Blocks.diamond_ore);
 par3World.setBlock(X, Y + 6, Z, Blocks.diamond_ore);
 par3World.setBlock(X + 1, Y + 6, Z, Blocks.diamond_ore);
-par3World.setBlock(X, Y + 3, Z, CreacionDeBloques.OblivionFireBlock);
+par3World.setBlock(X, Y + 3, Z, CreacionDeBloques.blockMaderaRefinada); // cambiar por el fire block
 }
 return true;
 }
