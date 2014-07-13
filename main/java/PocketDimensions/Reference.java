@@ -8,8 +8,8 @@ public class Reference {
 
     public static final String MOD_IDENTIFIER = MOD_ID + ":";
 
-    public static final String CLIENT_PROXY_CLASS = "net.gtn.dimensionalpocket.client.ClientProxy";
-    public static final String SERVER_PROXY_CLASS = "net.gtn.dimensionalpocket.common.CommonProxy";
+    public static final String CLIENT_PROXY_CLASS = "PocketDimensions.ClientProxy";
+    public static final String SERVER_PROXY_CLASS = "PocketDimensions.CommonProxy";
 
     public static final int DIMENSION_ID_DEFAULT = 33;
     public static int DIMENSION_ID;
