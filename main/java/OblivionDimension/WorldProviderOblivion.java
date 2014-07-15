@@ -19,7 +19,7 @@ public class WorldProviderOblivion extends WorldProvider{
 	
 	public void registerWorldChunkManager()
 	{
-	       this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.desertHills, 0.8F);
+	       this.worldChunkMgr = new WorldChunkManagerHell(BaseMod.BiomeGenTutorial, 0.8F);
 	       this.dimensionId = BaseMod.DimID;
 	       
 	}

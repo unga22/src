@@ -20,6 +20,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
@@ -127,8 +128,8 @@ public class BaseMod {
 	public static int DimID = 32;
 
 	NealecraftWorldGen eventWorldGen = new NealecraftWorldGen();
-	public static BiomeGenTutorial worldGen = new BiomeGenTutorial(DimID); // This is your world generation file.
-
+	
+	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
 	public static CreativeTabs oblivion;
 	
 	
