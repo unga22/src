@@ -54,6 +54,9 @@ public class CreacionDeBloques {
 	public final int blockMaderaRefinadaID = 1111;
 	public static Block OblivionPortalBlock;
 	
+	public static Block OblivionTreelog;
+	public static Block OblivionTreeLeaves;
+	
 
 	
 	
@@ -97,6 +100,8 @@ public class CreacionDeBloques {
 		blockSapling = new OblivionSapling().setBlockName("Sapling").setCreativeTab(BaseMod.oblivion);
 		blockMaderaRefinada = new MaderaRefinada(Material.wood).setBlockName("MaderaRefinada");
 		OblivionPortalBlock = new OblivionPortalBlock().setBlockName("OblivionPortal");
+		OblivionTreelog = new OblivionTreeLog(Material.wood).setBlockName("obliviontreelog");
+		OblivionTreeLeaves = new OblivionTreeLeaves(Material.leaves).setBlockName("obliviontreeleaves");
 		//OblivionFireBlock = (BlockFire) new OblivionFireBlock(Material.cactus).setBlockName("OblivionFireBlock");
 	}
 	//
@@ -132,6 +137,8 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockMaderaRefinada, "MaderaRefinada");
 		GameRegistry.registerBlock(OblivionPortalBlock, "OblivionPortal");
+		GameRegistry.registerBlock(OblivionTreelog, "OblivionTreelog");
+		GameRegistry.registerBlock(OblivionTreeLeaves, "OblivionTreeLeaves");
 
 		
 		

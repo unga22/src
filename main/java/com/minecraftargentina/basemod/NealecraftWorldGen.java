@@ -28,6 +28,10 @@ public class NealecraftWorldGen implements IWorldGenerator {
 		case 1 :
 			//Generate our surface world
 			generateEnd(world, random, chunkX*16, chunkZ*16);
+			
+		case 32 :
+			//Generate our surface world
+			generateSurface(world, random, chunkX*16, chunkZ*16);
 		}
 
 	}

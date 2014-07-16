@@ -2,6 +2,8 @@ package com.minecraftargentina.basemod.Biomes;
 
 import java.util.Random;
 
+import Prueba.olivecraft.OliveTreeStructure;
+
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 
@@ -16,30 +18,17 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGenerator
-{
-    /** The minimum height of a generated tree. */
-    private final int minTreeHeight;
-    private final int randomTreeHeight;
-    
-    
-    
-    /** True if this tree should grow Vines. */
-    private final boolean vinesGrow;
-    
-    private final Block wood;
-    private final Block leaves;
-    
-    
-    
-    /** The metadata value of the wood to use in tree generation. */
-    private final int metaWood;
-    /** The metadata value of the leaves to use in tree generation. */
-    private final int metaLeaves;
-    
+public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGenerator {
 
+	private Block wood;
+	private Block leaves;
+	private int minTreeHeight;
+	private int randomTreeHeight;
+	private int metaWood;
+	private int metaLeaves;
+	private boolean vinesGrow;
 
-    public WorldGenOlvidoTree(Block wood, Block leaves, int metaWood, int metaLeaves)
+	public WorldGenOlvidoTree(Block wood, Block leaves, int metaWood, int metaLeaves)
     {
         this(wood, leaves, metaWood, metaLeaves, false, 4, 3, false);
     }
@@ -60,7 +49,8 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
         this.metaLeaves = metaLeaves;
         this.vinesGrow = vinesGrow;
     }
-
+    
+    
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
         int l = par2Random.nextInt(3) + this.minTreeHeight;
@@ -145,7 +135,7 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
 
                                     if (block1.isAir(par1World, i2, k1, k2) || block1.isLeaves(par1World, i2, k1, k2))
                                     {
-                                        this.setBlockAndNotifyAdequately(par1World, i2, k1, k2, CreacionDeBloques.blockLeaf, this.metaLeaves);
+                                        this.setBlockAndNotifyAdequately(par1World, i2, k1, k2, CreacionDeBloques.OblivionTreeLeaves, this.metaLeaves);
                                     }
                                 }
                             }
@@ -156,9 +146,10 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
                     {
                         block = par1World.getBlock(par3, par4 + k1, par5);
 
+
                         if (block.isAir(par1World, par3, par4 + k1, par5) || block.isLeaves(par1World, par3, par4 + k1, par5))
                         {
-                            this.setBlockAndNotifyAdequately(par1World, par3, par4 + k1, par5, CreacionDeBloques.blockLog, this.metaWood);
+                            this.setBlockAndNotifyAdequately(par1World, par3, par4 + k1, par5, CreacionDeBloques.OblivionTreelog, this.metaWood);
 
                             if (this.vinesGrow && k1 > 0)
                             {
@@ -249,8 +240,11 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
         else
         {
             return false;
+            
         }
     }
+    
+
 
     /**
      * Grows vines downward from the given block for a given length. Args: World, x, starty, z, vine-length
@@ -271,12 +265,25 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
 
             this.setBlockAndNotifyAdequately(par1World, par2, par3, par4, Blocks.vine, par5);
             --i1;
+            
+        }
+        
+    }
+  
+
+	//@Override //SI PONGO OVERRIDE PONE MENOS ARBOLES?
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+        if (world.provider.dimensionId == 32) {
+            generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
-	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		// TODO Auto-generated method stub
-		
-	}
+    private void generateSurface(World world, Random random, int x, int z) {
+        if (random.nextInt(3) == 2 & world.getBiomeGenForCoords(x, z).biomeName.equals("OblivionBiome")) {
+            int oX = x + random.nextInt(16);
+            int oY = 256;
+            int oZ = z + random.nextInt(16);
+            (new OblivionTreeStructure()).generate(world, random, oX, oY, oZ);
+        }
+    }
 }

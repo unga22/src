@@ -36,6 +36,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
 import OblivionDimension.BiomeGenTutorial;
+import Prueba.olivecraft.OliveGen;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -136,7 +137,7 @@ public class BaseMod {
 
 	
 	//public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
-	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("Oblivion Biome");
+	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("OblivionBiome");
 	public static CreativeTabs oblivion;
 	
 	
@@ -208,14 +209,13 @@ public class BaseMod {
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
 		
-		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0, false, 0, 0, false), 32);
+		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0), 32);
 		
 		DimensionManager.registerProviderType(BaseMod.DimID, OblivionDimension.WorldProviderOblivion.class, false);
 		DimensionManager.registerDimension(BaseMod.DimID, BaseMod.DimID);
 		
-		BiomeDictionary.registerBiomeType(BiomeGenTutorial, Type.FOREST);		
-		BiomeDictionary.registerBiomeType(BiomeGenTutorial, Type.PLAINS);
-		BiomeManager.addSpawnBiome(BiomeGenTutorial);
+		
+		BiomeManager.addSpawnBiome(BiomeGenTutorial);		
 		
 
 

@@ -1,0 +1,18 @@
+olivecraft.tile.oliveLog.name=Madera de olivo
+olivecraft.tile.fertilizedLog.name=Madera de olivo fertilizada
+olivecraft.tile.oliveLeaves.name=Hojas de olivo
+olivecraft.tile.fryer.name=Freidora
+olivecraft.tile.barrel.name=Barril
+
+olivecraft.item.olive.name=Aceituna
+olivecraft.item.oil.name=Aceite de oliva
+olivecraft.item.refriedOil.name=Aceite Refrito
+olivecraft.item.toast.name=Tostada de aceite
+olivecraft.item.rod.name=Vara
+olivecraft.item.burnt.name=Comida quemada
+olivecraft.item.chip.name=Patata frita
+olivecraft.item.emptyBag.name=Carton de patatas vacio
+olivecraft.item.fullBag.name=Carton de patatas
+olivecraft.item.oliveEdible.name=Aceituna Comestible
+
+olivecraft.item.fullBag.tooltip=patatas

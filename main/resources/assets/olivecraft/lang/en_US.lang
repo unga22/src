@@ -1,0 +1,22 @@
+#Block localizations
+olivecraft.tile.oliveLog.name=Olive log
+olivecraft.tile.fertilizedLog.name=Fertilized olive log
+olivecraft.tile.oliveLeaves.name=Olive leaves
+olivecraft.tile.fryer.name=Fryer
+olivecraft.tile.barrel.name=Barrel
+
+#Items localizations
+olivecraft.item.olive.name=Olive
+olivecraft.item.oil.name=Olive oil
+olivecraft.item.refriedOil.name=Refried oil
+olivecraft.item.toast.name=Oil toast
+olivecraft.item.rod.name=Rod
+olivecraft.item.burnt.name=Burnt food
+olivecraft.item.chip.name=Chip
+olivecraft.item.emptyBag.name=Empty chip bag
+olivecraft.item.fullBag.name=Chip bag
+olivecraft.item.oliveEdible.name=Edible Olive
+
+olivecraft.item.fullBag.tooltip=chips
+
+
