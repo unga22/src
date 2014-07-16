@@ -5,16 +5,18 @@ import java.util.Random;
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 
+import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class WorldGenOlvidoTree extends WorldGenAbstractTree
+public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGenerator
 {
     /** The minimum height of a generated tree. */
     private final int minTreeHeight;
@@ -271,4 +273,10 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree
             --i1;
         }
     }
+
+	@Override
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+		// TODO Auto-generated method stub
+		
+	}
 }

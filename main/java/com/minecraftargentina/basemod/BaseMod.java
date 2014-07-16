@@ -20,8 +20,12 @@ import net.minecraft.potion.Potion;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,7 +36,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
 import OblivionDimension.BiomeGenTutorial;
-import OblivionDimension.WorldGenTutorialTree;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -57,6 +60,7 @@ import com.minecraftargentina.basemod.Armaduras.TopazArmor;
 import com.minecraftargentina.basemod.Biomes.OblivionLeaf;
 import com.minecraftargentina.basemod.Biomes.OblivionLog;
 import com.minecraftargentina.basemod.Biomes.OblivionSapling;
+import com.minecraftargentina.basemod.Biomes.WorldGenOlvidoTree;
 import com.minecraftargentina.basemod.Blocks.BlockNCStem;
 import com.minecraftargentina.basemod.Blocks.BloodMelon;
 import com.minecraftargentina.basemod.Blocks.CopperBlock;
@@ -129,10 +133,14 @@ public class BaseMod {
 
 	NealecraftWorldGen eventWorldGen = new NealecraftWorldGen();
 	
-	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
+
+	
+	//public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
+	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("Oblivion Biome");
 	public static CreativeTabs oblivion;
 	
 	
+
 	
 	
 
@@ -146,6 +154,7 @@ public class BaseMod {
 	@SidedProxy(clientSide = "com.minecraftargentina.basemod.lib.ClientProxy", serverSide = "com.minecraftargentina.basemod.lib.CommonProxy")
 	public static ClientProxy nealeProxy;
 	public static Item Frutilla;
+	
 
 
 	@EventHandler
@@ -162,7 +171,8 @@ public class BaseMod {
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(CreacionDeItems.armorTopazChest),1,1,065));
 		//Spawn
 		GameRegistry.registerWorldGenerator(eventWorldGen, 0);
-
+		
+		
 		
 		
 		
@@ -198,10 +208,16 @@ public class BaseMod {
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
 		
-		GameRegistry.registerWorldGenerator(new WorldGenTutorialTree(false), 32);
+		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0, false, 0, 0, false), 32);
 		
 		DimensionManager.registerProviderType(BaseMod.DimID, OblivionDimension.WorldProviderOblivion.class, false);
 		DimensionManager.registerDimension(BaseMod.DimID, BaseMod.DimID);
+		
+		BiomeDictionary.registerBiomeType(BiomeGenTutorial, Type.FOREST);		
+		BiomeDictionary.registerBiomeType(BiomeGenTutorial, Type.PLAINS);
+		BiomeManager.addSpawnBiome(BiomeGenTutorial);
+		
+
 
 	}
 
