@@ -49,7 +49,7 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
         this.metaLeaves = metaLeaves;
         this.vinesGrow = vinesGrow;
     }
-    
+        
     
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
@@ -271,18 +271,17 @@ public class WorldGenOlvidoTree extends WorldGenAbstractTree implements IWorldGe
     }
   
 
-	//@Override //SI PONGO OVERRIDE PONE MENOS ARBOLES?
+	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
         if (world.provider.dimensionId == 32) {
             generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
     }
-
-    private void generateSurface(World world, Random random, int x, int z) {
-        if (random.nextInt(3) == 2 & world.getBiomeGenForCoords(x, z).biomeName.equals("OblivionBiome")) {
-            int oX = x + random.nextInt(16);
-            int oY = 256;
-            int oZ = z + random.nextInt(16);
+	private void generateSurface(World world, Random random, int x, int z) {
+        if (/*random.nextInt(3) == 2 &**/ world.getBiomeGenForCoords(x, z).biomeName.equals("OblivionBiome")) {
+            int oX = x; //+ random.nextInt(16);
+            int oY = 70;
+            int oZ = z;// + random.nextInt(16);
             (new OblivionTreeStructure()).generate(world, random, oX, oY, oZ);
         }
     }

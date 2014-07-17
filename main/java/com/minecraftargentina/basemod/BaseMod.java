@@ -211,6 +211,8 @@ public class BaseMod {
 		
 		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0), 32);
 		
+
+		
 		DimensionManager.registerProviderType(BaseMod.DimID, OblivionDimension.WorldProviderOblivion.class, false);
 		DimensionManager.registerDimension(BaseMod.DimID, BaseMod.DimID);
 		
