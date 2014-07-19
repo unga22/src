@@ -5,4 +5,10 @@ public class CommonProxy {
 	public void registerRenderInformation(){
 		
 	}
+	
+	
+	//Añadido por si acaso.
+	public void registerTileEntitySpecialRenderer(){
+		
+	}
 }
