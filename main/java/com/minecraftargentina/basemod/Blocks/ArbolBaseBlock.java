@@ -7,15 +7,17 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ArbolBase extends BlockContainer {
+public class ArbolBaseBlock extends BlockContainer {
 
 
 
 
-	protected ArbolBase(Material material) {
+	protected ArbolBaseBlock(Material material) {
 		super(material);
 		this.setHardness(2.0F);
 		this.setResistance(5.0F);
@@ -47,5 +49,5 @@ public class ArbolBase extends BlockContainer {
 		this.blockIcon = iconRegister.registerIcon(BaseMod.modid + ":" + this.getUnlocalizedName());
 		
 	}
-
+	
 }

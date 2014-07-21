@@ -35,6 +35,8 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
+import Models.RenderArbolBase;
+import Models.RenderArbolPlataform;
 import OblivionDimension.BiomeGenTutorial;
 import Prueba.olivecraft.OliveGen;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -70,6 +72,7 @@ import com.minecraftargentina.basemod.Blocks.MineralBlocks;
 import com.minecraftargentina.basemod.Blocks.ObsidianBlock;
 import com.minecraftargentina.basemod.Blocks.OreBlock;
 import com.minecraftargentina.basemod.Blocks.PurpleLamp;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolBase;
 import com.minecraftargentina.basemod.Cubos.BucketGenericos;
 import com.minecraftargentina.basemod.Cubos.BucketHandler;
 import com.minecraftargentina.basemod.Cubos.CreacionDeCubos;
@@ -153,7 +156,7 @@ public class BaseMod {
 	
 
 	@SidedProxy(clientSide = "com.minecraftargentina.basemod.lib.ClientProxy", serverSide = "com.minecraftargentina.basemod.lib.CommonProxy")
-	public static ClientProxy nealeProxy;
+	public static ClientProxy oblivionProxy;
 	public static Item Frutilla;
 	
 
@@ -177,7 +180,11 @@ public class BaseMod {
 		
 		
 		
-		nealeProxy.registerRenderThings();
+		oblivionProxy.registerRenderThings();
+		
+		RenderArbolBase render = new RenderArbolBase();
+		RenderArbolPlataform render2 = new RenderArbolPlataform();
+		
 
 	}
 
@@ -218,6 +225,8 @@ public class BaseMod {
 		
 		
 		BiomeManager.addSpawnBiome(BiomeGenTutorial);		
+		
+		GameRegistry.registerTileEntity(TileEntityArbolBase.class, "TileEntityArbolBase");
 		
 
 

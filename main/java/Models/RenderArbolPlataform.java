@@ -3,7 +3,7 @@ package Models;
 import org.lwjgl.opengl.GL11;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.Blocks.TileEntityArbolBase;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolPlataform;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -11,16 +11,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import Models.ArbolBaseModel;
 
-public class RenderArbolBase extends TileEntitySpecialRenderer {
+public class RenderArbolPlataform extends TileEntitySpecialRenderer {
 	
-	private ArbolBaseModel model;
-	private static final ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/ArbolBase.png");
+	private ArbolPlataformModel model;
+	private static final ResourceLocation texture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/ArbolPlataform.png");
 
 
 	
-	public RenderArbolBase() {
+	public RenderArbolPlataform() {
 		
-		model = new ArbolBaseModel();
+		model = new ArbolPlataformModel();
 		
 		
 		
@@ -60,7 +60,7 @@ public class RenderArbolBase extends TileEntitySpecialRenderer {
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {
 	
 
-		renderModelAt((TileEntityArbolBase)tileentity, x, y, z, f);
+		renderModelAt((TileEntityArbolPlataform)tileentity, x, y, z, f);
 		
 		
 		

@@ -2,6 +2,7 @@ package com.minecraftargentina.basemod.lib;
 
 
 import Models.RenderArbolBase;
+import Models.RenderArbolPlataform;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.EntityCyclops;
@@ -11,6 +12,7 @@ import com.minecraftargentina.basemod.RenderObsidianTable;
 import com.minecraftargentina.basemod.TileEntityObsidianTable;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolBase;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolPlataform;
 import com.minecraftargentina.basemod.Items.ItemRenderObsidianTable;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -31,7 +33,12 @@ public class ClientProxy extends CommonProxy {
 		//ArbolBase
 		TileEntitySpecialRenderer render1 = new RenderArbolBase();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolBase.class, render1);
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ArbolBase), new ItemRenderArbolBase(render1, new TileEntityArbolBase()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ArbolBaseBlock), new ItemRenderArbolBase(render1, new TileEntityArbolBase()));
+		
+		//ArbolPlataform
+				TileEntitySpecialRenderer render2 = new RenderArbolPlataform();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolPlataform.class, render2);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ArbolPlataformBlock), new ItemRenderArbolPlataform(render2, new TileEntityArbolPlataform()));
 		
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));

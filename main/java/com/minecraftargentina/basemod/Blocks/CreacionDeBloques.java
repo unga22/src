@@ -57,7 +57,8 @@ public class CreacionDeBloques {
 	public static Block OblivionTreelog;
 	public static Block OblivionTreeLeaves;
 	
-	public static Block ArbolBase;
+	public static Block ArbolBaseBlock;
+	public static Block ArbolPlataformBlock;
 	
 
 	
@@ -71,7 +72,8 @@ public class CreacionDeBloques {
 	//
 	public static void CreaciondeBloques(){
 		
-		ArbolBase = new ArbolBase(Material.wood).setBlockName("ArbolBase");
+		ArbolBaseBlock = new ArbolBaseBlock(Material.wood).setBlockName("ArbolBase");
+		ArbolPlataformBlock = new ArbolPlataformBlock(Material.wood).setBlockName("ArbolPlataform");
 		
 		cropStrawberryPlant = new StrawberryCrop().setBlockName("StrawberryPlant");
 
@@ -142,7 +144,8 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(OblivionTreelog, "OblivionTreelog");
 		GameRegistry.registerBlock(OblivionTreeLeaves, "OblivionTreeLeaves");
 		
-		GameRegistry.registerBlock(ArbolBase, "ArbolBase");
+		GameRegistry.registerBlock(ArbolBaseBlock, "ArbolBase");
+		GameRegistry.registerBlock(ArbolPlataformBlock, "ArbolPlataform");
 
 		
 		
