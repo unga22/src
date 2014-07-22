@@ -21,7 +21,7 @@ public class ArbolPlataformBlock extends BlockContainer {
 		super(material);
 		this.setHardness(2.0F);
 		this.setResistance(5.0F);
-		this.setBlockBounds(0F, 0F, 0F, 1F, 0.75F, 1F);
+	//	this.setBlockBounds(0F, 0F, 0F, 1F, 0.75F, 1F);
 		this.setCreativeTab(BaseMod.oblivion);
 	}
 	
