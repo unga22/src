@@ -15,6 +15,9 @@ import net.minecraft.block.BlockFire;
 import net.minecraft.block.material.Material;
 
 public class CreacionDeBloques {
+	
+	
+
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static Block oreCopperOre;
@@ -58,8 +61,12 @@ public class CreacionDeBloques {
 	public static Block OblivionTreeLeaves;
 	
 	public static Block ArbolBaseBlock;
-	public static Block ArbolPlataformBlock;
-	
+	public static Block ToconBlock;
+	public static Block ToconBlock2;
+	public static Block ToconBlock3;
+	public static Block ToconBlock4;
+	public static Block ToconBlock5;
+	public static Block ToconBlock6;
 
 	
 	
@@ -73,7 +80,12 @@ public class CreacionDeBloques {
 	public static void CreaciondeBloques(){
 		
 		ArbolBaseBlock = new ArbolBaseBlock(Material.wood).setBlockName("ArbolBase");
-		ArbolPlataformBlock = new ArbolPlataformBlock(Material.wood).setBlockName("ArbolPlataform");
+		ToconBlock = new ToconBlock(Material.wood).setBlockName("ToconBlock");
+		ToconBlock2 = new ToconBlock2(Material.wood).setBlockName("ToconBlock2");
+		ToconBlock3 = new ToconBlock3(Material.wood).setBlockName("ToconBlock3");
+		ToconBlock4 = new ToconBlock4(Material.wood).setBlockName("ToconBlock4");
+		ToconBlock5 = new ToconBlock5(Material.wood).setBlockName("ToconBlock5");
+		ToconBlock6 = new ToconBlock6(Material.wood).setBlockName("ToconBlock6");
 		
 		cropStrawberryPlant = new StrawberryCrop().setBlockName("StrawberryPlant");
 
@@ -145,7 +157,13 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(OblivionTreeLeaves, "OblivionTreeLeaves");
 		
 		GameRegistry.registerBlock(ArbolBaseBlock, "ArbolBase");
-		GameRegistry.registerBlock(ArbolPlataformBlock, "ArbolPlataform");
+		GameRegistry.registerBlock(ToconBlock, "ToconBlock");
+		GameRegistry.registerBlock(ToconBlock2, "ToconBlock2");
+		GameRegistry.registerBlock(ToconBlock3, "ToconBlock3");
+		GameRegistry.registerBlock(ToconBlock4, "ToconBlock4");
+		GameRegistry.registerBlock(ToconBlock5, "ToconBlock5");
+		GameRegistry.registerBlock(ToconBlock6, "ToconBlock6");
+
 
 		
 		

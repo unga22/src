@@ -36,7 +36,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
 import Models.RenderArbolBase;
-import Models.RenderArbolPlataform;
+import Models.RenderToconBlock;
 import OblivionDimension.BiomeGenTutorial;
 import Prueba.olivecraft.OliveGen;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -183,7 +183,7 @@ public class BaseMod {
 		oblivionProxy.registerRenderThings();
 		
 		RenderArbolBase render = new RenderArbolBase();
-		RenderArbolPlataform render2 = new RenderArbolPlataform();
+		RenderToconBlock render2 = new RenderToconBlock();
 		
 
 	}

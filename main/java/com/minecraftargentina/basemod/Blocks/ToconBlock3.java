@@ -1,5 +1,6 @@
 package com.minecraftargentina.basemod.Blocks;
 
+
 import com.minecraftargentina.basemod.BaseMod;
 
 import cpw.mods.fml.relauncher.Side;
@@ -12,21 +13,21 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ArbolPlataformBlock extends BlockContainer {
+public class ToconBlock3 extends BlockContainer {
 
 
 
 
-	protected ArbolPlataformBlock(Material material) {
+	protected ToconBlock3(Material material) {
 		super(material);
 		this.setHardness(2.0F);
 		this.setResistance(5.0F);
-	    this.setBlockBounds(0.30F, -0.25F, 0.25F, 0.75F, 0.25F, 0.60F);
+	    this.setBlockBounds(0.30F, -0.25F, 0.25F, 0.75F, 1F, 0.60F);
 		this.setCreativeTab(BaseMod.oblivion);
 	}
 	
 	public int getRenderType(){
-		return -3;
+		return -5;
 	}
 	
 	public boolean isOpaqueCube(){
@@ -40,7 +41,7 @@ public class ArbolPlataformBlock extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World var1, int var2) {		
-		return new TileEntityArbolPlataform();	
+		return new TileEntityArbolTocon3();	
 	}
 	
 	

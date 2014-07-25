@@ -2,7 +2,15 @@ package com.minecraftargentina.basemod.lib;
 
 
 import Models.RenderArbolBase;
-import Models.RenderArbolPlataform;
+import Models.RenderToconBlock;
+import Models.RenderToconBlock2;
+import Models.RenderToconBlock3;
+import Models.RenderToconBlock4;
+import Models.RenderToconBlock5;
+import Models.RenderToconBlock6;
+import Models.TileEntityArbolTocon4;
+import Models.TileEntityArbolTocon5;
+import Models.TileEntityArbolTocon6;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.EntityCyclops;
@@ -12,7 +20,9 @@ import com.minecraftargentina.basemod.RenderObsidianTable;
 import com.minecraftargentina.basemod.TileEntityObsidianTable;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolBase;
-import com.minecraftargentina.basemod.Blocks.TileEntityArbolPlataform;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon2;
+import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon3;
 import com.minecraftargentina.basemod.Items.ItemRenderObsidianTable;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -35,11 +45,33 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolBase.class, render1);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ArbolBaseBlock), new ItemRenderArbolBase(render1, new TileEntityArbolBase()));
 		
-		//ArbolPlataform
-				TileEntitySpecialRenderer render2 = new RenderArbolPlataform();
-				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolPlataform.class, render2);
-				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ArbolPlataformBlock), new ItemRenderArbolPlataform(render2, new TileEntityArbolPlataform()));
+		//ToconBlock
+				TileEntitySpecialRenderer render2 = new RenderToconBlock();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon.class, render2);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock), new ItemRenderTocon(render2, new TileEntityArbolTocon()));
 		
+		//ToconBlock2
+				TileEntitySpecialRenderer render3 = new RenderToconBlock2();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon2.class, render3);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock2), new ItemRenderTocon2(render3, new TileEntityArbolTocon2()));
+				
+		//ToconBlock3
+				TileEntitySpecialRenderer render4 = new RenderToconBlock3();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon3.class, render4);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock3), new ItemRenderTocon3(render4, new TileEntityArbolTocon3()));
+		//ToconBlock4
+				TileEntitySpecialRenderer render5 = new RenderToconBlock4();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon4.class, render5);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock4), new ItemRenderTocon4(render5, new TileEntityArbolTocon4()));
+		//Rama1
+				TileEntitySpecialRenderer render6 = new RenderToconBlock5();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon5.class, render6);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock5), new ItemRenderTocon5(render6, new TileEntityArbolTocon5()));
+		//Rama2
+				TileEntitySpecialRenderer render7 = new RenderToconBlock6();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon6.class, render7);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock6), new ItemRenderTocon6(render7, new TileEntityArbolTocon6()));
+				
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
 	}

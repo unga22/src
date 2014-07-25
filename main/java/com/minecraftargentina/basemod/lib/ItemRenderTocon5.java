@@ -1,5 +1,7 @@
 package com.minecraftargentina.basemod.lib;
 
+
+
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -7,16 +9,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.IItemRenderer;
 
-public class ItemRenderArbolPlataform implements IItemRenderer {
+public class ItemRenderTocon5 implements IItemRenderer {
 	
 	
-	TileEntitySpecialRenderer render2;
+	TileEntitySpecialRenderer render4;
 	private TileEntity entity;
 	
 	
-	public ItemRenderArbolPlataform(TileEntitySpecialRenderer render1, TileEntity entity){
+	public ItemRenderTocon5(TileEntitySpecialRenderer render1, TileEntity entity){
 		this.entity = entity;
-		this.render2 = render1;
+		this.render4 = render1;
 		
 		
 	}
@@ -39,7 +41,7 @@ public class ItemRenderArbolPlataform implements IItemRenderer {
 		if (type == IItemRenderer.ItemRenderType.ENTITY)
 			GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
 		
-		this.render2.renderTileEntityAt(this.entity, 0.0D, 0.0D, 0.0D, 0.0F);
+		this.render4.renderTileEntityAt(this.entity, 0.0D, 0.0D, 0.0D, 0.0F);
 
 	}
 
