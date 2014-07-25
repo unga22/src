@@ -8,9 +8,13 @@ import Models.RenderToconBlock3;
 import Models.RenderToconBlock4;
 import Models.RenderToconBlock5;
 import Models.RenderToconBlock6;
+import Models.RenderToconBlock7;
+import Models.RenderToconBlock8;
 import Models.TileEntityArbolTocon4;
 import Models.TileEntityArbolTocon5;
 import Models.TileEntityArbolTocon6;
+import Models.TileEntityArbolTocon7;
+import Models.TileEntityArbolTocon8;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.EntityCyclops;
@@ -71,7 +75,15 @@ public class ClientProxy extends CommonProxy {
 				TileEntitySpecialRenderer render7 = new RenderToconBlock6();
 				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon6.class, render7);
 				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock6), new ItemRenderTocon6(render7, new TileEntityArbolTocon6()));
-				
+		//Hojas1
+				TileEntitySpecialRenderer render8 = new RenderToconBlock7();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon7.class, render8);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock7), new ItemRenderTocon7(render8, new TileEntityArbolTocon7()));
+		//Hojas2
+				TileEntitySpecialRenderer render9 = new RenderToconBlock8();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon8.class, render9);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock8), new ItemRenderTocon8(render9, new TileEntityArbolTocon8()));
+																
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
 	}
