@@ -27,13 +27,13 @@ import Models.ArbolBaseModel;
 	    public RenderToconBlock4(){
 	    	
 	    	//Resource by Name
-	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Tocon4.obj");
+	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/TreeTrunk3.obj");
 	    	
 	    	//Model From Name
 	    	ArbolPlataformModel = AdvancedModelLoader.loadModel(ArbolPlataform);
 	    	
 	    	//Texture Resource
-	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/ent.png");
+	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Trunk.jpeg");
 
 	    }
 

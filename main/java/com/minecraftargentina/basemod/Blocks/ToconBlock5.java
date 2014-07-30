@@ -27,7 +27,7 @@ public class ToconBlock5 extends BlockContainer {
 		this.setResistance(5.0F);
 		
 		//this.setBlockBounds(ANCHO, ALTO, LARGO, ANCHO, ALTO, LARGO);
-	    this.setBlockBounds(0.50F, 0.75F, -0.60F, 0.75F, 1F, 0.20F);
+	    this.setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
 		this.setCreativeTab(BaseMod.oblivion);
 	}
 	

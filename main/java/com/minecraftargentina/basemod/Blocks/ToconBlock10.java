@@ -1,9 +1,14 @@
 package com.minecraftargentina.basemod.Blocks;
 
 
+
+import Models.TileEntityArbolTocon10;
 import Models.TileEntityArbolTocon4;
 import Models.TileEntityArbolTocon5;
 import Models.TileEntityArbolTocon6;
+import Models.TileEntityArbolTocon7;
+import Models.TileEntityArbolTocon8;
+import Models.TileEntityArbolTocon9;
 
 import com.minecraftargentina.basemod.BaseMod;
 
@@ -17,12 +22,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ToconBlock6 extends BlockContainer {
+public class ToconBlock10 extends BlockContainer {
 
 
 
 
-	protected ToconBlock6(Material material) {
+	protected ToconBlock10(Material material) {
 		super(material);
 		this.setHardness(2.0F);
 		this.setResistance(5.0F);
@@ -33,7 +38,7 @@ public class ToconBlock6 extends BlockContainer {
 	}
 	
 	public int getRenderType(){
-		return -8;
+		return -12;
 	}
 	
 	public boolean isOpaqueCube(){
@@ -47,7 +52,7 @@ public class ToconBlock6 extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World var1, int var2) {		
-		return new TileEntityArbolTocon6();	
+		return new TileEntityArbolTocon10();	
 	}
 	
 	

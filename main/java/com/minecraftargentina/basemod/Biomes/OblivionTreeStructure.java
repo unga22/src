@@ -18,18 +18,19 @@ public class OblivionTreeStructure extends WorldGenerator {
         
         if (world.getBlock(x, y, z) == Blocks.dirt || world.getBlock(x, y, z) == Blocks.grass) {
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock, 14, 2); //BASE
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock2, 14, 2); //TRONCO 1
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock3, 14, 2); //TRONCO 2
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock4, 14, 2); //TRONCO 3
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock5, 14, 2); //RAMAS
             y++;
-            world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
+            world.setBlock(x, y, z, CreacionDeBloques.ToconBlock10, 14, 2); //HOJAS
             y++;
+            /*
             world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
             y++;
             world.setBlock(x, y, z, CreacionDeBloques.OblivionTreelog, 14, 2);
@@ -68,6 +69,8 @@ public class OblivionTreeStructure extends WorldGenerator {
             world.setBlock(x, y, z - 1, CreacionDeBloques.OblivionTreeLeaves, random.nextInt(10) + 1, 2);
             y++;
             world.setBlock(x, y, z, CreacionDeBloques.OblivionTreeLeaves, random.nextInt(10) + 1, 2);
+            
+            **/
             return true;
         } else {
             return false;

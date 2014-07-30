@@ -4,7 +4,6 @@ package Models;
 import org.lwjgl.opengl.GL11;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon2;
 
 import net.minecraft.block.Block;
@@ -29,13 +28,13 @@ import Models.ArbolBaseModel;
 	    public RenderToconBlock2(){
 	    	
 	    	//Resource by Name
-	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Tocon2.obj");
+	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/TreeTrunk1.obj");
 	    	
 	    	//Model From Name
 	    	ArbolPlataformModel = AdvancedModelLoader.loadModel(ArbolPlataform);
 	    	
 	    	//Texture Resource
-	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/ent.png");
+	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Trunk.jpeg");
 
 	    }
 

@@ -103,6 +103,7 @@ import com.minecraftargentina.basemod.Semillas.CreacionDeSemillas;
 import com.minecraftargentina.basemod.Semillas.StrawberryCrop;
 import com.minecraftargentina.basemod.lib.ClientProxy;
 
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -215,6 +216,7 @@ public class BaseMod {
 		//Falta pasar todo esto
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
+		
 		
 		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0), 32);
 		

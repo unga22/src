@@ -1,4 +1,4 @@
-package com.minecraftargentina.basemod.Blocks;
+package Models;
 
 import net.minecraft.tileentity.TileEntity;
 

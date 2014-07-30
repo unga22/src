@@ -3,6 +3,8 @@ package com.minecraftargentina.basemod.lib;
 
 import Models.RenderArbolBase;
 import Models.RenderToconBlock;
+import Models.RenderToconBlock10;
+import Models.RenderToconBlock11;
 import Models.RenderToconBlock2;
 import Models.RenderToconBlock3;
 import Models.RenderToconBlock4;
@@ -10,11 +12,16 @@ import Models.RenderToconBlock5;
 import Models.RenderToconBlock6;
 import Models.RenderToconBlock7;
 import Models.RenderToconBlock8;
+import Models.RenderToconBlock9;
+import Models.TileEntityArbolTocon;
+import Models.TileEntityArbolTocon10;
+import Models.TileEntityArbolTocon11;
 import Models.TileEntityArbolTocon4;
 import Models.TileEntityArbolTocon5;
 import Models.TileEntityArbolTocon6;
 import Models.TileEntityArbolTocon7;
 import Models.TileEntityArbolTocon8;
+import Models.TileEntityArbolTocon9;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.EntityCyclops;
@@ -24,11 +31,11 @@ import com.minecraftargentina.basemod.RenderObsidianTable;
 import com.minecraftargentina.basemod.TileEntityObsidianTable;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolBase;
-import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon2;
 import com.minecraftargentina.basemod.Blocks.TileEntityArbolTocon3;
 import com.minecraftargentina.basemod.Items.ItemRenderObsidianTable;
 
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -83,9 +90,24 @@ public class ClientProxy extends CommonProxy {
 				TileEntitySpecialRenderer render9 = new RenderToconBlock8();
 				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon8.class, render9);
 				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock8), new ItemRenderTocon8(render9, new TileEntityArbolTocon8()));
-																
+		//Hojas3
+				TileEntitySpecialRenderer render10 = new RenderToconBlock9();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon9.class, render10);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock9), new ItemRenderTocon9(render10, new TileEntityArbolTocon9()));
+		//Hojas3
+				TileEntitySpecialRenderer render11 = new RenderToconBlock10();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon10.class, render11);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock10), new ItemRenderTocon10(render11, new TileEntityArbolTocon10()));
+		
+		//ARBOLFULL3D
+				TileEntitySpecialRenderer render12 = new RenderToconBlock11();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon11.class, render12);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock11), new ItemRenderTocon11(render12, new TileEntityArbolTocon11()));
+						
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
+
+		
 	}
 
 	public void registerTileEntitySpecialRenderer() {

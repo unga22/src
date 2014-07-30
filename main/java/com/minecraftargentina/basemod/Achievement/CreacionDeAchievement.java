@@ -3,6 +3,7 @@ package com.minecraftargentina.basemod.Achievement;
 import java.lang.reflect.Field;
 import java.util.Map;
 
+import com.minecraftargentina.basemod.ArbolCaeTickEvent;
 import com.minecraftargentina.basemod.CraftingHandler;
 import com.minecraftargentina.basemod.GuiHandler;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
@@ -75,6 +76,11 @@ public class CreacionDeAchievement {
 		
 		MinecraftForge.EVENT_BUS.register(new BioFuelEvents());
 		FMLCommonHandler.instance().bus().register(new BioFuelEvents());
+		
+		
+		MinecraftForge.EVENT_BUS.register(new ArbolCaeTickEvent());
+		FMLCommonHandler.instance().bus().register(new ArbolCaeTickEvent());
+		
 		
 
 		
