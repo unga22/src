@@ -10,6 +10,9 @@ import java.util.Random;
 
 
 
+
+
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -25,8 +28,10 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
+import net.minecraft.world.gen.feature.WorldGenCactus;
 import net.minecraft.world.gen.feature.WorldGenForest;
 import net.minecraft.world.gen.feature.WorldGenHugeTrees;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
@@ -35,13 +40,15 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.minecraftargentina.basemod.Biomes.WorldGenOlvidoTree;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
+import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
 
 public class BiomeGenTutorial extends BiomeGenBase
 {
 public final Material blockMaterial;
+private WorldGenerator WorldGenTrees;
+private WorldGenerator WorldGenLakes;
 
 
-private Object worldGeneratorTutorialBigTree;
 
 private float minHeight;
 

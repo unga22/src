@@ -17,13 +17,13 @@ public class WorldProviderOblivion extends WorldProvider{
 
 	@Override
 	public String getDimensionName() {
-		// TODO Auto-generated method stub
-		return("DimenisonShiftBasicDimenison");
+
+		return "Oblivion";
 	}
 	
 	public void registerWorldChunkManager()
 	{
-	       this.worldChunkMgr = new WorldChunkManagerHell(BaseMod.BiomeGenTutorial, 0.8F);
+	       this.worldChunkMgr = new WorldChunkManagerHell(BaseMod.oblivionDesert, 0.8F);
 	       this.dimensionId = BaseMod.DimID;
 	       
 	}

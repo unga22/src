@@ -22,6 +22,7 @@ import Models.TileEntityArbolTocon6;
 import Models.TileEntityArbolTocon7;
 import Models.TileEntityArbolTocon8;
 import Models.TileEntityArbolTocon9;
+import PocketDimensions.GuiInfoBook;
 
 import com.minecraftargentina.basemod.BaseMod;
 import com.minecraftargentina.basemod.EntityCyclops;
@@ -37,12 +38,21 @@ import com.minecraftargentina.basemod.Items.ItemRenderObsidianTable;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
+	
+	public static int currentPage = 0;
+	
+	   @Override
+	    public void runClientSide() {
+
+	    }
 
 	public void registerRenderThings() {
 		
@@ -107,6 +117,19 @@ public class ClientProxy extends CommonProxy {
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
 
+	}
+		
+		//StartBook
+	
+	
+		
+	    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+	        switch (ID) {
+	            case 0:
+	                return new GuiInfoBook();
+	            default:
+	                return null;
+	        }
 		
 	}
 
