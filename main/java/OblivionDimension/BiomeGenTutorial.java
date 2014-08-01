@@ -44,6 +44,8 @@ import com.minecraftargentina.basemod.Fluidos.CreacionDeFluidos;
 
 public class BiomeGenTutorial extends BiomeGenBase
 {
+	
+	
 public final Material blockMaterial;
 private WorldGenerator WorldGenTrees;
 private WorldGenerator WorldGenLakes;
@@ -77,6 +79,9 @@ this.waterColorMultiplier = 0xE42D17;
 /**
 * Gets a WorldGen appropriate for this biome.
 */
+
+
+
 public WorldGenerator getRandomWorldGenForTrees(Random par1Random)
 {
 return (WorldGenerator)(par1Random.nextInt(5) == 0 ? this.worldGeneratorTrees : (par1Random.nextInt(10) == 0 ? this.WorldGenOlvidoTree : this.worldGeneratorTrees));

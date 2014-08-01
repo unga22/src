@@ -2,6 +2,7 @@ package com.minecraftargentina.basemod.lib;
 
 
 import Models.RenderArbolBase;
+import Models.RenderRoca3D1Block;
 import Models.RenderToconBlock;
 import Models.RenderToconBlock10;
 import Models.RenderToconBlock11;
@@ -22,6 +23,7 @@ import Models.TileEntityArbolTocon6;
 import Models.TileEntityArbolTocon7;
 import Models.TileEntityArbolTocon8;
 import Models.TileEntityArbolTocon9;
+import Models.TileEntityRoca1;
 import PocketDimensions.GuiInfoBook;
 
 import com.minecraftargentina.basemod.BaseMod;
@@ -113,27 +115,19 @@ public class ClientProxy extends CommonProxy {
 				TileEntitySpecialRenderer render12 = new RenderToconBlock11();
 				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArbolTocon11.class, render12);
 				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.ToconBlock11), new ItemRenderTocon11(render12, new TileEntityArbolTocon11()));
-						
+	
+				
+	//Rocas3D
+				TileEntitySpecialRenderer render13 = new RenderRoca3D1Block();
+				ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRoca1.class, render13);
+				MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(CreacionDeBloques.Roca3D1), new ItemRenderRoca3D1(render13, new TileEntityRoca1()));
+				
+				
+				
 		//Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
-
 	}
 		
-		//StartBook
 	
 	
-		
-	    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-	        switch (ID) {
-	            case 0:
-	                return new GuiInfoBook();
-	            default:
-	                return null;
-	        }
-		
-	}
-
-	public void registerTileEntitySpecialRenderer() {
-
-	}
 }

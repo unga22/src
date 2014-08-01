@@ -18,10 +18,6 @@ public class CreacionDeBloques {
 	
 	
 
-	
-	
-	
-	
 
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
@@ -77,8 +73,10 @@ public class CreacionDeBloques {
 	public static Block ToconBlock9;
 	public static Block ToconBlock10;
 	public static Block ToconBlock11;
+	
+	public static Block Roca3D1;
 
-
+	
 	
 	
 	
@@ -102,6 +100,8 @@ public class CreacionDeBloques {
 		ToconBlock9 = new ToconBlock9(Material.wood).setBlockName("ToconBlock9");
 		ToconBlock10 = new ToconBlock10(Material.wood).setBlockName("ToconBlock10");
 		ToconBlock11 = new ToconBlock11(Material.wood).setBlockName("ToconBlock11");
+		
+		Roca3D1 = new Roca3D1(Material.rock).setBlockName("Roca");
 		
 		cropStrawberryPlant = new StrawberryCrop().setBlockName("StrawberryPlant");
 
@@ -184,9 +184,11 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(ToconBlock9, "ToconBlock9");
 		GameRegistry.registerBlock(ToconBlock10, "ToconBlock10");
 		GameRegistry.registerBlock(ToconBlock11, "ToconBlock11");
+		
+		GameRegistry.registerBlock(Roca3D1, "Roca3D1");
 
-		
-		
+	
+
 		
 		
 	}

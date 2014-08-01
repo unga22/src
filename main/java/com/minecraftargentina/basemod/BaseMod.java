@@ -60,7 +60,6 @@ import com.minecraftargentina.basemod.Achievement.CopperOnCraftEvent;
 import com.minecraftargentina.basemod.Achievement.CopperOnPickEvent;
 import com.minecraftargentina.basemod.Achievement.CreacionDeAchievement;
 import com.minecraftargentina.basemod.Armaduras.TopazArmor;
-import com.minecraftargentina.basemod.Biomes.BiomeGenOblivionDesert;
 import com.minecraftargentina.basemod.Biomes.OblivionLeaf;
 import com.minecraftargentina.basemod.Biomes.OblivionLog;
 import com.minecraftargentina.basemod.Biomes.OblivionSapling;
@@ -141,10 +140,10 @@ public class BaseMod {
 
 	
 	//public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
-	public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("OblivionBiome");
+	public static BiomeGenBase BiomeGenTutorial;
 	public static CreativeTabs oblivion;
 	
-	public static BiomeGenBase oblivionDesert;
+	
 
 	
 	
@@ -178,7 +177,7 @@ public class BaseMod {
 		GameRegistry.registerWorldGenerator(eventWorldGen, 0);
 		
 		
-		oblivionDesert =  new BiomeGenOblivionDesert(DimID).setColor(16421912).setBiomeName("OblivionDesert").setDisableRain().setTemperatureRainfall(2.0F, 0.0F);
+	
 		
 		
 		oblivionProxy.registerRenderThings();
@@ -186,6 +185,7 @@ public class BaseMod {
 		RenderArbolBase render = new RenderArbolBase();
 		RenderToconBlock render2 = new RenderToconBlock();
 		
+		BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("OblivionBiome");
 
 	}
 
