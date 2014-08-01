@@ -32,76 +32,30 @@ public class ArbolCaeTickEvent {
 	public void onBlockBreak(BlockEvent.BreakEvent event){
 		
 		if(event.block == CreacionDeBloques.ToconBlock){
-			
-			System.out.println("DESTRUCCION1");
-			
-		}
-		
-		
-		if(event.world.getBlock(event.x, event.y, event.z) == CreacionDeBloques.ToconBlock){
-			
-			System.out.println("DESTRUCCION0");
-			
-		}
-	}
-	
-			
-			@SubscribeEvent
-			public void createFallingBlocks(BreakEvent event) {
-			World world = event.world;
-			if (!world.isRemote) {
-			for (int i = 1; i <= 256; ++i) {
-			Block block = world.getBlock(event.x, event.y+i, event.z);
-			if (block == CreacionDeBloques.ToconBlock) {
-			world.setBlockToAir(event.x, event.y+i, event.z);
-		//	world.spawnEntityInWorld(new TileEntityArbolTocon(world, event.x, event.y+i, event.z));
+			if(event.world.getBlock(event.x, event.y + 1, event.z) == CreacionDeBloques.ToconBlock2){
+				event.world.setBlockToAir(event.x, event.y + 1, event.z);
+				event.world.setBlock(event.x + 1, event.y, event.z, CreacionDeBloques.ToconBlock6);
 			}
-
+			if(event.world.getBlock(event.x, event.y + 2, event.z) == CreacionDeBloques.ToconBlock3){
+				event.world.setBlockToAir(event.x, event.y + 2, event.z);
+				event.world.setBlock(event.x + 2, event.y, event.z, CreacionDeBloques.ToconBlock7);
+			}
+			if(event.world.getBlock(event.x, event.y + 3, event.z) == CreacionDeBloques.ToconBlock4){
+				event.world.setBlockToAir(event.x, event.y + 3, event.z);
+				event.world.setBlock(event.x + 3, event.y, event.z, CreacionDeBloques.ToconBlock8);
+			}
+			if(event.world.getBlock(event.x, event.y + 4, event.z) == CreacionDeBloques.ToconBlock5){
+				event.world.setBlockToAir(event.x, event.y + 4, event.z);
+				event.world.setBlock(event.x + 4, event.y, event.z, CreacionDeBloques.ToconBlock9);
+			}
+			if(event.world.getBlock(event.x, event.y + 5, event.z) == CreacionDeBloques.ToconBlock10){
+				event.world.setBlockToAir(event.x, event.y + 5, event.z);
+			}
 		}
-		
 	}
 	
 }
-}
-			
-			
-			
-			
-		
-		
-		/*
-		TileEntity entity = event.world.getTileEntity(event.x, event.y, event.z);
-		
-		if(entity = Models.TileEntityArbolTocon){
-	  
-	
-	  
-	  if(event.world.getBlock(event.x, event.y, event.z) == CreacionDeBloques.ToconBlock){	  
-		  
-		  
-		  System.out.println("DESTRUCCION1");
-		  
-		
-			/*
-			
-		  
-		  
-		  /*
-		   private void breakBlock(World world, int x, int y, int z){
-		if(world.getBlock(x, y, z) != Blocks.bedrock){
-			world.getBlock(x, y, z).dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
-			world.setBlockToAir(x, y, z);
-		}
-	} 
-		   
-		   */
-		  
-		//  event.block.beginLeavesDecay(world, x, y, z);
-			
-		//  event.block.breakBlock(p_149749_1_, p_149749_2_, p_149749_3_, p_149749_4_, p_149749_5_, p_149749_6_);
-	
-		//  event.block.getItemDropped(p_149650_1_, p_149650_2_, p_149650_3_)
-		  
+
 		  
 
 	
