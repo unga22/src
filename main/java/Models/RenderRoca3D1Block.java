@@ -28,13 +28,13 @@ import Models.ArbolBaseModel;
 	    public RenderRoca3D1Block(){
 	    	
 	    	//Resource by Name
-	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Cactus.obj");
+	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Grass.obj");
 	    	
 	    	//Model From Name
 	    	ArbolPlataformModel = AdvancedModelLoader.loadModel(ArbolPlataform);
 	    	
 	    	//Texture Resource
-	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/Cactus.jpg");
+	    	ArbolPlataformTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/model/grass_diff.png");
 	   
 
 	    }
