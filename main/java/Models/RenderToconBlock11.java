@@ -27,7 +27,7 @@ import Models.ArbolBaseModel;
 	    public RenderToconBlock11(){
 	    	
 	    	//Resource by Name
-	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/TreeHOJAS-90.obj");
+	    	ArbolPlataform = new ResourceLocation(BaseMod.modid + ":" + "textures/model/TreeHOJAS-902.obj");
 	    	
 	    	//Model From Name
 	    	ArbolPlataformModel = AdvancedModelLoader.loadModel(ArbolPlataform);
