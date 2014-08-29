@@ -35,10 +35,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.oredict.OreDictionary;
-import Models.RenderArbolBase;
-import Models.RenderToconBlock;
 import OblivionDimension.BiomeGenTutorial;
-import Prueba.olivecraft.OliveGen;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -96,6 +93,8 @@ import com.minecraftargentina.basemod.Maquinas.FuelMachine.TileEntityFuelMachine
 import com.minecraftargentina.basemod.Maquinas.IngotMasher.IngotMasher;
 import com.minecraftargentina.basemod.Maquinas.IngotMasher.TileEntityIngotMasher;
 import com.minecraftargentina.basemod.Maquinas.WorckSurface.WorkSurface;
+import com.minecraftargentina.basemod.Models.RenderArbolBase;
+import com.minecraftargentina.basemod.Models.RenderToconBlock;
 import com.minecraftargentina.basemod.Pociones.CreacionDePociones;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasDelHorno;
 import com.minecraftargentina.basemod.Recipes.CreacionDeRecetasMesaDeCrafteo;
@@ -133,7 +132,11 @@ public class BaseMod {
 
 	public static final String modid = "basemod";
 	public static final String version = "Alpha v0.1";
+	
+	
+	
 	public static int DimID = 32;
+	public static int DimID0 = 33;
 
 	NealecraftWorldGen eventWorldGen = new NealecraftWorldGen();
 	
@@ -141,6 +144,9 @@ public class BaseMod {
 	
 	//public static final BiomeGenBase BiomeGenTutorial = new BiomeGenTutorial(DimID);
 	public static BiomeGenBase BiomeGenTutorial;
+	public static BiomeGenBase BiomeGenBaseOrbit;
+	
+	
 	public static CreativeTabs oblivion;
 	
 	
@@ -186,6 +192,7 @@ public class BaseMod {
 		RenderToconBlock render2 = new RenderToconBlock();
 		
 		BiomeGenTutorial = new BiomeGenTutorial(DimID).setBiomeName("OblivionBiome");
+		BiomeGenBaseOrbit = new EspacioExterior.BiomeGenBaseOrbit(DimID).setBiomeName("BiomeGenBaseOrbit");
 
 	}
 
@@ -221,12 +228,18 @@ public class BaseMod {
 		GameRegistry.registerWorldGenerator(new WorldGenOlvidoTree(null, null, 0, 0), 32);
 		
 
-		
+		//Oblivion Dimension
 		DimensionManager.registerProviderType(BaseMod.DimID, OblivionDimension.WorldProviderOblivion.class, false);
 		DimensionManager.registerDimension(BaseMod.DimID, BaseMod.DimID);
 		
+		//Dungeon Dimension
 		
-		BiomeManager.addSpawnBiome(BiomeGenTutorial);		
+		DimensionManager.registerProviderType(BaseMod.DimID0, EspacioExterior.WorldProviderDungeon.class, false);
+		DimensionManager.registerDimension(BaseMod.DimID0, BaseMod.DimID0);
+		
+		
+		BiomeManager.addSpawnBiome(BiomeGenTutorial);
+		BiomeManager.addSpawnBiome(BiomeGenBaseOrbit);
 		
 		GameRegistry.registerTileEntity(TileEntityArbolBase.class, "TileEntityArbolBase");
 		

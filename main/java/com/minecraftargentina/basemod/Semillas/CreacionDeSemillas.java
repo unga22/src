@@ -1,7 +1,6 @@
 package com.minecraftargentina.basemod.Semillas;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.DrugMod;
 import com.minecraftargentina.basemod.Blocks.CreacionDeBloques;
 import com.minecraftargentina.basemod.Items.CreacionDeItems;
 import com.minecraftargentina.basemod.Items.ItemsGenericos;

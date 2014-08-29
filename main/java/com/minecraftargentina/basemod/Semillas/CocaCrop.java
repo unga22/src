@@ -1,6 +1,7 @@
 package com.minecraftargentina.basemod.Semillas;
 
-import com.minecraftargentina.basemod.DrugMod;
+
+import com.minecraftargentina.basemod.BaseMod;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -39,7 +40,7 @@ public class CocaCrop extends BlockCrops{
     	this.iconArray = new IIcon[8];
     	
     	for(int i = 0; i < this.iconArray.length; i++){
-    		this.iconArray[i] = iconRegister.registerIcon(DrugMod.modid + ":" + "stage" + i + "Coca");
+    		this.iconArray[i] = iconRegister.registerIcon(BaseMod.modid + ":" + "stage" + i + "Coca");
     	}
     }
 }

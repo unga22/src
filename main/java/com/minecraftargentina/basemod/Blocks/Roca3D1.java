@@ -1,10 +1,9 @@
 package com.minecraftargentina.basemod.Blocks;
 
 
-import Models.TileEntityArbolTocon;
-import Models.TileEntityRoca1;
-
 import com.minecraftargentina.basemod.BaseMod;
+import com.minecraftargentina.basemod.Models.TileEntityArbolTocon;
+import com.minecraftargentina.basemod.Models.TileEntityRoca1;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

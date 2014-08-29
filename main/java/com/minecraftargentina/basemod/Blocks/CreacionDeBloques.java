@@ -75,6 +75,8 @@ public class CreacionDeBloques {
 	public static Block ToconBlock11;
 	
 	public static Block Roca3D1;
+	
+	public static Block DungeonPortalBlock;
 
 	
 	
@@ -87,6 +89,8 @@ public class CreacionDeBloques {
 	//-----------------------------------------------------------------------------------------------------------------------
 	//
 	public static void CreaciondeBloques(){
+		
+		DungeonPortalBlock = new DungeonPortalBlock().setBlockName("DungeonPortal");
 		
 		ArbolBaseBlock = new ArbolBaseBlock(Material.wood).setBlockName("ArbolBase");
 		ToconBlock = new ToconBlock(Material.wood).setBlockName("ToconBlock");
@@ -186,6 +190,8 @@ public class CreacionDeBloques {
 		GameRegistry.registerBlock(ToconBlock11, "ToconBlock11");
 		
 		GameRegistry.registerBlock(Roca3D1, "Roca3D1");
+		
+		GameRegistry.registerBlock(DungeonPortalBlock, "DungeonPortal");
 
 	
 

@@ -14,7 +14,6 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.DrugMod;
 import com.minecraftargentina.basemod.Pociones.CreacionDePociones;
 
 import cpw.mods.fml.common.Mod.EventHandler;

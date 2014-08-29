@@ -1,7 +1,6 @@
 package com.minecraftargentina.basemod.Pociones;
 
 import com.minecraftargentina.basemod.BaseMod;
-import com.minecraftargentina.basemod.DrugMod;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;

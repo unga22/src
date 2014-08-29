@@ -13,24 +13,24 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 
-public class WorldProviderOblivion extends WorldProvider{
-
-	@Override
-	public String getDimensionName() {
-
-		return "Oblivion";
-	}
+public class WorldProviderOblivion extends WorldProvider {
 	
 	public void registerWorldChunkManager()
 	{
-	       this.worldChunkMgr = new WorldChunkManagerHell(BaseMod.BiomeGenTutorial, 0.8F);
-	       this.dimensionId = BaseMod.DimID;
-	       
+	    this.worldChunkMgr = new WorldChunkManagerHell(BaseMod.BiomeGenTutorial, 0.8F);
+	    this.dimensionId = BaseMod.DimID;	       
 	}
 	
 	public IChunkProvider createChunkGenerator()
 	{
-	       return new OblivionDimension.ChunkProviderOblivion2(worldObj, worldObj.getSeed(), true);
+	   return new OblivionDimension.ChunkProviderOblivion2(worldObj, worldObj.getSeed(), true);
+	}
+	
+	
+	@Override
+	public String getDimensionName() {
+
+		return "Oblivion";
 	}
 
 
