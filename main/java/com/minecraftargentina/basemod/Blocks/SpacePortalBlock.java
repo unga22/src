@@ -1,6 +1,7 @@
 package com.minecraftargentina.basemod.Blocks;
 
 import EspacioExterior.DungeonTeleporter;
+import EspacioExterior.Vector3;
 
 import com.minecraftargentina.basemod.BaseMod;
 
@@ -12,15 +13,28 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
  
-public class DungeonPortalBlock extends BlockPortal
-{
-    public DungeonPortalBlock()
+public class SpacePortalBlock extends BlockPortal {
+	
+	
+    public SpacePortalBlock()
     {
         super();
         setBlockName("DungeonPortal");
         setCreativeTab(BaseMod.oblivion);
     }
+    
+    
+	public Vector3 getPlayerSpawnLocation(WorldServer world, EntityPlayerMP player)
+	{
+		return new Vector3(0.5, 65.0, 0.5);
+	}
+
+	public Vector3 getEntitySpawnLocation(WorldServer world, Entity player)
+	{
+		return new Vector3(0.5, 65.0, 0.5);
+	}
  
     @Override
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)

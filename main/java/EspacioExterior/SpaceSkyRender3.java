@@ -1,5 +1,6 @@
 package EspacioExterior;
 
+
 import cpw.mods.fml.client.FMLClientHandler;
 //import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 //import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -19,27 +20,18 @@ import com.minecraftargentina.basemod.BaseMod;
 
 import java.util.Random;
 
-public class SpaceSkyRender2 extends IRenderHandler
+public class SpaceSkyRender3 extends IRenderHandler
 {
 	private static final ResourceLocation moonTexture = new ResourceLocation("textures/environment/moon_phases.png");
-	private static final ResourceLocation sunTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/space/earth.png");
+	private static final ResourceLocation sunTexture = new ResourceLocation(BaseMod.modid + ":" + "textures/space/sun.png");
 
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
 	public int glSkyList2;
-	private final ResourceLocation planetToRender;
-	private final boolean renderMoon;
-	private final boolean renderSun;
-	private float spinAngle = 0;
-	public float spinDeltaPerTick = 0;
-	private float prevPartialTicks = 0;
-	private long prevTick;
+	private final ResourceLocation planetToRender = new ResourceLocation(BaseMod.modid + ":" + "textures/space/earth.png");
 
-	public SpaceSkyRender2(ResourceLocation planet, boolean renderMoon, boolean renderSun)
+	public SpaceSkyRender3()
 	{
-		this.planetToRender = planet;
-		this.renderMoon = renderMoon;
-		this.renderSun = renderSun;
 		GL11.glPushMatrix();
 		GL11.glNewList(this.starGLCallList, GL11.GL_COMPILE);
 		this.renderStars();
@@ -48,7 +40,7 @@ public class SpaceSkyRender2 extends IRenderHandler
 		final Tessellator tessellator = Tessellator.instance;
 		this.glSkyList = this.starGLCallList + 1;
 		GL11.glNewList(this.glSkyList, GL11.GL_COMPILE);
-		final byte byte2 = 64;
+		final byte byte2 = 5;
 		final int i = 256 / byte2 + 2;
 		float f = 16F;
 
@@ -91,18 +83,14 @@ public class SpaceSkyRender2 extends IRenderHandler
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc)
 	{
-		final float var20 = 400.0F + (float) this.minecraft.thePlayer.posY / 2F;
-
-		// if (this.minecraft.thePlayer.ridingEntity != null)
-		{
-			// var20 = (float) (this.minecraft.thePlayer.posY - 200.0F);
-		}
+		float var20 = (float) (mc.thePlayer.posY - 200.0F) / 1000.0F;
+		final float var21 = Math.max(1.0F - var20 * 4.0F, 0.0F);
 
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		final Vec3 var2 = this.minecraft.theWorld.getSkyColor(this.minecraft.renderViewEntity, partialTicks);
-		float var3 = (float) var2.xCoord;
-		float var4 = (float) var2.yCoord;
-		float var5 = (float) var2.zCoord;
+		float var3 = (float) var2.xCoord * var21;
+		float var4 = (float) var2.yCoord * var21;
+		float var5 = (float) var2.zCoord * var21;
 		float var8;
 
 		if (this.minecraft.gameSettings.anaglyph)
@@ -156,10 +144,11 @@ public class SpaceSkyRender2 extends IRenderHandler
 			}
 
 			var23.startDrawing(6);
-			var23.setColorRGBA_F(var8, var9, var10, var24[3]);
+
+			var23.setColorRGBA_F(var8 * var21, var9 * var21, var10 * var21, var24[3] * var21);
 			var23.addVertex(0.0D, 100.0D, 0.0D);
 			final byte var26 = 16;
-			var23.setColorRGBA_F(var24[0], var24[1], var24[2], 0.0F);
+			var23.setColorRGBA_F(var24[0] * var21, var24[1] * var21, var24[2] * var21, 0.0F);
 
 			for (int var27 = 0; var27 <= var26; ++var27)
 			{
@@ -174,6 +163,7 @@ public class SpaceSkyRender2 extends IRenderHandler
 			GL11.glShadeModel(GL11.GL_FLAT);
 		}
 
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
 		GL11.glPushMatrix();
 		var8 = 1.0F - this.minecraft.theWorld.getRainStrength(partialTicks);
@@ -184,156 +174,82 @@ public class SpaceSkyRender2 extends IRenderHandler
 		GL11.glTranslatef(var9, var10, var11);
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
 
-		//Code for rendering spinning spacestations
-		float deltaTick = partialTicks - this.prevPartialTicks;
-		//while (deltaTick < 0F) deltaTick += 1.0F;
-		this.prevPartialTicks = partialTicks;
-		long curTick = this.minecraft.theWorld.getTotalWorldTime();
-		int tickDiff = (int) (curTick - this.prevTick);
-		this.prevTick = curTick;
-		if (tickDiff > 0 && tickDiff < 20)
-		{
-			deltaTick += tickDiff;
-		}
-		this.spinAngle = this.spinAngle - this.spinDeltaPerTick * deltaTick;
-		while (this.spinAngle < -180F)
-		{
-			this.spinAngle += 360F;
-		}
-		GL11.glRotatef(this.spinAngle, 0.0F, 1.0F, 0.0F);
+		GL11.glRotatef(this.minecraft.theWorld.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		var12 = 30.0F;
+		this.minecraft.renderEngine.bindTexture(SpaceSkyRender3.sunTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, 100.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 100.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 100.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 100.0D, var12, 0.0D, 1.0D);
+		var23.draw();
 
-		//Stars first
-		// if (var20 > 0.0F)
-		{
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			GL11.glCallList(this.starGLCallList);
-		}
-		GL11.glEnable(GL11.GL_TEXTURE_2D);
-
-		GL11.glPushMatrix();
-		float celestialAngle = this.minecraft.theWorld.getCelestialAngle(partialTicks);
-		GL11.glRotatef(celestialAngle * 360.0F, 1.0F, 0.0F, 0.0F);
-		if (this.renderSun)
-		{
-			var12 = 28.0F;
-			this.minecraft.renderEngine.bindTexture(SpaceSkyRender2.sunTexture);
-			var23.startDrawingQuads();
-			var23.addVertexWithUV(-var12, 100.0D, -var12, 0.0D, 0.0D);
-			var23.addVertexWithUV(var12, 100.0D, -var12, 1.0D, 0.0D);
-			var23.addVertexWithUV(var12, 100.0D, var12, 1.0D, 1.0D);
-			var23.addVertexWithUV(-var12, 100.0D, var12, 0.0D, 1.0D);
-			var23.draw();
-		}
-
-		if (this.renderMoon)
-		{
-			var12 = 40.0F;
-			this.minecraft.renderEngine.bindTexture(SpaceSkyRender2.moonTexture);
-			float var28 = this.minecraft.theWorld.getMoonPhase();
-			final int var30 = (int) (var28 % 4);
-			final int var29 = (int) (var28 / 4 % 2);
-			final float var16 = (var30 + 0) / 4.0F;
-			final float var17 = (var29 + 0) / 2.0F;
-			final float var18 = (var30 + 1) / 4.0F;
-			final float var19 = (var29 + 1) / 2.0F;
-			var23.startDrawingQuads();
-			var23.addVertexWithUV(-var12, -100.0D, var12, var18, var19);
-			var23.addVertexWithUV(var12, -100.0D, var12, var16, var19);
-			var23.addVertexWithUV(var12, -100.0D, -var12, var16, var17);
-			var23.addVertexWithUV(-var12, -100.0D, -var12, var18, var17);
-			var23.draw();
-		}
-
-		GL11.glPopMatrix();
-		GL11.glDisable(GL11.GL_BLEND);
-
-		if (this.planetToRender != null)
-		{
-			GL11.glPushMatrix();
-			GL11.glTranslatef(0.0F, -var20 / 10, 0.0F);
-			float scale = 100 * (0.3F - var20 / 10000.0F);
-			scale = Math.max(scale, 0.2F);
-			GL11.glScalef(scale, 0.0F, scale);
-			GL11.glTranslatef(0.0F, -var20, 0.0F);
-			GL11.glRotatef(90F, 0.0F, 1.0F, 0.0F);
-			this.minecraft.renderEngine.bindTexture(this.planetToRender);
-
-			var10 = 1.0F;
-			final float alpha = 0.5F;
-			GL11.glColor4f(Math.min(alpha, 1.0F), Math.min(alpha, 1.0F), Math.min(alpha, 1.0F), Math.min(alpha, 1.0F));
-			var23.startDrawingQuads();
-			var23.addVertexWithUV(-var10, 0, var10, 0.0F, 1.0F);
-			var23.addVertexWithUV(var10, 0, var10, 1.0F, 1.0F);
-			var23.addVertexWithUV(var10, 0, -var10, 1.0F, 0.0F);
-			var23.addVertexWithUV(-var10, 0, -var10, 0.0F, 0.0F);
-			var23.draw();
-			GL11.glPopMatrix();
-		}
+		var12 = 40.0F;
+		this.minecraft.renderEngine.bindTexture(SpaceSkyRender3.moonTexture);
+		float var28 = this.minecraft.theWorld.getMoonPhase();
+		final int var30 = (int) (var28 % 4);
+		final int var29 = (int) (var28 / 4 % 2);
+		final float var16 = (var30 + 0) / 4.0F;
+		final float var17 = (var29 + 0) / 2.0F;
+		final float var18 = (var30 + 1) / 4.0F;
+		final float var19 = (var29 + 1) / 2.0F;
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, -100.0D, var12, var18, var19);
+		var23.addVertexWithUV(var12, -100.0D, var12, var16, var19);
+		var23.addVertexWithUV(var12, -100.0D, -var12, var16, var17);
+		var23.addVertexWithUV(-var12, -100.0D, -var12, var18, var17);
+		var23.draw();
 
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
-		GL11.glPopMatrix();
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		GL11.glCallList(this.starGLCallList);
 
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		GL11.glDisable(GL11.GL_BLEND);
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
-
+		GL11.glEnable(GL11.GL_FOG);
+		GL11.glPopMatrix();
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glColor3f(0.0F, 0.0F, 0.0F);
 
-		/* This all does nothing!
-		double var25 = 0.0D;
+		double var25 = this.minecraft.thePlayer.posY - 64;
 
-		// if (this.minecraft.thePlayer.ridingEntity != null)
-		{
-			var25 = this.minecraft.thePlayer.posY - 64;
+		var20 *= 400.0F;
 
-			if (var25 < 0.0D)
-			{
-				// GL11.glPushMatrix();
-				// GL11.glTranslatef(0.0F, 12.0F, 0.0F);
-				// GL11.glCallList(this.glSkyList2);
-				// GL11.glPopMatrix();
-				// var10 = 1.0F;
-				// var11 = -((float)(var25 + 65.0D));
-				// var12 = -var10;
-				// var23.startDrawingQuads();
-				// var23.setColorRGBA_I(0, 255);
-				// var23.addVertex(-var10, var11, var10);
-				// var23.addVertex(var10, var11, var10);
-				// var23.addVertex(var10, var12, var10);
-				// var23.addVertex(-var10, var12, var10);
-				// var23.addVertex(-var10, var12, -var10);
-				// var23.addVertex(var10, var12, -var10);
-				// var23.addVertex(var10, var11, -var10);
-				// var23.addVertex(-var10, var11, -var10);
-				// var23.addVertex(var10, var12, -var10);
-				// var23.addVertex(var10, var12, var10);
-				// var23.addVertex(var10, var11, var10);
-				// var23.addVertex(var10, var11, -var10);
-				// var23.addVertex(-var10, var11, -var10);
-				// var23.addVertex(-var10, var11, var10);
-				// var23.addVertex(-var10, var12, var10);
-				// var23.addVertex(-var10, var12, -var10);
-				// var23.addVertex(-var10, var12, -var10);
-				// var23.addVertex(-var10, var12, var10);
-				// var23.addVertex(var10, var12, var10);
-				// var23.addVertex(var10, var12, -var10);
-				// var23.draw();
-			}
-		}
+		final float var22 = Math.max(Math.min(var20 / 100.0F - 0.2F, 1.0F), 0.0F);
 
-		if (this.minecraft.theWorld.provider.isSkyColored())
-		{
-			GL11.glColor3f(0.0f, 0.0f, 0.0f);
-		}
-		else
-		{
-			GL11.glColor3f(var3, var4, var5);
-		}
+		GL11.glPushMatrix();
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
+		GL11.glTranslatef(0.0F, -var20 / 10 - 5, 0.0F);
+		float scale = 100 * (0.25F - var20 / 10000.0F);
+		scale = Math.max(scale, 0.2F);
+		GL11.glScalef(scale, 0.0F, scale);
+		GL11.glTranslatef(0.0F, -var20, 0.0F);
+		this.minecraft.renderEngine.bindTexture(this.planetToRender);
+
+		var10 = 1.0F;
+
+		GL11.glColor4f(var22, var22, var22, var22);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var10, 0, var10, 0.0F, 1.0F);
+		var23.addVertexWithUV(var10, 0, var10, 1.0F, 1.0F);
+		var23.addVertexWithUV(var10, 0, -var10, 1.0F, 0.0F);
+		var23.addVertexWithUV(-var10, 0, -var10, 0.0F, 0.0F);
+		var23.addVertexWithUV(-var10, 0, var10, 0.0F, 1.0F);
+		var23.addVertexWithUV(var10, 0, var10, 1.0F, 1.0F);
+		var23.addVertexWithUV(var10, 0, -var10, 1.0F, 0.0F);
+		var23.addVertexWithUV(-var10, 0, -var10, 0.0F, 0.0F);
+		var23.draw();
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
+		GL11.glPopMatrix();
+
 		GL11.glColor3f(0.0f, 0.0f, 0.0f);
 
 		GL11.glPushMatrix();
 		GL11.glTranslatef(0.0F, -((float) (var25 - 16.0D)), 0.0F);
+		GL11.glCallList(this.glSkyList2);
 		GL11.glPopMatrix();
-		*/
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glDepthMask(true);
 	}

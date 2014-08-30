@@ -59,13 +59,11 @@ public class WorldProviderDungeon extends WorldProvider {
     
     @Override
     protected void generateLightBrightnessTable() {
-       
-        float f = 0.0F;
-
-        for (int i = 0; i <= 15; ++i) {
-           
-           //this.lightBrightnessTable = 1.35F *  (float) Math.pow((1.0f - 0.0895f), 15.0f - i) - 0.35f;
-           //this.lightBrightnessTable = 1.25F *  (float) Math.pow((1.0f - 0.10f), 15.0f - i) - 0.35f;
+    	
+    	float f = 0.1F;
+		for(int i = 0; i <= 15; ++i) {
+			float f1 = 1.0F - (float) i / 15.0F;
+			this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
             
         }
         
@@ -76,7 +74,7 @@ public class WorldProviderDungeon extends WorldProvider {
     @SideOnly(Side.CLIENT)
     public IRenderHandler getSkyRenderer() {
        
-            return new SpaceSkyRender2(null, hasNoSky, hasNoSky);
+            return new SpaceSkyRender3();
             
     }
     

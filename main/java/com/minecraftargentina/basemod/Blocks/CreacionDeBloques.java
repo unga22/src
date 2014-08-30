@@ -90,7 +90,7 @@ public class CreacionDeBloques {
 	//
 	public static void CreaciondeBloques(){
 		
-		DungeonPortalBlock = new DungeonPortalBlock().setBlockName("DungeonPortal");
+		DungeonPortalBlock = new SpacePortalBlock().setBlockName("DungeonPortal");
 		
 		ArbolBaseBlock = new ArbolBaseBlock(Material.wood).setBlockName("ArbolBase");
 		ToconBlock = new ToconBlock(Material.wood).setBlockName("ToconBlock");
