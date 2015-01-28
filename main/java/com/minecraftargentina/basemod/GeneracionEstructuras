@@ -1,0 +1,5 @@
+packet com.miencraftargentina.basemod.GeneracionEstructuras
+
+public class GeneracionEstructuraEnSpawn{
+//Empezare con este test mio! Por cierto hay que actualizar mas adleante todavia no por que esta en beta la 1.8 pero cuando salga la relase a actualizar
+}
